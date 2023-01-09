@@ -1,6 +1,6 @@
 <template>
-  <div class="Back">
-    <Header style="position: relative"/>
+  <div class="Back container">
+    <Top-Header style="position: relative"/>
     <div style="width: max-content;height: 30px;">
     </div>
     <section :movie="MoviesDetails" class="container d-flex">
@@ -27,20 +27,22 @@
           </p>
         </div>
       </section>
-      <div  class="Cast">
-        <div style="margin-bottom: 10px ">
-          <span>Series Cast</span>
-        </div>
-        <div style="max-width: 750px" :perPage="5" class="row">
-          <div   v-for="(cast,index) in MoviesCast" :key="index">
+    </section>
+    <div class="row" >
+      <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
+           :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
+        <div v-for="(cast,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
+             style="width: 150px;height: 250px;display: inline-block; flex: 0 0 auto;">
+          <div>
             <img class="ImgCast" :src="IMG_URL + cast.profile_path">
             <a class="justify-content-center d-flex CastName">{{ cast.name }}</a>
             <p class="CastCharacter">{{ cast.character }}</p>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   </div>
+
 </template>
 
 <script>
@@ -55,6 +57,9 @@ export default {
       MoviesDetails: '',
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
       MoviesCast: [],
+      slides: [],
+      currentSlide: 0,
+
     }
   },
   async mounted() {
@@ -74,7 +79,7 @@ export default {
       .get(TOP_MOVIE_CAST + API_KEY + '&language=en-US')
       .then((res) => {
         console.log(res.data.cast)
-        this.MoviesCast = res.data.cast
+        this.slides = res.data.cast
       })
   },
 
@@ -161,5 +166,13 @@ span.genres {
   margin-right: 5px;
   color: rebeccapurple;
 }
-
+#carousel-wrapper {
+  display: flex;
+  position: relative;
+  transition: transform 0.5s;
+  height: 320px;
+}
+#carousel-wrapper > * {
+  width: calc(100% / slides.length);
+}
 </style>

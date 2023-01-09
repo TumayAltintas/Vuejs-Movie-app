@@ -15,6 +15,8 @@ const router = createRouter({
 
 		{path: '/Movie/:id', name: 'MovieDetail', component: () => import('../views/MovieView/MovieDetails.vue')},
 
+		{path: '/Tv/:id', name: 'TvDetail', component: () => import('../views/TvView/TvDetails.vue')},
+
 		{path: '/Tv/AiringToday', name: 'TvAiringToday', component: () => import('../views/TvView/AiringNow.vue')},
 
 		{path: '/Tv/OnTheAir', name: 'TvOnTheAir', component: () => import('../views/TvView/OnTheAir.vue')},

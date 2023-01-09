@@ -9,7 +9,7 @@
             <div class="average">
               <span style="color:#000;">{{ Tv.vote_average }}</span>
             </div>
-            <router-link to="">
+            <router-link :to="'/Tv/'+ Tv.id">
               <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Tv.poster_path">
             </router-link>
           </div>
