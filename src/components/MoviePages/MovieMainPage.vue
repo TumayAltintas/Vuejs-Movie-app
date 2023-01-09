@@ -1,13 +1,12 @@
 <template>
-  <div id="carousel-container container Full">
     <div class="row">
       <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
            :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
         <div v-for="(Movie,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
-             style="width: 165px;height: 250px;display: inline-block; flex: 0 0 auto;">
+             style="width: 250px;height: 250px;display: inline-block; flex: 0 0 auto;">
           <div>
             <div class="average">
-              <span>{{ Movie.vote_average }}</span>
+              <span style="color:#000;">{{ Movie.vote_average }}</span>
             </div>
             <router-link to="">
               <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Movie.poster_path">
@@ -19,7 +18,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -27,7 +25,7 @@ import axios from 'axios'
 
 
 export default {
-  name: 'test',
+  name: 'MovieMainPage',
   components: {},
   data() {
     return {
@@ -72,22 +70,19 @@ export default {
   width: calc(100% / slides.length);
 }
 
-#Full {
-  margin-top: 150px
-}
 
 div.average {
-  text-align: end;
   position: relative;
-
+  top: 0;
+  width: max-content;
 }
 
 div.title {
-  justify-content: center;
-  text-align: center;
+  justify-content: start;
+  text-align: start;
 }
 
-p.title {
+p {
   color: red;
 }
 

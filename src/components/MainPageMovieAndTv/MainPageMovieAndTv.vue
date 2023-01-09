@@ -7,7 +7,7 @@
     <div>
       <button @click="show=!show">Movie</button>
       <button @click="show=!show">Tv Series</button>
-      <div>
+      <div >
         <TvMainPage v-if="show"/>
         <MovieMainPage v-else/>
       </div>

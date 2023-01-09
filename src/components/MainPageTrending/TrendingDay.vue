@@ -1,10 +1,12 @@
 <template>
-  <div class="container Full">
-    <div class="row">
-      <div v-for="(day,index) in TrendingDay" :key="index" class="col-lg-2 col-md-3 col-sm-4  m-0">
+  <div class="row mb-5">
+    <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
+         :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
+      <div v-for="(day,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
+           style="width: 250px;height: 250px;display: inline-block; flex: 0 0 auto;">
         <div>
           <div class="average">
-            <!--            <span>{{ day.vote_average }}</span>-->
+            <span style="color: black"> {{ day.vote_average }}</span>
           </div>
           <router-link to="">
             <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + day.poster_path">
@@ -17,8 +19,9 @@
       </div>
     </div>
   </div>
+
 </template>
-<!--:autoplay="true" :autoplayTimeout="6000" :perPage="6"-->
+
 <script>
 import axios from 'axios'
 
@@ -28,8 +31,9 @@ export default {
 
   data() {
     return {
-      TrendingDay: [],
+      slides: [],
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
+      currentSlide: 0,
 
     }
   },
@@ -42,7 +46,7 @@ export default {
         .get(TOP_MOVIE_URL + API_KEY)
         .then((response) => {
 
-          this.TrendingDay = response.data.results
+          this.slides = response.data.results
         })
   },
 }
@@ -51,27 +55,39 @@ export default {
 </script>
 
 <style scoped>
+#carousel-wrapper {
+  display: flex;
+  position: relative;
+  transition: transform 0.5s;
+  height: 350px;
+}
+
+#carousel-wrapper > * {
+  width: calc(100% / slides.length);
+}
+
+#Full {
+  margin-top: 150px
+}
 
 div.average {
-  text-align: end;
   position: relative;
-
+  top: 0;
+  width: max-content;
 }
 
 div.title {
-  justify-content: center;
-  text-align: center;
+  justify-content: start;
+  text-align: start;
 }
 
-p.title {
+p {
   color: red;
 }
 
 img {
   width: 165px;
 }
-
-
 </style>
 
 

@@ -1,13 +1,13 @@
 <template>
-  <div id="carousel-container container Full">
+  <div>
     <div class="row">
-      <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
+      <div style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
            :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
         <div v-for="(Tv,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
-             style="width: 165px;height: 250px;display: inline-block; flex: 0 0 auto;">
+             style="width: 200px;height: 250px;display: inline-block; flex: 0 0 auto;">
           <div>
             <div class="average">
-              <span>{{ Tv.vote_average }}</span>
+              <span style="color:#000;">{{ Tv.vote_average }}</span>
             </div>
             <router-link to="">
               <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Tv.poster_path">
@@ -26,16 +26,14 @@
 import axios from 'axios'
 
 
-
 export default {
-  name: 'NuxtTutorial',
-  components: {
-
-  },
+  name: 'TvMainPage',
+  components: {},
   data() {
     return {
       slides: [],
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
+      currentSlide: 0,
     }
   },
 
@@ -47,7 +45,7 @@ export default {
         .get(TOP_MOVIE_URL + API_KEY + '&language=en-US&page=' + this.currentPage)
         .then((response) => {
 
-          this.TvSeries = response.data.results
+          this.slides = response.data.results
         })
 
 
@@ -59,16 +57,6 @@ export default {
 
 
   },
-  // setup(){
-  //   const {store} = useContext();
-  //   const Movies = computed(()=> store.getters.getMovie);
-  //
-  //   return{
-  //     Movies
-  //   }
-  //
-  // }
-
 }
 
 
@@ -81,26 +69,23 @@ export default {
   transition: transform 0.5s;
   height: 320px;
 }
+
 #carousel-wrapper > * {
   width: calc(100% / slides.length);
 }
 
-#Full {
-  margin-top: 150px
-}
-
 div.average {
-  text-align: end;
   position: relative;
-
+  top: 0;
+  width: max-content;
 }
 
 div.title {
-  justify-content: center;
-  text-align: center;
+  justify-content: start;
+  text-align: start;
 }
 
-p.title {
+p {
   color: red;
 }
 
