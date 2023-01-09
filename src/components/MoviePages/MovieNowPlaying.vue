@@ -1,7 +1,6 @@
 <template>
   <section>
     <div>
-      <Header/>
     </div>
     <div>
       <div class="container">

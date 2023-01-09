@@ -1,6 +1,8 @@
 <template>
 <div>
-<TvAiringToday/>
+  <Top-Header style="margin-bottom: 50px"/>
+
+  <TvAiringToday/>
 </div>
 </template>
 

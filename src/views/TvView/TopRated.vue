@@ -1,5 +1,7 @@
 <template>
 <div>
+  <Top-Header style="margin-bottom: 50px"/>
+
   <TvTopRated/>
 </div>
 </template>
