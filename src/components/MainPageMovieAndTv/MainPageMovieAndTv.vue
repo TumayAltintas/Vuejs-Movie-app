@@ -12,7 +12,7 @@
         <MovieMainPage v-else/>
       </div>
       <div>
-        <div>deneme</div>
+
         <TrendCombine/>
       </div>
     </div>
