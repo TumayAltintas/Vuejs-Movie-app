@@ -12,7 +12,6 @@
         <MovieMainPage v-else/>
       </div>
       <div>
-
         <TrendCombine/>
       </div>
     </div>

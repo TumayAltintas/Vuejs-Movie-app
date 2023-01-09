@@ -67,10 +67,7 @@ export default {
   position: relative;
   transition: transform 0.5s;
   height: 320px;
-
-
 }
-
 #carousel-wrapper > * {
   width: calc(100% / slides.length);
 }
