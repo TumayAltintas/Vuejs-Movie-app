@@ -60,6 +60,14 @@ export default {
 }
 </script>
 <style scoped>
+.blur {
+  position: relative;
+  right: 0;
+  height: max-content;
+  color: black;
+  width: 55px;
+  filter: blur(5px); /* blur seviyesi */
+}
 #carousel-wrapper {
   display: flex;
   position: relative;

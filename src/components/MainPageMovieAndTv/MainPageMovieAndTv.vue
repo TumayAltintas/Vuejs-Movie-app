@@ -19,7 +19,7 @@
         <TvMainPage v-if="show"/>
         <MovieMainPage v-else=""/>
       </div>
-      <div>
+      <div style="margin-top: 50px">
         <TrendCombine/>
       </div>
     </div>

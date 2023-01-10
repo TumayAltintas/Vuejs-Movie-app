@@ -2,19 +2,20 @@
   <div class="row mb-5">
     <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
          :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
-      <div v-for="(day,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
-           style="width: 250px;height: 250px;display: inline-block; flex: 0 0 auto;">
-        <div>
-          <div class="average">
-            <span style="color: black">{{ day.vote_average }}</span>
-          </div>
-          <router-link to="">
-            <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + day.poster_path">
-          </router-link>
+      <div v-for="(week,index) in slides" :key="index" style="padding: 0;margin-right: 15px;width: 165px;height: 250px">
+        <div class="average">
+          <span style="color:#000;">
+            {{ week.vote_average }}
+          </span>
         </div>
-        <div class="title">
-          <p v-if="day.media_type='movie'">{{ day.title }}</p>
-          <p v-if="day.media_type='tv'">{{ day.name }}</p>
+        <router-link to="">
+          <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + week.poster_path">
+        </router-link>
+        <div v-if="week.media_type='movie'" class="title">
+          <h6>{{ week.title }}</h6>
+        </div>
+        <div v-if="week.media_type='tv'" class="title2">
+          <h6>{{ week.name }}</h6>
         </div>
       </div>
     </div>
@@ -24,7 +25,17 @@
 <script>
 import axios from 'axios'
 
-
+// <div class="average">
+//     <span style="color: black">{{ day.vote_average }}</span>
+// </div>
+// <router-link to="">
+//   <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + day.poster_path">
+// </router-link>
+// </div>
+// <div class="title">
+//   <p style="width: 65px" v-if="day.media_type='movie'">{{ day.title }}</p>
+//   <p style="width: 65px" v-if="day.media_type='tv'">{{ day.name }}</p>
+// </div>
 export default {
   name: 'TrendingWeek',
   components: {},
@@ -59,12 +70,9 @@ export default {
   transition: transform 0.5s;
   height: 350px;
 }
+
 #carousel-wrapper > * {
   width: calc(100% / slides.length);
-}
-
-#Full {
-  margin-top: 150px
 }
 
 div.average {
@@ -74,9 +82,22 @@ div.average {
 }
 
 div.title {
-  justify-content: start;
-  text-align: start;
+  width: 100%;
+  position: relative;
+  white-space: normal;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
 }
+div.title2 {
+  width: 100%;
+  position: relative;
+  white-space: normal;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
+
 
 p {
   color: red;
