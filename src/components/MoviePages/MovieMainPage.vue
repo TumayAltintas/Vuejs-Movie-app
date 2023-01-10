@@ -2,7 +2,7 @@
   <div class="row">
     <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
       <div v-for="(Movie,index) in slides" :key="index"
-           style="padding: 0;margin-right: 15px;width: 165px;height: 350px">
+           style="padding: 0;margin-right: 25px;width: 165px;height: 250px">
         <div class="average">
           <span style="color:#000;">
             {{ Movie.vote_average }}
@@ -82,7 +82,7 @@ div.title {
   display: flex;
   position: relative;
   transition: transform 0.5s;
-  height: 320px;
+  height: 350px;
 }
 
 div.average {

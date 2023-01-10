@@ -27,6 +27,8 @@ const router = createRouter({
 
 		{path: '/test', name: 'test', component: () => import('../components/MoviePages/test.vue')},
 
+		{path: '/Login-Register', name: 'Login-Register', component: () => import('../views/Login-Register/Login-Register.vue')},
+
 
 
 
@@ -35,17 +37,17 @@ const router = createRouter({
 
 export default router;
 
-// router.beforeEach((to, _, next) => {
-// 	const authRequiredRoutes = [""];
-// 	const authNotRequiredRoutes = [];
-// 	const _isAuthenticated = store.getters._isAuthenticated;
-//
-// 	if (authNotRequiredRoutes.indexOf(to.name) > -1 && _isAuthenticated) next(false);
-//
-// 	if (authRequiredRoutes.indexOf(to.name) > -1) {
-// 		if (_isAuthenticated) next();
-// 		else next({path: "/"});
-// 	} else {
-// 		next();
-// 	}
-// });
+router.beforeEach((to, _, next) => {
+	const authRequiredRoutes = [""];
+	const authNotRequiredRoutes = [];
+	const _isAuthenticated = store.getters._isAuthenticated;
+
+	if (authNotRequiredRoutes.indexOf(to.name) > -1 && _isAuthenticated) next(false);
+
+	if (authRequiredRoutes.indexOf(to.name) > -1) {
+		if (_isAuthenticated) next();
+		else next({path: "/"});
+	} else {
+		next();
+	}
+});

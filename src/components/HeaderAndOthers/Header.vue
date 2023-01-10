@@ -85,9 +85,11 @@ header {
   position: relative;
 }
 .TopA{
+  color: white;
   white-space: nowrap;
   cursor: pointer;
   outline: 0;
+  text-decoration: none;
 }
 
 </style>

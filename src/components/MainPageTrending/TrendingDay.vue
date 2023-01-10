@@ -1,25 +1,26 @@
 <template>
   <div class="row mb-5">
     <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
-      <div v-for="(week,index) in slides" :key="index" style="padding: 0;margin-right: 15px;width: 165px;height: 250px">
+      <div v-for="(week,index) in slides" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 250px">
         <div class="average">
           <span style="color:#000;">
             {{ week.vote_average }}
           </span>
         </div>
-        <router-link to="">
-          <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + week.poster_path">
-        </router-link>
+        <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + week.poster_path">
         <div v-if="week.media_type='movie'" class="title">
-          <h6>{{ week.title }}</h6>
+          <router-link v-if="week.media_type='tv'" :to="'/Movie/' + week.id">
+            <h6>{{ week.title }}</h6>
+          </router-link>
         </div>
         <div v-if="week.media_type='tv'" class="title2">
-          <h6>{{ week.name }}</h6>
+          <router-link :to="'/Tv/'+ week.id">
+            <h6>{{ week.name }}</h6>
+          </router-link>
         </div>
       </div>
     </div>
   </div>
-
 </template>
 
 <script>
@@ -76,6 +77,7 @@ div.title {
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
+  text-decoration: none;
 }
 
 div.title2 {
