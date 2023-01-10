@@ -2,18 +2,17 @@
     <div class="row">
       <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
            :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
-        <div v-for="(Movie,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
-             style="width: 200px;height: 250px;display: inline-block; flex: 0 0 auto;">
-          <div>
-            <div class="average">
-              <span style="color:#000;">{{ Movie.vote_average }}</span>
-            </div>
-            <router-link :to="'/Movie/'+Movie.id">
-              <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Movie.poster_path">
-            </router-link>
+        <div v-for="(Movie,index) in slides" :key="index" style="padding: 0;margin-right: 15px;width: 165px;height: 350px">
+          <div class="average">
+          <span style="color:#000;">
+            {{ Movie.vote_average }}
+          </span>
           </div>
+          <router-link :to="'/Movie/' + Movie.id">
+            <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Movie.poster_path">
+          </router-link>
           <div class="title">
-            <p>{{ Movie.title }}</p>
+            <h6>{{ Movie.title }}</h6>
           </div>
         </div>
       </div>
@@ -67,6 +66,14 @@ export default {
   color: black;
   width: 55px;
   filter: blur(5px); /* blur seviyesi */
+}
+div.title {
+  width: 100%;
+  position: relative;
+  white-space: normal;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
 }
 #carousel-wrapper {
   display: flex;

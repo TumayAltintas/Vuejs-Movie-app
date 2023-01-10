@@ -3,18 +3,17 @@
     <div class="row">
       <div style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
            :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
-        <div v-for="(Tv,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
-             style="width: 200px;height: 250px;display: inline-block; flex: 0 0 auto;">
-          <div>
-            <div class="average">
-              <span style="color:#000;">{{ Tv.vote_average }}</span>
-            </div>
-            <router-link :to="'/Tv/'+ Tv.id">
-              <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Tv.poster_path">
-            </router-link>
+        <div v-for="(Tv,index) in slides" :key="index" style="padding: 0;margin-right: 15px;width: 165px;height: 350px">
+          <div class="average">
+          <span style="color:#000;">
+            {{ Tv.vote_average }}
+          </span>
           </div>
+          <router-link :to="'/Tv/' + Tv.id">
+            <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Tv.poster_path">
+          </router-link>
           <div class="title">
-            <p>{{ Tv.name }}</p>
+            <h6>{{ Tv.name }}</h6>
           </div>
         </div>
       </div>
@@ -63,13 +62,21 @@ export default {
 </script>
 
 <style scoped>
+
 #carousel-wrapper {
   display: flex;
   position: relative;
   transition: transform 0.5s;
   height: 320px;
 }
-
+div.title {
+  width: 100%;
+  position: relative;
+  white-space: normal;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+}
 #carousel-wrapper > * {
   width: calc(100% / slides.length);
 }

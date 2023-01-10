@@ -97,7 +97,35 @@ p.title {
 img {
   width: 165px;
 }
+.cat {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border: 3px solid black;
+  border-radius: 50%;
+}
 
+.cat::before,
+.cat::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: black;
+}
+
+.cat::before {
+  width: 100px;
+  height: 100px;
+  top: -50px;
+  left: 50px;
+}
+
+.cat::after {
+  width: 50px;
+  height: 50px;
+  top: -25px;
+  left: 125px;
+}
 
 </style>
 
