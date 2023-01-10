@@ -1,6 +1,7 @@
 <template>
+
 <div>
-  <Top-Header style="position: relative"/>
+<Top-Header/>
   <TvDetail/>
 </div>
 </template>

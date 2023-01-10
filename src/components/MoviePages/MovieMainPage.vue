@@ -75,6 +75,7 @@ div.title {
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
+  margin-bottom: 20px;
 }
 
 #carousel-wrapper {

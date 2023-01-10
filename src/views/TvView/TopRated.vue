@@ -1,6 +1,6 @@
 <template>
 <div>
-  <Top-Header style="margin-bottom: 50px"/>
+  <Top-Header/>
 
   <TvTopRated/>
 </div>

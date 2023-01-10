@@ -30,10 +30,11 @@
         <div v-for="(cast,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
              style="width: 150px;height: 250px;display: inline-block; flex: 0 0 auto;">
           <div>
-            <img v-if="cast.profile_path == null" class="ImgCast" style="height: 188px" src="../photo/empty-profile-picture-png-2-2.png">
+            <img v-if="cast.profile_path == null" class="ImgCast" style="height: 188px"
+                 src="../photo/empty-profile-picture-png-2-2.png">
             <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path">
-              <a class="justify-content-start d-flex CastName title">{{ cast.name }}</a>
-              <p class="CastCharacter title">{{ cast.character }}</p>
+            <a class="justify-content-start d-flex CastName title">{{ cast.name }}</a>
+            <p class="CastCharacter title">{{ cast.character }}</p>
           </div>
         </div>
       </div>
@@ -87,6 +88,7 @@ li {
   list-style-type: none;
   padding-right: 15px;
 }
+
 .title {
   width: 100%;
   position: relative;
@@ -98,6 +100,7 @@ li {
   padding: 0;
   color: blue;
 }
+
 ol {
   margin: 0;
   padding: 0
@@ -149,7 +152,6 @@ img.ImgAllof {
   left: 0;
   width: 250px;
 }
-
 
 
 </style>

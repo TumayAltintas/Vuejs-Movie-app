@@ -1,8 +1,5 @@
 <template>
   <div class="Back container">
-    <Top-Header style="position: relative"/>
-    <div style="width: max-content;height: 30px;">
-    </div>
     <section :movie="MoviesDetails" class="container d-flex">
       <div>
         <img class="ImgAllof" :src="IMG_URL + MoviesDetails.poster_path">
@@ -28,20 +25,20 @@
         </div>
       </section>
     </section>
-    <div class="row" >
+    <div class="row">
       <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
         <div v-for="(cast,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
              style="width: 150px;height: 250px;display: inline-block; flex: 0 0 auto;">
           <div>
-              <img v-if="cast.profile_path == null" class="ImgCast" style="height: 188px" src="../photo/empty-profile-picture-png-2-2.png">
-              <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path">
+            <img v-if="cast.profile_path == null" class="ImgCast" style="height: 188px"
+                 src="../photo/empty-profile-picture-png-2-2.png">
+            <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path">
             <p class=" title">{{ cast.name }}</p>
             <p class=" title">{{ cast.character }}</p>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 
 </template>
@@ -68,20 +65,20 @@ export default {
     const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
     const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + this.$route.params.id + '?';
     axios
-      .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
-      .then((response) => {
-        this.MoviesDetails = response.data
-      })
+        .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
+        .then((response) => {
+          this.MoviesDetails = response.data
+        })
 
   },
   created() {
     const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
     const TOP_MOVIE_CAST = 'https://api.themoviedb.org/3/movie/' + this.$route.params.id + '/credits?'
     axios
-      .get(TOP_MOVIE_CAST + API_KEY + '&language=en-US')
-      .then((res) => {
-        this.slides = res.data.cast
-      })
+        .get(TOP_MOVIE_CAST + API_KEY + '&language=en-US')
+        .then((res) => {
+          this.slides = res.data.cast
+        })
 
   },
 
@@ -100,6 +97,7 @@ li {
   list-style-type: none;
   padding-left: 15px;
 }
+
 .title {
   width: 100%;
   position: relative;
@@ -111,6 +109,7 @@ li {
   padding: 0;
   color: blue;
 }
+
 div.Overview {
   max-width: 750px
 }
@@ -174,13 +173,11 @@ span.genres {
   margin-right: 5px;
   color: rebeccapurple;
 }
+
 #carousel-wrapper {
   display: flex;
   position: relative;
   transition: transform 0.5s;
   height: 320px;
-}
-#carousel-wrapper > * {
-  width: calc(100% / slides.length);
 }
 </style>
