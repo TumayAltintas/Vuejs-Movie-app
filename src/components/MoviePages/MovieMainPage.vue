@@ -3,7 +3,7 @@
       <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
            :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
         <div v-for="(Movie,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
-             style="width: 250px;height: 250px;display: inline-block; flex: 0 0 auto;">
+             style="width: 200px;height: 250px;display: inline-block; flex: 0 0 auto;">
           <div>
             <div class="average">
               <span style="color:#000;">{{ Movie.vote_average }}</span>
