@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <Top-Header style="position: relative"/>
     <div style="width: max-content;height: 30px;">
     </div>
     <section :tv="TvDetails" class="container d-flex">
@@ -10,11 +9,10 @@
       <div class="TvDetails">
         <h3>{{ TvDetails.name }} (First Episode {{ TvDetails.first_air_date }})</h3>
       </div>
-      <section class="row" style="position: absolute; left: 37%;margin-top: 45px" >
+      <section class="row" style="position: absolute; left: 37%;margin-top: 45px">
         <div v-for="genre in TvDetails.genres">
-          <span>{{genre.name}}</span>
+          <span>{{ genre.name }}</span>
         </div>
-
       </section>
       <section class="Overview">
         <div>
@@ -27,15 +25,15 @@
         </div>
       </section>
     </section>
-    <div class="row" >
-      <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
-           :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
+    <div class="row">
+      <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
         <div v-for="(cast,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
              style="width: 150px;height: 250px;display: inline-block; flex: 0 0 auto;">
           <div>
-            <img class="ImgCast" :src="IMG_URL + cast.profile_path">
-            <a class="justify-content-center d-flex CastName">{{ cast.name }}</a>
-            <p class="CastCharacter">{{ cast.character }}</p>
+            <img v-if="cast.profile_path == null" class="ImgCast" style="height: 188px" src="../photo/empty-profile-picture-png-2-2.png">
+            <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path">
+              <a class="justify-content-start d-flex CastName title">{{ cast.name }}</a>
+              <p class="CastCharacter title">{{ cast.character }}</p>
           </div>
         </div>
       </div>
@@ -48,9 +46,7 @@ import axios from "axios";
 
 export default {
   name: "Tv",
-  components: {
-
-  },
+  components: {},
   data() {
     return {
       slides: [],
@@ -71,6 +67,7 @@ export default {
 
   },
   created() {
+
     const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
     const TOP_MOVIE_CAST = 'https://api.themoviedb.org/3/tv/' + this.$route.params.id + '/credits?'
     axios
@@ -90,7 +87,17 @@ li {
   list-style-type: none;
   padding-right: 15px;
 }
-
+.title {
+  width: 100%;
+  position: relative;
+  white-space: normal;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  color: blue;
+}
 ol {
   margin: 0;
   padding: 0
@@ -115,7 +122,6 @@ p.overview {
 a.CastName {
   margin: 0;
   padding: 0;
-  left: 50%;
   max-width: 100px;
   color: #000
 }
@@ -123,8 +129,8 @@ a.CastName {
 p.CastCharacter {
   margin: 0;
   padding: 0;
-  left: 50%;
-  max-width: 100px
+  max-width: 100px;
+  color: #000
 }
 
 img.ImgCast {
@@ -144,9 +150,6 @@ img.ImgAllof {
   width: 250px;
 }
 
-div.Cast {
-  position: absolute;
-  top: 500px
-}
+
 
 </style>

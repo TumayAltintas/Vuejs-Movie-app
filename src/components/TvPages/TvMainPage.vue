@@ -84,10 +84,7 @@ div.average {
   width: max-content;
 }
 
-div.title {
-  justify-content: start;
-  text-align: start;
-}
+
 
 p {
   color: red;

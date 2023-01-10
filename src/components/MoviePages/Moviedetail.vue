@@ -29,18 +29,19 @@
       </section>
     </section>
     <div class="row" >
-      <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
-           :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
+      <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
         <div v-for="(cast,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
              style="width: 150px;height: 250px;display: inline-block; flex: 0 0 auto;">
           <div>
-            <img class="ImgCast" :src="IMG_URL + cast.profile_path">
-            <a class="justify-content-center d-flex CastName">{{ cast.name }}</a>
-            <p class="CastCharacter">{{ cast.character }}</p>
+              <img v-if="cast.profile_path == null" class="ImgCast" style="height: 188px" src="../photo/empty-profile-picture-png-2-2.png">
+              <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path">
+            <p class=" title">{{ cast.name }}</p>
+            <p class=" title">{{ cast.character }}</p>
           </div>
         </div>
       </div>
     </div>
+
   </div>
 
 </template>
@@ -60,6 +61,7 @@ export default {
       slides: [],
       currentSlide: 0,
 
+
     }
   },
   async mounted() {
@@ -78,9 +80,9 @@ export default {
     axios
       .get(TOP_MOVIE_CAST + API_KEY + '&language=en-US')
       .then((res) => {
-        console.log(res.data.cast)
         this.slides = res.data.cast
       })
+
   },
 
 
@@ -98,7 +100,17 @@ li {
   list-style-type: none;
   padding-left: 15px;
 }
-
+.title {
+  width: 100%;
+  position: relative;
+  white-space: normal;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  color: blue;
+}
 div.Overview {
   max-width: 750px
 }
@@ -157,10 +169,6 @@ div.DivGenres {
   width: max-content;
 }
 
-div.Cast {
-  position: absolute;
-  top: 500px;
-}
 
 span.genres {
   margin-right: 5px;
