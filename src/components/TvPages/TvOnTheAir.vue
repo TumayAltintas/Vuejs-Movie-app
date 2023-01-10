@@ -1,24 +1,21 @@
 <template>
   <section>
-    <Header></Header>
-    <div>
-      <div class="container">
-        <div>
-          <button v-on:click.prevent="previous()">next</button>
-          <button v-on:click.prevent="next()">next</button>
-        </div>
-        <div>
-          <section>
-            <div class="row">
-              <div v-for="tv in Tv" :key="tv.id" class="col-lg-2 col-md-3 m-3">
-                <router-link to="">
-                  <img class="opacity-100 shadow-lg rounded rounded-150 " :src="IMG_URL + tv.poster_path">
-                </router-link>
-                <h2>{{ tv.name }}</h2>
-              </div>
+    <div class="container">
+      <div>
+        <button v-on:click.prevent="previous()">next</button>
+        <button v-on:click.prevent="next()">next</button>
+      </div>
+      <div>
+        <section>
+          <div class="row">
+            <div v-for="tv in Tv" :key="tv.id" class="col-lg-2 col-md-3 m-3">
+              <router-link to="">
+                <img class="opacity-100 shadow-lg rounded rounded-150 " :src="IMG_URL + tv.poster_path">
+              </router-link>
+              <h2>{{ tv.name }}</h2>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
     </div>
   </section>

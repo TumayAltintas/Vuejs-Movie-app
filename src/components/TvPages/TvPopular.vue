@@ -1,6 +1,5 @@
 <template>
   <section>
-    <div>
       <div class="container">
         <div>
           <button  v-on:click.prevent="previous()">NExt</button>
@@ -18,7 +17,6 @@
             </div>
           </section>
         </div>
-      </div>
     </div>
   </section>
 

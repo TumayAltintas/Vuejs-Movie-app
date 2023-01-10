@@ -1,7 +1,6 @@
 <template>
   <div class="row mb-5">
-    <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
-         :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
+    <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
       <div v-for="(week,index) in slides" :key="index" style="padding: 0;margin-right: 15px;width: 165px;height: 250px">
         <div class="average">
           <span style="color:#000;">
@@ -63,9 +62,6 @@ export default {
   height: 350px;
 }
 
-#carousel-wrapper > * {
-  width: calc(100% / slides.length);
-}
 
 div.average {
   position: relative;

@@ -4,7 +4,8 @@
       <div class="row col-lg-6">
         <h3 style="width: max-content">Trending</h3>
         <div style="width: max-content">
-          <button class="custom-button" style="color: black;" v-if="showtrend" @click="showtrend=!showtrend">Day</button>
+          <button class="custom-button" style="color: black;" v-if="showtrend" @click="showtrend=!showtrend">Day
+          </button>
           <button class="custom-button" style="color: black;" v-else @click="showtrend=!showtrend">Week</button>
         </div>
       </div>
@@ -18,26 +19,28 @@
 
 import TrendingDay from "./TrendingDay.vue";
 import TrendingWeek from "./TrendingWeek.vue";
+
 export default {
   name: "TrendCombine",
-  components:{
+  components: {
     TrendingWeek,
     TrendingDay
 
   },
-  data(){
-    return{
-      showtrend : true
+  data() {
+    return {
+      showtrend: true
     }
   }
 }
 </script>
 
 <style scoped>
-h4{
+h4 {
   margin-left: 15px;
   font-size: 1.17em;
 }
+
 .custom-button {
   display: inline-block;
   font-weight: 400;

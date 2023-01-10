@@ -1,12 +1,9 @@
 <template>
   <section>
-    <div>
       <div class="container">
         <div>
           <button v-on:click.prevent="previous()">next</button>
           <button v-on:click.prevent="next()">next</button>
-        </div>
-        <div>
           <section>
             <div class="row">
               <div v-for="tv in Tv" :key="tv.id" class="col-lg-2 col-md-3 m-3">
@@ -18,7 +15,6 @@
             </div>
           </section>
         </div>
-      </div>
     </div>
   </section>
 

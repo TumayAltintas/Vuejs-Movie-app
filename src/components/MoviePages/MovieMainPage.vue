@@ -1,22 +1,22 @@
 <template>
-    <div class="row">
-      <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
-           :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
-        <div v-for="(Movie,index) in slides" :key="index" style="padding: 0;margin-right: 15px;width: 165px;height: 350px">
-          <div class="average">
+  <div class="row">
+    <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+      <div v-for="(Movie,index) in slides" :key="index"
+           style="padding: 0;margin-right: 15px;width: 165px;height: 350px">
+        <div class="average">
           <span style="color:#000;">
             {{ Movie.vote_average }}
           </span>
-          </div>
-          <router-link :to="'/Movie/' + Movie.id">
-            <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Movie.poster_path">
-          </router-link>
-          <div class="title">
-            <h6>{{ Movie.title }}</h6>
-          </div>
+        </div>
+        <router-link :to="'/Movie/' + Movie.id">
+          <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Movie.poster_path">
+        </router-link>
+        <div class="title">
+          <h6>{{ Movie.title }}</h6>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -65,8 +65,9 @@ export default {
   height: max-content;
   color: black;
   width: 55px;
-  filter: blur(5px); /* blur seviyesi */
+  filter: blur(5px);
 }
+
 div.title {
   width: 100%;
   position: relative;
@@ -75,16 +76,13 @@ div.title {
   align-content: flex-start;
   flex-wrap: wrap;
 }
+
 #carousel-wrapper {
   display: flex;
   position: relative;
   transition: transform 0.5s;
   height: 320px;
 }
-#carousel-wrapper > * {
-  width: calc(100% / slides.length);
-}
-
 
 div.average {
   position: relative;

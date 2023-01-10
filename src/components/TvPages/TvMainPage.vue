@@ -1,8 +1,7 @@
 <template>
   <div>
     <div class="row">
-      <div style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
-           :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
+      <div style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
         <div v-for="(Tv,index) in slides" :key="index" style="padding: 0;margin-right: 15px;width: 165px;height: 350px">
           <div class="average">
           <span style="color:#000;">
@@ -69,6 +68,7 @@ export default {
   transition: transform 0.5s;
   height: 320px;
 }
+
 div.title {
   width: 100%;
   position: relative;
@@ -76,9 +76,6 @@ div.title {
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
-}
-#carousel-wrapper > * {
-  width: calc(100% / slides.length);
 }
 
 div.average {

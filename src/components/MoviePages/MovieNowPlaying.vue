@@ -1,14 +1,9 @@
 <template>
   <section>
-    <div>
-    </div>
-    <div>
       <div class="container">
         <div>
           <button v-on:click.prevent="previous()">Next</button>
           <button v-on:click.prevent="next()">Back</button>
-        </div>
-        <div>
           <section>
             <div class="row">
               <div v-for="movie in Movies" :key="movie.id"
@@ -19,11 +14,9 @@
                 <h6>{{movie.title}}</h6>
               </div>
             </div>
-
           </section>
         </div>
       </div>
-    </div>
   </section>
 
 </template>
