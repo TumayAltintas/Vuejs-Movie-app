@@ -2,7 +2,7 @@
   <div class="container">
     <div style="width: max-content;height: 30px;">
     </div>
-    <section :tv="TvDetails" class="container d-flex">
+    <section tv="TvDetails" class="container d-flex">
       <div>
         <img class="ImgAllof" :src="IMG_URL + TvDetails.poster_path">
       </div>

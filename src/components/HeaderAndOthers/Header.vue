@@ -42,7 +42,7 @@ export default {
 header {
   background-color: #032541;
   width: 100%;
-  height: 80px;
+  height: 60px;
   position: relative
 }
 .dropdown {
@@ -74,7 +74,6 @@ header {
   color: black;
   padding: 0.5rem 0.5rem;
   outline: 0;
-  color: inherit;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
@@ -84,9 +83,11 @@ header {
   -ms-flex-align: center;
   align-items: center;
   position: relative;
+}
+.TopA{
   white-space: nowrap;
   cursor: pointer;
+  outline: 0;
 }
-
 
 </style>

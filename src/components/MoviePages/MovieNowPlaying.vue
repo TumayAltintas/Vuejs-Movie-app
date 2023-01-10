@@ -8,7 +8,7 @@
             <div class="row">
               <div v-for="movie in Movies" :key="movie.id"
                    class="col-lg-2 col-md-3 m-3">
-                <router-link to="">
+                <router-link :to="'/Movie/'+ movie.id">
                   <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + movie.poster_path">
                 </router-link>
                 <h6>{{movie.title}}</h6>
