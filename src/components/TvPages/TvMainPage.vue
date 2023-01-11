@@ -8,12 +8,12 @@
             {{ Tv.vote_average }}
           </span>
           </div>
+          <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Tv.poster_path">
           <router-link :to="'/Tv/' + Tv.id">
-            <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Tv.poster_path">
+            <div class="title">
+              <h6>{{ Tv.name }}</h6>
+            </div>
           </router-link>
-          <div class="title">
-            <h6>{{ Tv.name }}</h6>
-          </div>
         </div>
       </div>
     </div>

@@ -9,9 +9,9 @@
       <div class="TvDetails">
         <h3>{{ TvDetails.name }} (First Episode {{ TvDetails.first_air_date }})</h3>
       </div>
-      <section class="row" style="position: absolute; left: 37%;margin-top: 45px">
+      <section class="d-flex" style="position: absolute; left: 37%;margin-top: 45px;">
         <div v-for="genre in TvDetails.genres">
-          <span>{{ genre.name }}</span>
+          <span style="margin-left: 1.5rem">{{ genre.name }}</span>
         </div>
       </section>
       <section class="Overview">
@@ -33,8 +33,8 @@
             <img v-if="cast.profile_path == null" class="ImgCast" style="height: 188px"
                  src="../photo/empty-profile-picture-png-2-2.png">
             <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path">
-            <a class="justify-content-start d-flex CastName title">{{ cast.name }}</a>
-            <p class="CastCharacter title">{{ cast.character }}</p>
+            <p class=" title">{{ cast.name }}</p>
+            <p class=" title">{{ cast.character }}</p>
           </div>
         </div>
       </div>
@@ -138,6 +138,8 @@ p.CastCharacter {
 
 img.ImgCast {
   width: 125px;
+  padding: 0;
+  margin: 0;
 }
 
 section.Overview {

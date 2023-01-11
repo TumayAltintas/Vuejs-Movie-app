@@ -28,17 +28,29 @@
             </div>
           </div>
         </div>
+          <img @click="onLogout" class="d-flex logout" src="../photo/icons8-logout-rounded-50.png">
     </div>
   </header>
 </template>
 
 <script>
 export default {
-  name: "Header"
+  name: "Header",
+  methods: {
+    onLogout() {
+      this.$store.commit("logoutUser");
+      this.$router.push({name: "home"});
+    }
+  },
 }
 </script>
 
 <style scoped>
+.logout {
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
+}
 header {
   background-color: #032541;
   width: 100%;

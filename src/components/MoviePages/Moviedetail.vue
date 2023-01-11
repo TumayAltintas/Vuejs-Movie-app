@@ -1,5 +1,5 @@
 <template>
-  <div class="Back container">
+  <div class="container">
     <section :movie="MoviesDetails" class="container d-flex">
       <div>
         <img class="ImgAllof" :src="IMG_URL + MoviesDetails.poster_path">
@@ -7,11 +7,9 @@
       <div class="MoviesDetails">
         <h3>{{ MoviesDetails.title }} ({{ MoviesDetails.release_date }})</h3>
       </div>
-      <section class="row genres">
-        <div v-for="genre in MoviesDetails.genres" class="DivGenres">
-        <span class="genres">
-          {{ genre.name }}
-        </span>
+      <section class="d-flex" style="position: absolute; left: 37%;margin-top: 45px;">
+        <div v-for="genre in MoviesDetails.genres">
+          <span style="margin-left: 1.5rem">{{ genre.name }}</span>
         </div>
       </section>
       <section class="Overview">
@@ -125,10 +123,6 @@ a.CastName {
   left: 50%;
   max-width: max-content;
   color: #000
-}
-
-section.genres {
-  left: 35%;
 }
 
 div.MoviesDetails {

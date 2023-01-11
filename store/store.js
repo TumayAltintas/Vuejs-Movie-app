@@ -2,7 +2,7 @@ import createPersistedState from 'vuex-persistedstate'
 import { createStore } from 'vuex'
 import SecureLS from "secure-ls";
 var ls = new SecureLS({ isCompression: false });
-// Create a new index instance.
+
 export default createStore({
 	state () {
 		return {

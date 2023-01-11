@@ -37,9 +37,9 @@ export default {
   },
   methods: {
     onsubmit() {
-      this.$appAxios.get(`user?username=${this.userData.username}&password=${this.userData.password}`).then(login_response => {
+      this.$appAxios.get(`admin?username=${this.userData.username}&password=${this.userData.password}`).then(login_response => {
         if (login_response.data.length > 0) {
-          this.$router.push({path: '/'});
+          this.$router.push({name: 'home'});
           this.$store.commit('setUser', login_response.data);
         } else {
           alert("Kullanıcı adı veya şifre hatalı");
