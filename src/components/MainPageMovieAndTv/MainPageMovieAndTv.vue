@@ -20,10 +20,10 @@
       <div>
         <div style="margin-top: 25px">
           <button class="custom-button" style="color: black;" v-if="show" @click="show=!show">Tv</button>
-          <button class="custom-button" style="color: black;" v-else="" @click="show=!show">Movie</button>
+          <button class="custom-button" style="color: black;" v-else @click="show=!show">Movie</button>
         </div>
         <TvMainPage v-if="show"/>
-        <MovieMainPage v-else=""/>
+        <MovieMainPage v-else/>
       </div>
       <div style="margin-top: 50px">
         <TrendCombine/>
