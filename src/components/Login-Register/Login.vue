@@ -10,7 +10,7 @@
         <label for="password">Password:</label>
         <input type="password" class="form-control" id="password" v-model="userData.password">
       </div>
-      <button class="btn btn-primary" @click="onSave">Submit</button>
+      <button class="btn btn-primary" @click="onsubmit">Submit</button>
     </form>
   </div>
 </template>
@@ -27,10 +27,10 @@ export default {
     }
   },
   methods: {
-    onsubmit() {
+   async onsubmit() {
       this.$appAxios.get(`admin?username=${this.userData.username}&password=${this.userData.password}`).then(login_response => {
         if (login_response.data.length > 0) {
-          this.$router.push({name: 'home'});
+          this.$router.push({ name: 'home' });
           this.$store.commit('setUser', login_response.data);
         } else {
           alert("Kullanıcı adı veya şifre hatalı");

@@ -26,11 +26,11 @@ export default {
     };
   },
   methods: {
-    onSave() {
-      this.$appAxios.post("/admin", { ...this.userData }).then(registered_user_response => {
-        console.log("registered_user_response :>> ", registered_user_response);
-        this.$router.push({ name: "home" });
-      });
+   async onSave() {
+      this.$appAxios.post("/admin",{...this.userData}).then((res) =>{
+       this.$router.push({ path: '/' });
+       console.log(this.userData)
+     })
     }
   }
 };

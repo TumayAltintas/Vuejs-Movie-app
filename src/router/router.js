@@ -38,7 +38,7 @@ const router = createRouter({
 export default router;
 
 router.beforeEach((to, _, next) => {
-	const authRequiredRoutes = [""];
+	const authRequiredRoutes = [];
 	const authNotRequiredRoutes = [];
 	const _isAuthenticated = store.getters._isAuthenticated;
 

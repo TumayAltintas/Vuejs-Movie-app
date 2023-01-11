@@ -1,20 +1,11 @@
 <template>
-
   <div class="container">
     <div>
       <!--      <label class="switch" :style="{ backgroundColor: buttonColor }">-->
       <!--        <input type="checkbox" @click="toggleDivs">-->
       <!--        <span  class="slider round">{{ buttonText }}</span>-->
       <!--      </label>-->
-      <div>
-        <div style="margin-top: 25px">
-          <button class="custom-button" style="color: black;" v-if="show" @click="show=!show">Tv</button>
-          <button class="custom-button" style="color: black;" v-else="" @click="show=!show">Movie</button>
-        </div>
-        <Login v-if="show"/>
-        <Register v-else=""/>
-      </div>
-
+        <Login/>
     </div>
   </div>
 </template>
