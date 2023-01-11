@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <form>
+      Register
       <div class="form-group">
         <label for="username">Username:</label>
         <input type="text" class="form-control" id="username" v-model="userData.username">

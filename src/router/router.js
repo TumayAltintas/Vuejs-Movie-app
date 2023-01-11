@@ -27,7 +27,7 @@ const router = createRouter({
 
 		{path: '/test', name: 'test', component: () => import('../components/MoviePages/test.vue')},
 
-		{path: '/Login-Register', name: 'Login-Register', component: () => import('../components/Login-Register/Register.vue')},
+		{path: '/Login-Register', name: 'Login-Register', component: () => import('../views/Login-Register/Login-Register.vue')},
 
 
 
