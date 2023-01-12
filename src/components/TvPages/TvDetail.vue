@@ -1,13 +1,11 @@
 <template>
   <div class="container">
-    <div style="width: max-content;height: 30px;">
-    </div>
-    <section tv="TvDetails" class="container d-flex">
+    <section :tv="TvDetails" class="container d-flex">
       <div>
         <img class="ImgAllof" :src="IMG_URL + TvDetails.poster_path">
       </div>
-      <div class="TvDetails">
-        <h3>{{ TvDetails.name }} (First Episode {{ TvDetails.first_air_date }})</h3>
+      <div class="MoviesDetails">
+        <h3>{{ TvDetails.name }} ({{ TvDetails.first_air_date }})</h3>
       </div>
       <section class="d-flex" style="position: absolute; left: 37%;margin-top: 45px;">
         <div v-for="genre in TvDetails.genres">
@@ -18,28 +16,29 @@
         <div>
           <h3 style="color: darkblue">Overview</h3>
         </div>
-        <div class="overview">
-          <p class="overview">
+        <div class="Overview">
+          <p class="Overview">
             {{ TvDetails.overview }}
           </p>
         </div>
       </section>
     </section>
     <div class="row">
-      <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
-        <div v-for="(cast,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
-             style="width: 150px;height: 250px;display: inline-block; flex: 0 0 auto;">
+      <div class="blur" ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+        <div v-for="(cast,index) in slides" :key="index" class="opacity-100 shadow-lg rounded-3 col-lg-2 col-md-3 col-sm-4 m-2"
+             style="width: 138px;height: 300px;display: inline-block; flex: 0 0 auto;">
           <div>
-            <img v-if="cast.profile_path == null" class="ImgCast" style="height: 188px"
+            <img v-if="cast.profile_path == null" class="ImgCast" style="height: 207px"
                  src="../photo/empty-profile-picture-png-2-2.png">
             <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path">
-            <p class=" title">{{ cast.name }}</p>
+            <p class=" title2">{{ cast.name }}</p>
             <p class=" title">{{ cast.character }}</p>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -83,10 +82,48 @@ export default {
 </script>
 
 <style scoped>
+
+.blur {
+  transition: linear 0.3s;
+  opacity: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-direction: column;
+  min-height: 100%;
+  height: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  background-color: rgba(var(--tmdbDarkBlue), 1);
+  color: #000;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.blur::after {
+  content: '';
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  will-change: opacity;
+  pointer-events: none;
+}
+ol {
+  margin: 0;
+  padding: 0;
+}
+
 li {
   top: 45%;
   list-style-type: none;
-  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .title {
@@ -98,26 +135,28 @@ li {
   flex-wrap: wrap;
   margin: 0;
   padding: 0;
-  color: blue;
+  font-size: 0.9em;
+  color: black;
 }
-
-ol {
+.title2 {
+  width: 100%;
+  position: relative;
+  white-space: normal;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
   margin: 0;
-  padding: 0
+  padding: 0;
+  font-weight: bold;
+  color: #000;
 }
 
-div.overview {
-  max-width: 750px;
 
+div.Overview {
+  max-width: 750px
 }
 
-div.TvDetails {
-  position: absolute;
-  max-width: max-content;
-  left: 35%
-}
-
-p.overview {
+p.Overview {
   margin: 0;
   padding: 0;
 }
@@ -125,19 +164,26 @@ p.overview {
 a.CastName {
   margin: 0;
   padding: 0;
-  max-width: 100px;
+  left: 50%;
+  max-width: max-content;
   color: #000
+}
+
+div.MoviesDetails {
+  position: absolute;
+  max-width: max-content;
+  left: 35%
 }
 
 p.CastCharacter {
   margin: 0;
   padding: 0;
-  max-width: 100px;
-  color: #000
+  left: 50%;
+  max-width: 100px
 }
 
 img.ImgCast {
-  width: 125px;
+  width: 138px;
   padding: 0;
   margin: 0;
 }
@@ -145,9 +191,9 @@ img.ImgCast {
 section.Overview {
   position: absolute;
   left: 35%;
-  top: 170px;
-  padding: 0;
-  margin: 15px 0 0;
+  top: 175px;
+  margin: 0;
+  padding: 0
 }
 
 img.ImgAllof {
@@ -155,5 +201,23 @@ img.ImgAllof {
   width: 250px;
 }
 
+div.DivGenres {
+  position: relative;
+  left: 8%;
+  top: 50px;
+  width: max-content;
+}
 
+
+span.genres {
+  margin-right: 5px;
+  color: rebeccapurple;
+}
+
+#carousel-wrapper {
+  display: flex;
+  position: relative;
+  transition: transform 0.5s;
+  height: 320px;
+}
 </style>

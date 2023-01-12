@@ -24,9 +24,9 @@
       </section>
     </section>
     <div class="row">
-      <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+      <div class="blur" ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
         <div v-for="(cast,index) in slides" :key="index" class="opacity-100 shadow-lg rounded-3 col-lg-2 col-md-3 col-sm-4 m-2"
-             style="width: 138px;height: 175px;display: inline-block; flex: 0 0 auto;">
+             style="width: 138px;height: 275px;display: inline-block; flex: 0 0 auto;">
           <div>
             <img v-if="cast.profile_path == null" class="ImgCast" style="height: 207px"
                  src="../photo/empty-profile-picture-png-2-2.png">
@@ -85,6 +85,39 @@ export default {
 </script>
 
 <style scoped>
+
+.blur {
+  transition: linear 0.3s;
+  opacity: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-direction: column;
+  min-height: 100%;
+  height: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  background-color: rgba(var(--tmdbDarkBlue), 1);
+  color: #000;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.blur::after {
+  content: '';
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  will-change: opacity;
+  pointer-events: none;
+}
 ol {
   margin: 0;
   padding: 0;

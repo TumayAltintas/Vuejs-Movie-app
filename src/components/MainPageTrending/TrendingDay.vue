@@ -7,9 +7,7 @@
             {{ week.vote_average }}
           </span>
         </div>
-        <router-link to="">
           <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + week.poster_path">
-        </router-link>
         <div v-if="week.media_type='movie'" class="title">
           <router-link v-if="week.media_type='tv'" :to="'/Movie/' + week.id">
             <h6>{{ week.title }}</h6>
