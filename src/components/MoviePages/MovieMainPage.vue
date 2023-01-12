@@ -1,19 +1,20 @@
 <template>
-  <div class="row">
-    <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
-      <div v-for="(Movie,index) in slides" :key="index"
-           style="padding: 0;margin-right: 25px;width: 165px;height: 250px">
-        <div class="average">
+  <div>
+    <div class="row">
+      <div class="blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+        <div v-for="(Movie,index) in slides" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
+          <div class="average">
           <span style="color:#000;">
             {{ Movie.vote_average }}
           </span>
-        </div>
-        <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Movie.poster_path">
-        <router-link :to="'/Movie/' + Movie.id">
-          <div class="title">
-            <h6>{{ Movie.title }}</h6>
           </div>
-        </router-link>
+          <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Movie.poster_path">
+          <router-link :to="'/Movie/' + Movie.id">
+            <div class="title">
+              <h6>{{ Movie.title }}</h6>
+            </div>
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
@@ -58,14 +59,15 @@ export default {
 
 }
 </script>
+
+
 <style scoped>
-.blur {
+
+#carousel-wrapper {
+  display: flex;
   position: relative;
-  right: 0;
-  height: max-content;
-  color: black;
-  width: 55px;
-  filter: blur(5px);
+  transition: transform 0.5s;
+  height: 350px;
 }
 
 div.title {
@@ -75,14 +77,6 @@ div.title {
   display: flex;
   align-content: flex-start;
   flex-wrap: wrap;
-  margin-bottom: 20px;
-}
-
-#carousel-wrapper {
-  display: flex;
-  position: relative;
-  transition: transform 0.5s;
-  height: 350px;
 }
 
 div.average {
@@ -91,10 +85,6 @@ div.average {
   width: max-content;
 }
 
-div.title {
-  justify-content: start;
-  text-align: start;
-}
 
 p {
   color: red;
@@ -103,11 +93,37 @@ p {
 img {
   width: 165px;
 }
+
+.blur {
+  transition: linear 0.3s;
+  opacity: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-direction: column;
+  min-height: 100%;
+  height: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  background-color: rgba(var(--tmdbDarkBlue), 1);
+  color: #000;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.blur::after {
+  content: '';
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  will-change: opacity;
+  pointer-events: none;
+}
 </style>
-
-
-
-
-
-
-

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row">
-      <div style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+      <div class="blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
         <div v-for="(Tv,index) in slides" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
           <div class="average">
           <span style="color:#000;">
@@ -91,5 +91,38 @@ p {
 
 img {
   width: 165px;
+}
+
+.blur {
+  transition: linear 0.3s;
+  opacity: 1;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: flex-start;
+  flex-direction: column;
+  min-height: 100%;
+  height: auto;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  background-color: rgba(var(--tmdbDarkBlue), 1);
+  color: #000;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 1em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.blur::after {
+  content: '';
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  will-change: opacity;
+  pointer-events: none;
 }
 </style>

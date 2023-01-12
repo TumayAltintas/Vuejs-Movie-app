@@ -138,7 +138,45 @@ img {
 
 
 
+<script>
+import axios from 'axios'
 
+
+export default {
+  name: 'MovieMainPage',
+  components: {},
+  data() {
+    return {
+      slides: [],
+      IMG_URL: 'https://image.tmdb.org/t/p/w500',
+      currentSlide: 0,
+
+    }
+  },
+
+  mounted() {
+    const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
+    const TOP_MOVIE_URL = 'https://api.themoviedb.org/3/movie/top_rated?';
+
+    axios
+        .get(TOP_MOVIE_URL + API_KEY + '&language=en-US&page=' + this.currentPage)
+        .then((response) => {
+
+          this.slides = response.data.results
+        })
+  },
+
+  computed: {
+    rows() {
+      return this.Movies.length
+    },
+    slidesLength() {
+      return this.slides.length;
+    }
+  },
+
+}
+</script>
 
 
 

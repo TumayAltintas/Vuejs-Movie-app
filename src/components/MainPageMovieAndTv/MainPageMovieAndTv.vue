@@ -85,6 +85,7 @@ export default {
 
 <style scoped>
 
+
 .custom-button {
   display: inline-block;
   font-weight: 400;
