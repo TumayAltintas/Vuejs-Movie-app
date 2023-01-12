@@ -25,20 +25,24 @@ const router = createRouter({
 
 		{path: '/Tv/TopRated', name: 'TvTopRated', component: () => import('../views/TvView/TopRated.vue')},
 
-		{path: '/test', name: 'test', component: () => import('../components/MoviePages/test.vue')},
+		{path: '/Register', name: 'Register', component: () => import('../components/Login-Register/Register.vue')},
 
 		{path: '/Login-Register', name: 'Login-Register', component: () => import('../views/Login-Register/Login-Register.vue')},
 
 
 
 
+
+
+
+		{path: '/test2', name: 'test2', component: () => import('../components/MoviePages/test2.vue')},
 	]
 });
 
 export default router;
 
 router.beforeEach((to, _, next) => {
-	const authRequiredRoutes = [];
+	const authRequiredRoutes = [""];
 	const authNotRequiredRoutes = [];
 	const _isAuthenticated = store.getters._isAuthenticated;
 

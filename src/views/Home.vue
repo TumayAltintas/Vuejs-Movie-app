@@ -1,7 +1,6 @@
 <template>
 <div>
   <Top-Header/>
-
   <MainPageMovieAndTv/>
 </div>
 </template>

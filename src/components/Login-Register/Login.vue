@@ -1,17 +1,19 @@
 <template>
-  <div class="container">
-    <form>
-      Login
-      <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" class="form-control" id="username" v-model="userData.username">
+  <div class="container-fluid temp">
+    <div class="container">
+      <div>
+        Login
+        <div class="form-group">
+          <label for="username">Username:</label>
+          <input type="text" class="form-control" id="form3Example3" v-model="userData.username">
+        </div>
+        <div class="form-group">
+          <label for="password">Password:</label>
+          <input type="password" class="form-control" id="form3Example4" v-model="userData.password">
+        </div>
+        <button class="btn btn-primary" @click="onsubmit">Submit</button>
       </div>
-      <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" class="form-control" id="password" v-model="userData.password">
-      </div>
-      <button class="btn btn-primary" @click="onsubmit">Submit</button>
-    </form>
+    </div>
   </div>
 </template>
 
@@ -27,10 +29,10 @@ export default {
     }
   },
   methods: {
-   async onsubmit() {
+    onsubmit() {
       this.$appAxios.get(`admin?username=${this.userData.username}&password=${this.userData.password}`).then(login_response => {
         if (login_response.data.length > 0) {
-          this.$router.push({ name: 'home' });
+          this.$router.push({name: "home"});
           this.$store.commit('setUser', login_response.data);
         } else {
           alert("Kullanıcı adı veya şifre hatalı");
@@ -45,23 +47,21 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
 .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* use the full height of the viewport */
+  height: 100vh;
 }
 
-form {
-  background: #f7f7f7; /* change the background color of the form */
-  padding: 20px;
-  border-radius: 10px; /* add rounded corners to the form */
-  box-shadow: 0px 0px 10px #ccc; /* add a subtle shadow to the form */
-}
 
 label {
   font-weight: bold; /* make the labels bold */
+}
+
+.temp {
+  background-color: #007bff ;
 }
 
 input {
@@ -81,9 +81,11 @@ button {
   font-weight: bold; /* make the text of the button bold */
   cursor: pointer; /* change the cursor to a pointer when hovering over the button */
 }
+
 body {
   background: linear-gradient(#2196F3, #00BCD4); /* Add a colorful background to the whole page */
 }
+
 form {
   background: linear-gradient(#e0f7fa, #b2ebf2); /* Add a gradient background color to the form */
   padding: 20px;
@@ -93,7 +95,7 @@ form {
 
 label {
   font-weight: bold;
-  color: #333; /* Change the text color of the labels */
+  color: black; /* Change the text color of the labels */
 }
 
 input {
@@ -103,7 +105,7 @@ input {
   border-radius: 10px;
   box-shadow: 0px 0px 5px #ccc;
   background: #f1f1f1; /* Change the background color of the inputs */
-  color: #333; /* Change the text color of the inputs */
+  color: black; /* Change the text color of the inputs */
 }
 
 button {

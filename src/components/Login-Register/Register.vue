@@ -1,17 +1,16 @@
 <template>
   <div class="container">
-    <form>
-      Register
+    <div>
       <div class="form-group">
         <label for="username">Username:</label>
-        <input type="text" class="form-control" id="username" v-model="userData.username">
+        <input type="text" class="form-control" id="form3Example3" v-model="userData.username">
       </div>
       <div class="form-group">
         <label for="password">Password:</label>
-        <input type="password" class="form-control" id="password" v-model="userData.password">
+        <input type="password" class="form-control" id="form3Example4" v-model="userData.password">
       </div>
       <button class="btn btn-primary" @click="onSave">Submit</button>
-    </form>
+    </div>
   </div>
 </template>
 <script>
@@ -26,17 +25,19 @@ export default {
     };
   },
   methods: {
-   async onSave() {
-      this.$appAxios.post("/admin",{...this.userData}).then((res) =>{
-       this.$router.push({ path: '/' });
+    onSave() {
+      this.$appAxios.post("/users",{...this.userData}).then((res) =>{
+        this.$router.push({ name: "home" });
        console.log(this.userData)
+     }).catch((err) =>{
+       console.log(err)
      })
     }
   }
 };
 </script>
 
-<style>
+<style scoped>
 .container {
   display: flex;
   justify-content: center;

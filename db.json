@@ -5,5 +5,17 @@
       "password": "admin",
       "request": 1
     }
+  ],
+  "users": [
+    {
+      "username": "mustakbulut",
+      "password": "asd123",
+      "id": 1
+    },
+    {
+      "username": null,
+      "password": null,
+      "id": 2
+    }
   ]
 }
