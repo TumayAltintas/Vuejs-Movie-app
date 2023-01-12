@@ -35,7 +35,7 @@ const router = createRouter({
 
 
 		{path: '/test3', name: 'test3', component: () => import('../components/MoviePages/test3.vue')},
-		{path: '/test2', name: 'test2', component: () => import('../components/MoviePages/test2.vue')},
+		{path: '/test2', name: 'test2', component: () => import('../components/HeaderAndOthers/SearchBack.vue')},
 	]
 });
 

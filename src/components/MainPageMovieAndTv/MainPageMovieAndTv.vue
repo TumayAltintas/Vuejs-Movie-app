@@ -1,22 +1,7 @@
 <template>
-
   <div class="container">
-    <div style="bottom: 25px;width: 100%; height: 300px; background-color: rebeccapurple">
-    </div>
-    <div class="blur">
-
-    </div>
-<!--    <div> ikinci switch -->
-<!--      <label class="switch">-->
-<!--        <input type="checkbox" v-model="isChecked">-->
-<!--        <span class="slider round"></span>-->
-<!--      </label>-->
-<!--    </div>-->
+   <SearchBack/>
     <div>
-      <!--  birinci switch  <label class="switch" :style="{ backgroundColor: buttonColor }">-->
-      <!--        <input type="checkbox" @click="toggleDivs">-->
-      <!--        <span  class="slider round">{{ buttonText }}</span>-->
-      <!--      </label>-->
       <div>
         <div style="margin-top: 25px">
           <button class="custom-button" style="color: black;" v-if="show" @click="show=!show">Tv</button>
@@ -38,13 +23,15 @@
 import TrendCombine from "../MainPageTrending/TrendCombine.vue";
 import MovieMainPage from "../MoviePages/MovieMainPage.vue";
 import TvMainPage from "../TvPages/TvMainPage.vue";
+import SearchBack from "../HeaderAndOthers/SearchBack.vue";
 
 export default {
   name: "MainPageMovieAndTv",
   components: {
     MovieMainPage,
     TrendCombine,
-    TvMainPage
+    TvMainPage,
+    SearchBack
 
 
   },
@@ -84,8 +71,6 @@ export default {
 </script>
 
 <style scoped>
-
-
 .custom-button {
   display: inline-block;
   font-weight: 400;

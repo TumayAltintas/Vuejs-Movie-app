@@ -1,6 +1,6 @@
 <template>
   <div class="row mb-5">
-    <div class="imgarka" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+    <div class="imgarka blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
       <div v-for="(week,index) in slides" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 250px">
         <div class="average">
           <span style="color:#000;">
