@@ -54,7 +54,7 @@ export default {
 header {
   background-color: #032541;
   width: 100%;
-  height: 60px;
+  height: 64px;
   position: relative
 }
 .dropdown {

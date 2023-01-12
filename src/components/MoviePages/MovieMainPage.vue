@@ -107,7 +107,6 @@ img {
   min-height: 100%;
   height: auto;
   -ms-overflow-style: -ms-autohiding-scrollbar;
-  background-color: rgba(var(--tmdbDarkBlue), 1);
   color: #000;
   font-family: 'Source Sans Pro', Arial, sans-serif;
   font-size: 1em;
