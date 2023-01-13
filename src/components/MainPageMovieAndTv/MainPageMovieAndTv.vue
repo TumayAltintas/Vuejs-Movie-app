@@ -1,11 +1,36 @@
 <template>
   <div class="container">
-   <SearchBack/>
+    <section class="inner_content new_index">
+      <div id="media_v4" class="media discover">
+        <div class="column_wrapper">
+          <div class="content_wrapper wrap">
+            <div class="title">
+              <h2>Welcome.</h2>
+              <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
+            </div>
+            <div class="search">
+              <form id="inner_search_form" action="https://www.themoviedb.org/search" method="get"
+                    accept-charset="utf-8">
+                <label>
+                  <input dir="auto" id="inner_search_v4" name="query" type="text" tabindex="1" autocorrect="off"
+                         autofill="off" autocomplete="off" spellcheck="false"
+                         placeholder="Search for a movie, tv show, person......" value="">
+                </label>
+                <input type="submit" value="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+       <SearchBack/>
     <div>
       <div>
         <div style="margin-top: 25px">
           <button class="custom-button" style="color: black;" v-if="show" @click="show=!show">Tv</button>
           <button class="custom-button" style="color: black;" v-else @click="show=!show">Movie</button>
+
         </div>
         <TvMainPage v-if="show"/>
         <MovieMainPage v-else/>
