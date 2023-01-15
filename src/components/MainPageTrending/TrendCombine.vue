@@ -64,6 +64,7 @@ export default {
   width: 87px;
   height: 100%;
   position: relative;
+  transition: 1s;
   background-color: rgb(10, 14, 51);
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
@@ -77,6 +78,7 @@ export default {
   width: 107px;
   height: 100%;
   position: relative;
+  transition: 1s;
   background-color: rgb(10, 14, 51);
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;

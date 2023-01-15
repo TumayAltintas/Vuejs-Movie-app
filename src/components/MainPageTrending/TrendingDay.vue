@@ -135,7 +135,9 @@ div.title2 {
 .link-item {
   text-decoration: none;
 }
-
+p{
+  color: black;
+}
 img {
   width: 165px;
 }

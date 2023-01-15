@@ -9,9 +9,9 @@
           </span>
           </div>
           <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Tv.poster_path">
-          <router-link :to="'/Tv/' + Tv.id">
+          <router-link class="link-item" :to="'/Tv/' + Tv.id">
             <div class="title">
-              <h6>{{ Tv.name }}</h6>
+              <h6 class="ptext">{{ Tv.name }}</h6>
             </div>
           </router-link>
         </div>
@@ -92,7 +92,12 @@ p {
 img {
   width: 165px;
 }
-
+.link-item {
+  text-decoration: none;
+}
+.ptext{
+  color: black
+}
 .blur {
   transition: linear 0.3s;
   opacity: 1;

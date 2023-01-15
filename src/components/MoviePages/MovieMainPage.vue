@@ -9,9 +9,9 @@
           </span>
           </div>
           <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Movie.poster_path">
-          <router-link :to="'/Movie/' + Movie.id">
+          <router-link class="link-item" :to="'/Movie/' + Movie.id">
             <div class="title">
-              <h6>{{ Movie.title }}</h6>
+              <h6 class="ptext">{{ Movie.title }}</h6>
             </div>
           </router-link>
         </div>
@@ -104,7 +104,12 @@ img {
   flex-direction: column;
 
 }
-
+.link-item {
+  text-decoration: none;
+}
+.ptext{
+  color: black
+}
 .blur::after {
   content: '';
   width: 60px;
