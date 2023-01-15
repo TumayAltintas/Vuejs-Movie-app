@@ -96,6 +96,8 @@ export default {
   margin-bottom: 0;
   white-space: nowrap;
   color: green;
+  cursor: pointer;
+
 }
 
 .select {
