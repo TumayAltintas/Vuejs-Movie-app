@@ -9,7 +9,7 @@
               <router-link class="link-item" to="/Movie/Popular">Popular</router-link>
               <router-link class="link-item" to="/Movie/NowPlaying">Now Playing</router-link>
               <router-link class="link-item" to="/Movie/MovieUpComing">Upcoming</router-link>
-              <router-link class="link-item" to="/Movie/">Top Rated</router-link>
+              <router-link class="link-item" to="">Top Rated</router-link>
             </div>
           </div>
           <div style="margin-left: 25px" class="dropdown">

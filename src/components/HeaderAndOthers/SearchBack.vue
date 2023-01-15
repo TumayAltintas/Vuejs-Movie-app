@@ -18,7 +18,7 @@
                   <label>
                     <input dir="auto" id="inner_search_v4" name="query" type="text" tabindex="1" autocorrect="off"
                            autofill="off" autocomplete="off" spellcheck="false" v-model="input"
-                          >
+                    >
                   </label>
                   <input @click="Search">
                 </form>
@@ -44,7 +44,7 @@ export default {
       slides: [],
       currentSlide: 0,
       back: '',
-      input : null
+      input: null
 
 
     }
@@ -58,8 +58,8 @@ export default {
           this.MoviesDetails = response.data
         })
   },
-  methods :{
-    Search(){
+  methods: {
+    Search() {
       this.$router.push(this.input)
     }
   },
@@ -85,7 +85,6 @@ export default {
   bottom: 25px;
   width: 100%;
   height: 300px;
-
 }
 
 .img-container {
@@ -94,7 +93,8 @@ export default {
   padding: 0;
   margin: 0;
 }
-.title{
+
+.title {
   color: #fff;
   font-size: 40px;
   font-weight: 700;
@@ -102,14 +102,15 @@ export default {
   margin-bottom: 10px;
 
 }
+
 .overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: blue;
   opacity: 0.3;
+
 }
 
 </style>

@@ -1,9 +1,10 @@
 <template>
   <Top-Header/>
   <div class="container">
-    <button @click="a()">asd</button>
-    <button @click="b()">asd</button>
-    <div style="width: 250px;height: 250px;background-color: black;margin: 0;padding: 0" class="move-element" :class="{'move-right': moveRight, 'move-up': moveUp}"></div>
+    <div class="select d-flex">
+      <div :class="{ SelectedFirst: SelectedFirst}"><h3 class="text" @click="toggleActive"><a>Today</a></h3></div>
+      <div :class="{selected: selected}"><h3 class="text" @click="secondSelect"><a>This Week</a></h3></div>
+    </div>
   </div>
 </template>
 
@@ -12,32 +13,74 @@ export default {
   name: "test4",
   data() {
     return {
-      moveRight: false,
-      moveUp: false
+      ShowTrend: true,
+      selected: false,
+      SelectedFirst: true,
     }
   },
   methods: {
-    a() {
-      this.moveRight = true;
+    toggleActive() {
+      this.SelectedFirst = true
+      this.selected = false
+      this.ShowTrend = true
+
     },
-    b() {
-      this.moveUp = true;
-    }
-  }
+    secondSelect() {
+      this.SelectedFirst = false
+      this.selected = true
+      this.ShowTrend = false
+    },
+  },
 }
 </script>
 
 <style scoped>
-.move-element {
-  transition: transform 1s;
+.SelectedFirst {
+  margin: 0;
+  padding: 0;
+  width: 87px;
+  height: 100%;
+  position: relative;
+  transition: 1s;
+  background-color: rgb(10, 14, 51);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+
 }
 
-.move-right {
-  transform: translateX(100px);
+.selected {
+  float: right;
+  width: 107px;
+  height: 100%;
+  position: relative;
+  transition: 1s;
+  background-color: rgb(10, 14, 51);
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
-.move-up {
-  transform: translateY(-100px);
+.text {
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  padding: 4px 20px;
+  margin-bottom: 0;
+  white-space: nowrap;
+  color: green;
 }
 
+.select {
+  border: black solid 1px;
+  border-radius: 50px;
+  width: 192px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+}
 </style>
