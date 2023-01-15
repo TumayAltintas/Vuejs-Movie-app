@@ -1,11 +1,9 @@
 <template>
   <Top-Header/>
   <div class="container">
-    <div class="select d-flex">
-      <div :class="{ selected1: isActive}"><h3 class="text" @click="toggleActive"><a>Movie</a></h3></div>
-      <span></span>
-      <div :class="{selected: isAnimated}"><h3 class="text" @click="secondSelect"><a>Tv</a></h3></div>
-    </div>
+    <button @click="a()">asd</button>
+    <button @click="b()">asd</button>
+    <div style="width: 250px;height: 250px;background-color: black;margin: 0;padding: 0" class="move-element" :class="{'move-right': moveRight, 'move-up': moveUp}"></div>
   </div>
 </template>
 
@@ -14,75 +12,32 @@ export default {
   name: "test4",
   data() {
     return {
-      isAnimated: false,
-      isActive: true,
-
-    }
-  },
-  computed: {
-    animationClass() {
-      return this.isAnimated ? 'animated' : ''
+      moveRight: false,
+      moveUp: false
     }
   },
   methods: {
-    toggleActive() {
-      this.isActive = true
-      this.isAnimated = false
-
+    a() {
+      this.moveRight = true;
     },
-    secondSelect() {
-      this.isActive = false
-      this.isAnimated = true
-    },
-  },
+    b() {
+      this.moveUp = true;
+    }
+  }
 }
 </script>
 
 <style scoped>
-
-.selected1 {
-  float: left;
-  width: 87px;
-  height: 100%;
-  position: relative;
-  background-color: rgb(10, 14, 51);
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-
+.move-element {
+  transition: transform 1s;
 }
 
-.selected {
-  float: right;
-  width: 63px;
-  height: 100%;
-  position: relative;
-  background-color: rgb(10, 14, 51);
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+.move-right {
+  transform: translateX(100px);
 }
 
-.text {
-  display: inline-flex;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  font-size: 1em;
-  padding: 4px 20px;
-  margin-bottom: 0;
-  white-space: nowrap;
-  color: green;
+.move-up {
+  transform: translateY(-100px);
 }
-
-.select {
-  border: black solid 1px;
-  border-radius: 50px;
-  width: 150px;
-  height: 30px;
-}
-
 
 </style>

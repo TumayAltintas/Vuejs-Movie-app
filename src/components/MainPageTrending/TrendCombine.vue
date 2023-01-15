@@ -4,9 +4,9 @@
       <div class="row col-lg-6">
         <h3 class="trend" style="width: max-content">Trending</h3>
         <div class="select d-flex">
-          <div :class="{ selected1: isActive}"><h3 class="text" @click="toggleActive"><a>Today</a></h3></div>
+          <div :class="{ SelectedFirst: SelectedFirst}"><h3 class="text" @click="toggleActive"><a>Today</a></h3></div>
           <span></span>
-          <div :class="{selected: isAnimated}"><h3 class="text" @click="secondSelect"><a>This Week</a></h3></div>
+          <div :class="{selected: selected}"><h3 class="text" @click="secondSelect"><a>This Week</a></h3></div>
         </div>
       </div>
     </div>
@@ -24,26 +24,27 @@ export default {
   name: "TrendCombine",
   components: {
     TrendingWeek,
-    TrendingDay
+    TrendingDay,
+
 
   },
   data() {
     return {
       ShowTrend: true,
-      isAnimated: false,
-      isActive: true,
+      selected: false,
+      SelectedFirst: true,
     }
   },
   methods: {
     toggleActive() {
-      this.isActive = true
-      this.isAnimated = false
+      this.SelectedFirst = true
+      this.selected = false
       this.ShowTrend = true
 
     },
     secondSelect() {
-      this.isActive = false
-      this.isAnimated = true
+      this.SelectedFirst = false
+      this.selected = true
       this.ShowTrend = false
     },
   },
@@ -57,7 +58,7 @@ export default {
   padding: 0;
 }
 
-.selected1 {
+.SelectedFirst {
   margin: 0;
   padding: 0;
   width: 87px;
