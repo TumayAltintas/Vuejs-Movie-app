@@ -4,7 +4,7 @@
         <div style="position: absolute; top: 25%">
           <router-link to="/" class="TopA">ANASAYFA</router-link>
           <div style="margin-left: 25px" class="dropdown">
-            <a style="color: white" >Movies</a>
+            <a style="color: white;cursor: pointer;" >Movies</a>
             <div class="dropdown-content">
               <router-link class="link-item" to="/Movie/Popular">Popular</router-link>
               <router-link class="link-item" to="/Movie/NowPlaying">Now Playing</router-link>
@@ -13,7 +13,7 @@
             </div>
           </div>
           <div style="margin-left: 25px" class="dropdown">
-            <a style="color: white" >Tv Shows</a>
+            <a style="color: white;cursor: pointer;" >Tv Shows</a>
             <div class="dropdown-content">
               <router-link class="link-item" to="/Tv/Popular">Popular</router-link>
               <router-link class="link-item" to="/Tv/AiringToday">Airing Today</router-link>
@@ -22,7 +22,7 @@
             </div>
           </div>
           <div style="margin-left: 25px" class="dropdown">
-            <a style="color: white" >People</a>
+            <a style="color: white;cursor: pointer;" >People</a>
             <div class="dropdown-content">
               <router-link class="link-item" to="#">Popular People</router-link>
             </div>
@@ -67,7 +67,7 @@ header {
   position: absolute;
   z-index: 1;
   width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   padding: 12px 16px;
   background-color: white;
   flex-direction: column;
