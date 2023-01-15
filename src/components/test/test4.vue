@@ -1,66 +1,47 @@
 <template>
-  <div>
-    <div class="d-flex">
-      <div class="row col-lg-6">
-        <h3 style="width: max-content">Trending</h3>
-        <div class="select d-flex">
-          <div :class="{ selected1: isActive}"><h3 class="text" @click="toggleActive"><a>Movie</a></h3></div>
-          <span></span>
-          <div :class="{selected: isAnimated}"><h3 class="text" @click="secondSelect"><a>Tv</a></h3></div>
-        </div>
-      </div>
+  <Top-Header/>
+  <div class="container">
+    <div class="select d-flex">
+      <div :class="{ selected1: isActive}"><h3 class="text" @click="toggleActive"><a>Movie</a></h3></div>
+      <span></span>
+      <div :class="{selected: isAnimated}"><h3 class="text" @click="secondSelect"><a>Tv</a></h3></div>
     </div>
-    <TrendingDay v-if="showtrend"/>
-    <TrendingWeek v-else/>
   </div>
 </template>
 
 <script>
-
-import TrendingDay from "./TrendingDay.vue";
-import TrendingWeek from "./TrendingWeek.vue";
-
 export default {
-  name: "TrendCombine",
-  components: {
-    TrendingWeek,
-    TrendingDay
-
-  },
+  name: "test4",
   data() {
     return {
-      showtrend: true,
       isAnimated: false,
       isActive: true,
+
+    }
+  },
+  computed: {
+    animationClass() {
+      return this.isAnimated ? 'animated' : ''
     }
   },
   methods: {
     toggleActive() {
       this.isActive = true
       this.isAnimated = false
-      this.showtrend = true
 
     },
     secondSelect() {
       this.isActive = false
       this.isAnimated = true
-      this.showtrend = false
     },
   },
 }
 </script>
 
 <style scoped>
-h3 {
-  margin-right: 15px;
-  font-size: 1.5em;
-  padding: 0;
-}
-
 
 .selected1 {
-  margin: 0;
-  padding: 0;
+  float: left;
   width: 87px;
   height: 100%;
   position: relative;
@@ -101,7 +82,7 @@ h3 {
   border-radius: 50px;
   width: 150px;
   height: 30px;
-  margin: 0;
-  padding: 0;
 }
+
+
 </style>

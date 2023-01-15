@@ -1,8 +1,33 @@
 <template>
+
   <div class="img-container container">
     <img v-if="MoviesDetails.backdrop_path == null" class="seacrh " :src="IMG_URL + back.backdrop_path">
     <img v-else class="seacrh " :src="IMG_URL + MoviesDetails.backdrop_path">
-    <div class="overlay"></div>
+    <div class="overlay">
+      <section class="inner_content new_index">
+        <div id="media_v4" class="media discover">
+          <div class="column_wrapper">
+            <div class="content_wrapper wrap">
+              <div class="title">
+                <h2>Welcome.</h2>
+                <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
+              </div>
+              <div class="search">
+                <form id="inner_search_form" action="https://www.themoviedb.org/search" method="get"
+                      accept-charset="utf-8">
+                  <label>
+                    <input dir="auto" id="inner_search_v4" name="query" type="text" tabindex="1" autocorrect="off"
+                           autofill="off" autocomplete="off" spellcheck="false" v-model="input"
+                          >
+                  </label>
+                  <input @click="Search">
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -18,7 +43,8 @@ export default {
       MoviesCast: [],
       slides: [],
       currentSlide: 0,
-      back: ''
+      back: '',
+      input : null
 
 
     }
@@ -31,6 +57,11 @@ export default {
         .then((response) => {
           this.MoviesDetails = response.data
         })
+  },
+  methods :{
+    Search(){
+      this.$router.push(this.input)
+    }
   },
   async created() {
     const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
@@ -56,13 +87,21 @@ export default {
   height: 300px;
 
 }
+
 .img-container {
   position: relative;
   width: 100%;
   padding: 0;
   margin: 0;
 }
+.title{
+  color: #fff;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 10px;
 
+}
 .overlay {
   position: absolute;
   top: 0;
