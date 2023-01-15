@@ -2,15 +2,15 @@
   <div>
     <div class="d-flex">
       <div class="row col-lg-6">
-        <h3 style="width: max-content">Trending</h3>
+        <h3 class="trend" style="width: max-content">Trending</h3>
         <div class="select d-flex">
-          <div :class="{ selected1: isActive}"><h3 class="text" @click="toggleActive"><a>Movie</a></h3></div>
+          <div :class="{ selected1: isActive}"><h3 class="text" @click="toggleActive"><a>Today</a></h3></div>
           <span></span>
-          <div :class="{selected: isAnimated}"><h3 class="text" @click="secondSelect"><a>Tv</a></h3></div>
+          <div :class="{selected: isAnimated}"><h3 class="text" @click="secondSelect"><a>This Week</a></h3></div>
         </div>
       </div>
     </div>
-    <TrendingDay v-if="showtrend"/>
+    <TrendingDay v-if="ShowTrend"/>
     <TrendingWeek v-else/>
   </div>
 </template>
@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      showtrend: true,
+      ShowTrend: true,
       isAnimated: false,
       isActive: true,
     }
@@ -38,25 +38,24 @@ export default {
     toggleActive() {
       this.isActive = true
       this.isAnimated = false
-      this.showtrend = true
+      this.ShowTrend = true
 
     },
     secondSelect() {
       this.isActive = false
       this.isAnimated = true
-      this.showtrend = false
+      this.ShowTrend = false
     },
   },
 }
 </script>
 
 <style scoped>
-h3 {
+.trend {
   margin-right: 15px;
   font-size: 1.5em;
   padding: 0;
 }
-
 
 .selected1 {
   margin: 0;
@@ -74,7 +73,7 @@ h3 {
 
 .selected {
   float: right;
-  width: 63px;
+  width: 107px;
   height: 100%;
   position: relative;
   background-color: rgb(10, 14, 51);
@@ -99,7 +98,7 @@ h3 {
 .select {
   border: black solid 1px;
   border-radius: 50px;
-  width: 150px;
+  width: 192px;
   height: 30px;
   margin: 0;
   padding: 0;
