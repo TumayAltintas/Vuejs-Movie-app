@@ -29,11 +29,13 @@ const router = createRouter({
 
 		{path: '/Login-Register', name: 'Login-Register', component: () => import('../views/Login-Register/Login-Register.vue')},
 
-		{path: '/search/:query?', name: 'search', component: () => import('../components/Search/SearchMain.vue')},
+		{path: '/search/:query?', name: 'search', component: () => import('../views/Search/Search.vue')},
 
 		{path: '/t', name: 't', component: () => import('../components/test/test4.vue')},
 
 		{path: '/test2', name: 'test2', component: () => import('../components/test/test2.vue')},
+
+
 		// {path: '/test2', name: 'test2', component: () => import('../components/HeaderAndOthers/SearchBack.vue')},
 
 	]
