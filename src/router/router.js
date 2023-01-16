@@ -29,7 +29,7 @@ const router = createRouter({
 
 		{path: '/Login-Register', name: 'Login-Register', component: () => import('../views/Login-Register/Login-Register.vue')},
 
-		{path: '/search/:query', name: 'search', component: () => import('../components/Search/SearchMain.vue')},
+		{path: '/search/:query?', name: 'search', component: () => import('../components/Search/SearchMain.vue')},
 
 
 

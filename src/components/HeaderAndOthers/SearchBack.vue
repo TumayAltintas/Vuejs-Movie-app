@@ -1,24 +1,13 @@
 <template>
 
-  <div class="img-container container">
-    <img v-if="MoviesDetails.backdrop_path == null" class="seacrh " :src="IMG_URL + back.backdrop_path">
-    <img v-else class="seacrh " :src="IMG_URL + MoviesDetails.backdrop_path">
+  <div class="img-container container" v-bind:style="{ 'background-image': 'url(' + IMG_URL + back.backdrop_path + ')' }">
+
     <div class="overlay">
       <section class="inner_content new_index">
-        <div id="media_v4" class="media discover">
-          <div class="column_wrapper">
-            <div class="content_wrapper wrap">
-              <div class="title">
                 <h2>Welcome.</h2>
                 <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
-              </div>
-              <div class="search">
                 <input v-model="searchText" placeholder="Enter search text">
                 <button @click="goToSearchPage">Go</button>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
     </div>
   </div>
@@ -33,9 +22,6 @@ export default {
     return {
       MoviesDetails: '',
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
-      MoviesCast: [],
-      slides: [],
-      currentSlide: 0,
       back: '',
       searchText: ""
 
@@ -49,6 +35,12 @@ export default {
         .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
         .then((response) => {
           this.MoviesDetails = response.data
+        })
+    const TOP_MOVIE_DETA = 'https://api.themoviedb.org/3/movie/' + 238 + '?';
+    axios
+        .get(TOP_MOVIE_DETA + API_KEY + '&language=en-US')
+        .then((response) => {
+          this.back = response.data
         })
   },
   methods: {
