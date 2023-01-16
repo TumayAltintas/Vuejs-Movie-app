@@ -75,7 +75,7 @@ export default {
 
 .selected {
   float: right;
-  width: 107px;
+  width: 108px;
   height: 100%;
   position: relative;
   transition: 1s;
@@ -97,7 +97,6 @@ export default {
   white-space: nowrap;
   color: green;
   cursor: pointer;
-
 }
 
 .select {
