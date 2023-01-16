@@ -6,10 +6,11 @@
 </template>
 
 <script>
-import SearchMain from "../../components/TvPages/TvOnTheAir.vue";
+import SearchMain from "../../components/Search/SearchMain.vue";
 export default {
-  name: "Search",
+  name: "search",
   components: {SearchMain}
+
 }
 </script>
 
