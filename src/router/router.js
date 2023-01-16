@@ -31,14 +31,11 @@ const router = createRouter({
 
 		{path: '/search/:query?', name: 'search', component: () => import('../components/Search/SearchMain.vue')},
 
-
-
-
-
 		{path: '/t', name: 't', component: () => import('../components/test/test4.vue')},
 
 		{path: '/test2', name: 'test2', component: () => import('../components/test/test2.vue')},
 		// {path: '/test2', name: 'test2', component: () => import('../components/HeaderAndOthers/SearchBack.vue')},
+
 	]
 });
 

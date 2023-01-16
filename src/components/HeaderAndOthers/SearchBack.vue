@@ -1,15 +1,16 @@
 <template>
 
   <div class="img-container container" v-bind:style="{ 'background-image': 'url(' + IMG_URL + back.backdrop_path + ')' }">
-
-    <div class="overlay">
-      <section class="inner_content new_index">
-                <h2>Welcome.</h2>
-                <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
-                <input v-model="searchText" placeholder="Enter search text">
-                <button @click="goToSearchPage">Go</button>
-      </section>
-    </div>
+    <section>
+      <div class="textinput">
+        <h2>Welcome.</h2>
+        <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
+      </div>
+      <div class="d-flex search">
+        <input  v-model="searchText" placeholder="Search for a movie, tv show, person......">
+        <button @click="goToSearchPage">Search</button>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -47,15 +48,7 @@ export default {
     goToSearchPage() {
       this.$router.push({name: "search", params: {query: this.searchText}});
     },
-     created() {
-      const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
-      const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + 238 + '?';
-      axios
-          .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
-          .then((response) => {
-            this.back = response.data
-          })
-    },
+
     computed: {
       random() {
         return Math.floor(Math.random() * 1200)
@@ -66,37 +59,58 @@ export default {
 </script>
 
 <style scoped>
-.seacrh {
-  bottom: 25px;
-  width: 100%;
-  height: 300px;
+input{
+  width: 1220px;
+  height: 46px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
+input[type="text"] {
+   color: black;
+ }
 
 .img-container {
   position: relative;
   width: 100%;
+  height: 300px;
   padding: 0;
   margin: 0;
+  margin-bottom: 55px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.search{
+  margin-left: 40px;
+  margin-top: 85px;
+}
+h2{
+  color: white;
+  font-size: 2rem;
+  font-weight: 500;
+}
+ h3{
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 
-.title {
-  color: #fff;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 1.1;
-  margin-bottom: 10px;
-
-}
-
-.overlay {
+button{
+  font-size: 1.5rem;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.3;
-
+  float: right;
+  right: 36px;
+  width: 100px;
+  height: 46px;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
+button:hover{
 
+  color: green;
+}
 </style>
 
