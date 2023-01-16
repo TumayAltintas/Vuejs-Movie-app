@@ -1,22 +1,22 @@
 <template>
   <section>
-      <div class="container">
-        <div>
-          <button v-on:click.prevent="previous()">Next</button>
-          <button v-on:click.prevent="next()">Back</button>
-          <section>
-            <div class="row">
-              <div v-for="movie in Movies" :key="movie.id"
-                   class="col-lg-2 col-md-3 m-3">
-                <router-link :to="'/Movie/'+ movie.id">
-                  <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + movie.poster_path">
-                </router-link>
-                <h6>{{movie.title}}</h6>
-              </div>
+    <div class="container">
+      <div>
+        <button v-on:click.prevent="previous()">Next</button>
+        <button v-on:click.prevent="next()">Back</button>
+        <section>
+          <div class="row">
+            <div v-for="movie in Movies" :key="movie.id"
+                 class="col-lg-2 col-md-3 m-3">
+              <router-link :to="'/Movie/'+ movie.id">
+                <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + movie.poster_path">
+              </router-link>
+              <h6>{{ movie.title }}</h6>
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
       </div>
+    </div>
   </section>
 
 </template>
@@ -39,7 +39,7 @@ export default {
   mounted() {
     this.fetchActors(currentPage)
     const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
-    const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + this.$route.params.id + '?';
+    const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/'  + '?';
     axios
         .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
         .then((response) => {
@@ -54,9 +54,7 @@ export default {
         axios
             .get(TOP_MOVIE_URL + API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
-
               this.Movies = response.data.results
-              console.log(this.Movies)
             })
       } catch (error) {
         console.log(error)

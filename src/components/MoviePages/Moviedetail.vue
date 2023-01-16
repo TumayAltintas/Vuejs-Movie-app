@@ -28,7 +28,7 @@
         <div v-for="(cast,index) in slides" :key="index" class="opacity-100 shadow-lg rounded-3 col-lg-2 col-md-3 col-sm-4 m-2"
              style="width: 138px;height: 275px;display: inline-block; flex: 0 0 auto;">
           <div>
-            <img v-if="cast.profile_path == null" class="ImgCast" style="height: 207px"
+            <img  v-if="cast.profile_path == null" class="ImgCast" style="height: 207px"
                  src="../photo/empty-profile-picture-png-2-2.png">
             <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path">
             <p class=" title2">{{ cast.name }}</p>

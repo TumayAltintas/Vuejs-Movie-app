@@ -13,15 +13,8 @@
                 <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
               </div>
               <div class="search">
-                <form id="inner_search_form" action="https://www.themoviedb.org/search" method="get"
-                      accept-charset="utf-8">
-                  <label>
-                    <input dir="auto" id="inner_search_v4" name="query" type="text" tabindex="1" autocorrect="off"
-                           autofill="off" autocomplete="off" spellcheck="false" v-model="input"
-                    >
-                  </label>
-                  <input @click="Search">
-                </form>
+                <input v-model="searchText" placeholder="Enter search text">
+                <button @click="goToSearchPage">Go</button>
               </div>
             </div>
           </div>
@@ -44,7 +37,7 @@ export default {
       slides: [],
       currentSlide: 0,
       back: '',
-      input: null
+      searchText: ""
 
 
     }
@@ -59,22 +52,22 @@ export default {
         })
   },
   methods: {
-    Search() {
-      this.$router.push(this.input)
-    }
-  },
-  async created() {
-    const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
-    const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + 238 + '?';
-    axios
-        .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
-        .then((response) => {
-          this.back = response.data
-        })
-  },
-  computed: {
-    random() {
-      return Math.floor(Math.random() * 1200)
+    goToSearchPage() {
+      this.$router.push({name: "search", params: {query: this.searchText}});
+    },
+     created() {
+      const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
+      const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + 238 + '?';
+      axios
+          .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
+          .then((response) => {
+            this.back = response.data
+          })
+    },
+    computed: {
+      random() {
+        return Math.floor(Math.random() * 1200)
+      }
     }
   }
 }
