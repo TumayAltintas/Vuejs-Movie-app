@@ -25,7 +25,7 @@
 import TrendCombine from "../MainPageTrending/TrendCombine.vue";
 import MovieMainPage from "../MoviePages/MovieMainPage.vue";
 import TvMainPage from "../TvPages/TvMainPage.vue";
-import SearchBack from "../HeaderAndOthers/SearchBack.vue";
+import SearchBack from "../Search/SearchBack.vue";
 
 export default {
   name: "MainPageMovieAndTv",

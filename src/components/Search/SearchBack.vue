@@ -8,7 +8,7 @@
       </div>
       <div class="d-flex search">
         <input  v-model="searchText" placeholder="Search for a movie, tv show, person......">
-        <button @click="goToSearchPage">Search</button>
+        <button  @click="goToSearchPage">Search</button>
       </div>
     </section>
   </div>
@@ -107,6 +107,7 @@ button{
   border-top-right-radius: 50px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
+  background-color: rebeccapurple;
 }
 button:hover{
 
