@@ -36,6 +36,8 @@ const router = createRouter({
 		{path: '/test2', name: 'test2', component: () => import('../components/test/test2.vue')},
 
 
+
+
 		// {path: '/test2', name: 'test2', component: () => import('../components/HeaderAndOthers/SearchBack.vue')},
 
 	]

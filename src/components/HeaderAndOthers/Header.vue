@@ -27,6 +27,9 @@
               <router-link class="link-item" to="#">Popular People</router-link>
             </div>
           </div>
+          <router-link to="/Login-Register">
+            Login
+          </router-link>
         </div>
           <img @click="onLogout" class="d-flex logout" src="../photo/icons8-logout-rounded-50.png">
     </div>
