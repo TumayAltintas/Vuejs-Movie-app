@@ -107,11 +107,12 @@ button{
   border-top-right-radius: 50px;
   border-bottom-left-radius: 50px;
   border-bottom-right-radius: 50px;
-  background-color: rebeccapurple;
+  background-color: #9a1203;
+  cursor: pointer;
 }
 button:hover{
 
-  color: green;
+  color: #1bb3ce;
 }
 </style>
 
