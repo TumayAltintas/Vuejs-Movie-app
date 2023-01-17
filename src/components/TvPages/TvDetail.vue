@@ -1,17 +1,15 @@
 <template>
-  <div v-bind:style="{ 'background-image': 'url(' + IMG_URL + TvDetails.backdrop_path + ')' }" class=" all">
-    <div class="backleft custonbg">
-      <div class="container ">
-        <div class="single">
-          <section class="d-flex">
-            <div class="origin">
-              <div class="poster">
+  <div>
+    <div v-bind:style="{ 'background-image': 'url(' + IMG_URL + TvDetails.backdrop_path + ')' }" class="all">
+      <div class="custonbg">
+        <div class="container">
+          <div class="single">
+            <section class="d-flex">
+              <div class="origin">
                 <img :src="IMG_URL + TvDetails.poster_path">
               </div>
-            </div>
-            <div class="information d-flex">
-              <section class="section-link">
-                <div class="title">
+              <section class="section-link" :style="{backgroundColor }">
+                <div class="title row">
                   <div class="d-flex">
                     <h2 style="color:white;"><a>{{ TvDetails.name }}</a>
                       <span>({{ TvDetails.first_air_date }})</span></h2>
@@ -21,9 +19,6 @@
                       <span style="color:white;" class="genres" v-if="!$last">{{ genres.name }},</span>
                     </div>
                   </div>
-                </div>
-                <div class="actions">
-
                 </div>
                 <h3 class="tagline">
                   {{ TvDetails.tagline }}
@@ -35,12 +30,28 @@
                   </div>
                 </div>
               </section>
-            </div>
-          </section>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=" container">
+      <div class="blur container" ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+        <div v-for="(cast,index) in slides" :key="index"
+             class="opacity-100 shadow-lg rounded-3 col-lg-2 col-md-3 col-sm-4 m-2"
+             style="width: 138px;height: 320px;display: inline-block; flex: 0 0 auto;">
+          <div>
+            <img v-if="cast.profile_path == null" class="ImgCast" style="height: 207px"
+                 src="../photo/empty-profile-picture-png-2-2.png">
+            <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path">
+            <p class=" title2">{{ cast.name }}</p>
+            <p class=" title">{{ cast.character }}</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
 </template>
 
 <script>
@@ -54,7 +65,8 @@ export default {
       slides: [],
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
       currentSlide: 0,
-      TvDetails: [],
+      TvDetails: '',
+      backgroundColor : ''
 
     }
   },
@@ -66,6 +78,7 @@ export default {
         .then((response) => {
           this.TvDetails = response.data
         })
+    window.addEventListener('resize', this.handleResize)
 
   },
   created() {
@@ -77,12 +90,94 @@ export default {
         .then((res) => {
           this.slides = res.data.cast
         })
+  },
+  methods: {
+    handleResize() {
+      if (window.innerWidth < 768) {
+        this.backgroundColor = 'blue'
+      } else {
+        this.backgroundColor = ''
+      }
+    }
+
   }
-
-
 }
 </script>
+
 <style scoped>
+.title {
+  width: 100%;
+  position: relative;
+  white-space: normal;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9em;
+  color: black;
+}
+
+.title2 {
+  width: 100%;
+  position: relative;
+  white-space: normal;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+  color: #000;
+}
+
+
+div.Overview {
+  max-width: 750px
+}
+
+p.Overview {
+  margin: 0;
+  padding: 0;
+}
+
+
+div.MoviesDetails {
+  position: absolute;
+  max-width: max-content;
+  left: 35%
+}
+
+img.ImgCast {
+  width: 138px;
+  padding: 0;
+  margin: 0;
+}
+
+section.Overview {
+  position: absolute;
+  left: 35%;
+  top: 175px;
+  margin: 0;
+  padding: 0
+}
+
+img.ImgAllof {
+  left: 0;
+  width: 250px;
+}
+
+span.genres {
+  margin-right: 5px;
+  color: rebeccapurple;
+}
+
+#carousel-wrapper {
+  display: flex;
+  position: relative;
+  transition: transform 0.5s;
+  height: 350px;
+}
 .genres {
   padding-left:0;
   top: 0;
@@ -214,5 +309,3 @@ img {
 }
 
 </style>
-
-

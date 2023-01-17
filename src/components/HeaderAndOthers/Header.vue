@@ -1,7 +1,7 @@
 <template>
   <header>
       <div class="container d-flex">
-        <div style="position: absolute; top: 25%">
+        <div class="" style="position: absolute; top: 25%">
           <router-link to="/" class="TopA">ANASAYFA</router-link>
           <div style="margin-left: 25px" class="dropdown">
             <a style="color: white;cursor: pointer;" >Movies</a>
@@ -27,11 +27,7 @@
               <router-link class="link-item" to="#">Popular People</router-link>
             </div>
           </div>
-          <router-link to="/Login-Register">
-            Login
-          </router-link>
         </div>
-          <img @click="onLogout" class="d-flex logout" src="../photo/icons8-logout-rounded-50.png">
     </div>
   </header>
 </template>
@@ -108,3 +104,4 @@ header {
 }
 
 </style>
+<!--<img @click="onLogout" class="d-flex logout" src="../photo/icons8-logout-rounded-50.png">-->
