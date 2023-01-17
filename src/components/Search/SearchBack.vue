@@ -1,5 +1,4 @@
 <template>
-
   <div class="img-container container"
        v-bind:style="{ 'background-image': 'url(' + IMG_URL + back.backdrop_path + ')' }">
     <section>

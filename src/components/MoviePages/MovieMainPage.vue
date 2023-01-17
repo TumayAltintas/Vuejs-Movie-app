@@ -2,7 +2,8 @@
   <div>
     <div class="row">
       <div class="blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
-        <div v-for="(Movie,index) in slides" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
+        <div v-for="(Movie,index) in slides" :key="index"
+             style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
           <div class="average">
           <span style="color:#000;">
             {{ Movie.vote_average }}
@@ -86,9 +87,6 @@ div.average {
 }
 
 
-p {
-  color: red;
-}
 
 img {
   width: 165px;
@@ -104,19 +102,16 @@ img {
   flex-direction: column;
 
 }
+
 .link-item {
   text-decoration: none;
 }
-.ptext{
-  color: black
+
+.ptext {
+  color: black;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
-.blur::after {
-  content: '';
-  width: 60px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
-}
+
+
 </style>

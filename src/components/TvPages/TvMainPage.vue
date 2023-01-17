@@ -84,41 +84,42 @@ div.average {
   width: max-content;
 }
 
-
-p {
-  color: red;
-}
-
 img {
   width: 165px;
 }
 .link-item {
   text-decoration: none;
 }
-.ptext{
-  color: black
-}
-.blur {
-  transition: linear 0.3s;
-  opacity: 1;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  align-content: flex-start;
-  flex-direction: column;
+
+.ptext {
+  color: black;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
-.blur::after {
-  content: '';
-  width: 60px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);
-  will-change: opacity;
 
-}
 </style>
+
+<!--.blur {-->
+<!--transition: linear 0.3s;-->
+<!--opacity: 1;-->
+<!--width: 100%;-->
+<!--display: flex;-->
+<!--justify-content: center;-->
+<!--flex-wrap: wrap;-->
+<!--align-items: flex-start;-->
+<!--align-content: flex-start;-->
+<!--flex-direction: column;-->
+<!--}-->
+
+<!--.blur::after {-->
+<!--content: '';-->
+<!--width: 60px;-->
+<!--height: 100%;-->
+<!--position: absolute;-->
+<!--top: 0;-->
+<!--right: 0;-->
+<!--background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);-->
+<!--will-change: opacity;-->
+
+<!--}-->
