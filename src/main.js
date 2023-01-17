@@ -1,8 +1,8 @@
 import {createApp} from 'vue'
 import App from './views/App.vue'
 import router from './router/router.js'
-import {appAxios} from "../axios/AppAxios.js";
-import store from "../store/store.js";
+import {appAxios} from "./axios/AppAxios.js";
+import store from "./store/store.js";
 import Header from "./components/HeaderAndOthers/Header.vue";
 
 const app = createApp(App)

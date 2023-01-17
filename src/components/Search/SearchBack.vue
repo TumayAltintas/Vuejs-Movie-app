@@ -1,6 +1,6 @@
 <template>
   <div class="img-container container"
-       v-bind:style="{ 'background-image': 'url(' + IMG_URL + back.backdrop_path + ')' }">
+       v-bind:style="{ 'background-image': 'url(' + IMG_URL + MoviesDetails + ')' }">
     <section class="warms">
       <div class="textinput">
         <h2>Welcome.</h2>
@@ -23,37 +23,26 @@ export default {
     return {
       MoviesDetails: '',
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
-      back: '',
-      searchText: ""
+      searchText: "",
+      random: Math.floor(Math.random() * 200),
 
 
     }
   },
-  async mounted() {
+  async created() {
     const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
-    // const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + this.random + '?';
-    // axios
-    //     .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
-    //     .then((response) => {
-    //       this.MoviesDetails = response.data
-    //     })
-    const TOP_MOVIE_DETA = 'https://api.themoviedb.org/3/movie/' + 238 + '?';
+    const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + 98 + '?';
     axios
-        .get(TOP_MOVIE_DETA + API_KEY + '&language=en-US')
+        .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
         .then((response) => {
-          this.back = response.data
+          this.MoviesDetails = response.data.backdrop_path
         })
+
   },
   methods: {
     goToSearchPage() {
       this.$router.push({name: "search", params: {query: this.searchText}});
     },
-
-    computed: {
-      random() {
-        return Math.floor(Math.random() * 1200)
-      }
-    }
   }
 }
 </script>
@@ -77,8 +66,8 @@ input[type="text"] {
   padding: 0;
   margin: 0;
   margin-bottom: 55px;
-  background-repeat: no-repeat;
   background-size: cover;
+
 }
 
 .search {
@@ -114,6 +103,7 @@ button {
   cursor: pointer;
   --CostumGreen: rgba(30, 213, 169);
   --CostumBlue: rgba(1, 180, 228);
+  --tmdbDarkBlue: rgb(3,37,65);
 }
 
 button:hover {
