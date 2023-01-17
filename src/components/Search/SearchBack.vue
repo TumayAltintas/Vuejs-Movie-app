@@ -1,14 +1,17 @@
 <template>
 
-  <div class="img-container container" v-bind:style="{ 'background-image': 'url(' + IMG_URL + back.backdrop_path + ')' }">
+  <div class="img-container container"
+       v-bind:style="{ 'background-image': 'url(' + IMG_URL + back.backdrop_path + ')' }">
     <section>
-      <div class="textinput">
-        <h2>Welcome.</h2>
-        <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
-      </div>
-      <div class="d-flex search">
-        <input  v-model="searchText" placeholder="Search for a movie, tv show, person......">
-        <button  @click="goToSearchPage">Search</button>
+      <div class="warms">
+        <div class="textinput">
+          <h2>Welcome.</h2>
+          <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
+        </div>
+        <div class="d-flex search">
+          <input v-model="searchText" placeholder="Search for a movie, tv show, person......">
+          <button @click="goToSearchPage">Search</button>
+        </div>
       </div>
     </section>
   </div>
@@ -59,17 +62,17 @@ export default {
 </script>
 
 <style scoped>
-input{
+input {
   width: 1220px;
   height: 46px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
+  border-radius: 30px;
+  border: none;
+  -webkit-appearance: searchfield;
 }
+
 input[type="text"] {
-   color: black;
- }
+  color: black;
+}
 
 .img-container {
   position: relative;
@@ -81,38 +84,55 @@ input[type="text"] {
   background-repeat: no-repeat;
   background-size: cover;
 }
-.search{
+
+.search {
   margin-left: 40px;
-  margin-top: 85px;
+  margin-top: 40px;
 }
-h2{
+
+h2 {
   color: white;
   font-size: 2rem;
   font-weight: 500;
 }
- h3{
+
+h3 {
   color: white;
   font-size: 1.5rem;
   font-weight: 500;
 }
 
-button{
-  font-size: 1.5rem;
+button {
+  font-size: 1rem;
   position: absolute;
+  align-items: center;
+  color: white;
   float: right;
   right: 36px;
   width: 100px;
   height: 46px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-  border-bottom-left-radius: 50px;
-  border-bottom-right-radius: 50px;
-  background-color: #9a1203;
+  font-weight: 700;
+  border: none;
+  border-radius: 30px;
+  background: linear-gradient(to right, var(--CostumGreen), var(--CostumBlue));
   cursor: pointer;
+  --CostumGreen: rgba(30, 213, 169);
+  --CostumBlue: rgba(1, 180, 228);
 }
-button:hover{
 
-  color: #1bb3ce;
+button:hover {
+  color: black;
 }
+
+.warms {
+  position: relative;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
 </style>
 

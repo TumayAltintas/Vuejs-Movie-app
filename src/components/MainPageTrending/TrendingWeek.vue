@@ -139,5 +139,6 @@ p{
 img {
   width: 165px;
 }
+
 </style>
 
