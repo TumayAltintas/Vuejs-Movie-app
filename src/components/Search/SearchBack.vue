@@ -1,16 +1,17 @@
 <template>
-  <div class="img-container container"
-       v-bind:style="{ 'background-image': 'url(' + IMG_URL + MoviesDetails + ')' }">
-    <section class="warms">
-      <div class="textinput">
-        <h2>Welcome.</h2>
-        <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
-      </div>
-      <div class="d-flex search">
-        <input v-model="searchText" placeholder="Search for a movie, tv show, person......">
-        <button @click="goToSearchPage">Search</button>
-      </div>
-    </section>
+  <div class="img-container container">
+    <div class="img-c" v-bind:style="{ 'background-image': 'url(' + IMG_URL + MoviesDetails + ')' }">
+      <section class="warms">
+        <div class="textinput">
+          <h2>Welcome.</h2>
+          <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
+        </div>
+        <div class="d-flex search">
+          <input v-model="searchText" placeholder="Search for a movie, tv show, person......">
+          <button @click="goToSearchPage">Search</button>
+        </div>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -65,13 +66,23 @@ input[type="text"] {
   height: 300px;
   padding: 0;
   margin: 0;
-  margin-bottom: 55px;
-  background-size: cover;
+  margin-bottom: 70px;
+}
 
+.img-c {
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 300px;
+  height: calc(100vh / 2.5);
+  max-height: 360px;
+  background-position: 50% 50%;
+  align-content: center;
+  justify-content: center;
 }
 
 .search {
-  margin-left: 40px;
   margin-top: 40px;
 }
 
@@ -103,7 +114,7 @@ button {
   cursor: pointer;
   --CostumGreen: rgba(30, 213, 169);
   --CostumBlue: rgba(1, 180, 228);
-  --tmdbDarkBlue: rgb(3,37,65);
+  --tmdbDarkBlue: rgb(3, 37, 65);
 }
 
 button:hover {
@@ -111,13 +122,14 @@ button:hover {
 }
 
 .warms {
-  position: relative;
-  align-items: flex-start;
-  align-content: flex-start;
+  max-width: var(--maxPrimaryPageWidth);
+  width: 100%;
+
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 30px;
   padding-bottom: 30px;
+  --maxPrimaryPageWidth: 1300px;
 }
 
 </style>
