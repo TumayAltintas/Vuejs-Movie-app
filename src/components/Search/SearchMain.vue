@@ -14,7 +14,12 @@
               <img style="width: 150px; height: 225px" class="opacity-100 shadow-lg rounded rounded-150 "
                    v-if="data.poster_path == null" src="../photo/empty.jpg">
               <img v-else class="opacity-100 shadow-lg rounded rounded-150 " :src="IMG_URL + data.poster_path">
-              <h2>{{ data.title }}</h2>
+              <router-link class="link-item" :to="'/Tv/'+ data.id">
+                <h2>{{data.name}}</h2>
+              </router-link>
+              <router-link class="link-item" :to="'/Movie/'+ data.id">
+                <h2>{{data.title}}</h2>
+              </router-link>
             </div>
           </div>
         </section>
@@ -97,7 +102,17 @@ img {
 
 h2 {
   font-size: 16px;
-  color: blue
+  color: black;
+  display: flex;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  text-decoration: none;
+
+}
+.link-item{
+  text-decoration: none;
+  margin:0;
+  padding:0;
 }
 </style>
 <!--<template>-->
