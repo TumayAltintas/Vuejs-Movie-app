@@ -102,11 +102,12 @@ div.title2 {
 .link-item {
   text-decoration: none;
 }
-p{
+
+p {
   color: black;
-  font-size: 1.2rem;
   font-weight: 700;
 }
+
 img {
   width: 165px;
 }

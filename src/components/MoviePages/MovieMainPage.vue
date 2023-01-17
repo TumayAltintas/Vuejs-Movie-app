@@ -110,7 +110,6 @@ img {
 .ptext {
   color: black;
   font-weight: 700;
-  font-size: 1.2rem;
 }
 
 

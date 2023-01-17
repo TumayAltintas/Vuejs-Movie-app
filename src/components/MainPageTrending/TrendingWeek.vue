@@ -103,7 +103,6 @@ div.title2 {
 
 p {
   color: black;
-  font-size: 1.2rem;
   font-weight: 700;
 }
 
