@@ -3,7 +3,22 @@
     {
       "username": "admin",
       "password": "admin",
-      "request": 1
+      "name": "Mehmet",
+      "surname": "Yılmaz",
+      "studentno": "27482379",
+      "tcno": "67967856634",
+      "Place_of_birth": "Adana",
+      "date_of_birth": "12.03.2000",
+      "adres": "CUMHURİYET MAH. BİRİNCİ SOK. İKİNCİ APT. NO:111/6a",
+      "il": "ANKARA",
+      "ilce": "YENİMAHALLE",
+      "email": "abc@hotmail.com",
+      "gsm": "53323423422",
+      "müfredat_id": "1",
+      "kimlik_id": "3",
+      "iletisim_id": "1",
+      "request": 0,
+      "id": 2
     }
   ],
   "users": [

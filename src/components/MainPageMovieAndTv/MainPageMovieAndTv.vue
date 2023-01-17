@@ -1,7 +1,7 @@
 <template>
   <div class="container">
 
-       <SearchBack/>
+    <SearchBack/>
     <div>
       <div>
         <div style="margin-top: 50px">
@@ -45,47 +45,22 @@ export default {
 
     }
   },
-  watch: {
-    isChecked(val) {
-      if (val) {
-        // do something when isChecked is true
-      } else {
-        // do something when isChecked is false
-      }
-    }
-  },
-  methods: {
-    toggleDivs() {
-      this.showDiv1 = !this.showDiv1;
-      this.showDiv2 = !this.showDiv2;
-      if (this.buttonText === 'Movie') {
-        this.buttonText = 'Tv';
-        this.buttonColor = '#4caf50';
-      } else {
-        this.buttonText = 'Movie';
-        this.buttonColor = '#ccc';
-      }
-
-    }
-  }
 }
 </script>
 
 <style scoped>
 .custom-button {
   display: inline-block;
-  font-weight: 400;
   color: #fff;
   text-align: center;
-  vertical-align: middle;
-  user-select: none;
+
   background-color: #007bff;
-  border: 1px solid #007bff;
   padding: 0.375rem 0.75rem;
+  border: none;
   font-size: 1rem;
+  font-weight: 600;
   line-height: 1.5;
-  border-radius: 0.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-radius: 30rem;
   cursor: pointer;
 }
 
