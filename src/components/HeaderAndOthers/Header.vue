@@ -4,7 +4,7 @@
         <div class="" style="position: absolute; top: 25%">
           <router-link to="/" class="TopA">ANASAYFA</router-link>
           <div style="margin-left: 25px" class="dropdown">
-            <a style="color: white;cursor: pointer;" >Movies</a>
+            <a style="color: white;cursor: pointer;position: relative" >Movies</a>
             <div class="dropdown-content">
               <router-link class="link-item" to="/Movie/Popular">Popular</router-link>
               <router-link class="link-item" to="/Movie/NowPlaying">Now Playing</router-link>

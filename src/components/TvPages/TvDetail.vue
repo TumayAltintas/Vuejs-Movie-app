@@ -8,11 +8,11 @@
               <div class="origin">
                 <img :src="IMG_URL + TvDetails.poster_path">
               </div>
-              <section class="section-link" :style="{backgroundColor }">
+              <section class="section-link" :style="{backgroundColor}">
                 <div class="title row">
                   <div class="d-flex">
                     <h2 style="color:white;"><a>{{ TvDetails.name }}</a>
-                      <span>({{ TvDetails.first_air_date }})</span></h2>
+                      <a>({{ TvDetails.first_air_date }})</a></h2>
                   </div>
                   <div class="d-flex">
                     <div class="fact" v-for="(genres, index) in TvDetails.genres" :key="index">
@@ -107,7 +107,6 @@ export default {
 <style scoped>
 .title {
   width: 100%;
-  position: relative;
   white-space: normal;
   display: flex;
   align-content: flex-start;
@@ -117,7 +116,10 @@ export default {
   font-size: 0.9em;
   color: black;
 }
-
+a{
+  font-weight: 700;
+  font-size: 2rem;
+}
 .title2 {
   width: 100%;
   position: relative;
@@ -131,41 +133,13 @@ export default {
   color: #000;
 }
 
-
-div.Overview {
-  max-width: 750px
-}
-
-p.Overview {
-  margin: 0;
-  padding: 0;
-}
-
-
-div.MoviesDetails {
-  position: absolute;
-  max-width: max-content;
-  left: 35%
-}
-
 img.ImgCast {
   width: 138px;
   padding: 0;
   margin: 0;
 }
 
-section.Overview {
-  position: absolute;
-  left: 35%;
-  top: 175px;
-  margin: 0;
-  padding: 0
-}
 
-img.ImgAllof {
-  left: 0;
-  width: 250px;
-}
 
 span.genres {
   margin-right: 5px;
@@ -200,11 +174,7 @@ h3{
   display: flex;
   width: max-content;
 }
-.actions{
-  width: 100%;
-  height: 100px;
-  background-color: white;
-}
+
 p{
   color: white;
 }
@@ -215,7 +185,6 @@ p{
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
-  position: relative;
   z-index: 1;
   border-bottom: 1px solid rgba(var(--lightGrey), 1);
   --lightGrey: rgb(227,227,227);
@@ -258,18 +227,6 @@ p{
   overflow: hidden;
   border-radius: var(--imageBorderRadius);
   --imageBorderRadius: 8px;
-}
-
-.poster {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
-  display: block;
-  min-width: 300px;
-  width: 300px;
-  height: 450px;
-  position: relative;
-  top: 0;
-  left: 0;
 }
 
 

@@ -1,8 +1,8 @@
 <template>
 
 <div>
-<Top-Header/>
-  <TvDetail/>
+  <Top-Header/>
+    <TvDetail/>
 </div>
 </template>
 
