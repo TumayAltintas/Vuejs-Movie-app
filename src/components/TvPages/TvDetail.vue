@@ -93,7 +93,7 @@ export default {
   },
   methods: {
     handleResize() {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 868) {
         this.backgroundColor = 'blue'
       } else {
         this.backgroundColor = ''
