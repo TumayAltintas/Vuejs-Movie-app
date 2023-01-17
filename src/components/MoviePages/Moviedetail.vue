@@ -8,7 +8,7 @@
         <h3>{{ MoviesDetails.title }} ({{ MoviesDetails.release_date }})</h3>
       </div>
       <section class="d-flex" style="position: absolute; left: 37%;margin-top: 45px;">
-        <div  v-for="genre in MoviesDetails.genres">
+        <div v-for="genre in MoviesDetails.genres">
           <span class="genres" style="margin-left: 1.5rem">{{ genre.name }}</span>
         </div>
       </section>
@@ -25,10 +25,11 @@
     </section>
     <div class="row">
       <div class="blur" ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
-        <div v-for="(cast,index) in slides" :key="index" class="opacity-100 shadow-lg rounded-3 col-lg-2 col-md-3 col-sm-4 m-2"
-             style="width: 138px;height: 275px;display: inline-block; flex: 0 0 auto;">
+        <div v-for="(cast,index) in slides" :key="index"
+             class="opacity-100 shadow-lg rounded-3 col-lg-2 col-md-3 col-sm-4 m-2"
+             style="width: 138px;height: 320px;display: inline-block; flex: 0 0 auto;">
           <div>
-            <img  v-if="cast.profile_path == null" class="ImgCast" style="height: 207px"
+            <img v-if="cast.profile_path == null" class="ImgCast" style="height: 207px"
                  src="../photo/empty-profile-picture-png-2-2.png">
             <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path">
             <p class=" title2">{{ cast.name }}</p>
@@ -98,6 +99,7 @@ export default {
   font-size: 0.8em;
   color: black;
 }
+
 .title2 {
   width: 100%;
   position: relative;
@@ -122,13 +124,11 @@ p.Overview {
 }
 
 
-
 div.MoviesDetails {
   position: absolute;
   max-width: max-content;
   left: 35%
 }
-
 
 
 img.ImgCast {

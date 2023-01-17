@@ -1,16 +1,14 @@
 <template>
   <div class="img-container container"
        v-bind:style="{ 'background-image': 'url(' + IMG_URL + back.backdrop_path + ')' }">
-    <section>
-      <div class="warms">
-        <div class="textinput">
-          <h2>Welcome.</h2>
-          <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
-        </div>
-        <div class="d-flex search">
-          <input v-model="searchText" placeholder="Search for a movie, tv show, person......">
-          <button @click="goToSearchPage">Search</button>
-        </div>
+    <section class="warms">
+      <div class="textinput">
+        <h2>Welcome.</h2>
+        <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
+      </div>
+      <div class="d-flex search">
+        <input v-model="searchText" placeholder="Search for a movie, tv show, person......">
+        <button @click="goToSearchPage">Search</button>
       </div>
     </section>
   </div>
@@ -66,7 +64,6 @@ input {
   height: 46px;
   border-radius: 30px;
   border: none;
-  -webkit-appearance: searchfield;
 }
 
 input[type="text"] {
