@@ -32,7 +32,7 @@ export default {
     }
   },
   async mounted() {
-    const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + this.random + '?';
+    const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + 98 + '?';
     axios
         .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
         .then((response) => {
