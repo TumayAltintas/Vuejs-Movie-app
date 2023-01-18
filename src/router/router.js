@@ -1,9 +1,8 @@
-import {createRouter, createWebHistory} from 'vue-router'
-
+import {createRouter, createWebHashHistory, createWebHistory} from 'vue-router'
 import store from "../store/store.js";
 
 const router = createRouter({
-	history: createWebHistory(),
+	history: createWebHashHistory(),
 	routes: [
 		{path: '/', name: 'home', component: () => import('../views/Home.vue')},
 
@@ -35,28 +34,23 @@ const router = createRouter({
 
 		{path: '/t3', name: 't3', component: () => import('../components/test/test3.vue')},
 
-
-
-
-
-		// {path: '/test2', name: 'test2', component: () => import('../components/HeaderAndOthers/SearchBack.vue')},
-
 	]
 });
 
+
 export default router;
 
-router.beforeEach((to, _, next) => {
-	const authRequiredRoutes = [""];
-	const authNotRequiredRoutes = [];
-	const _isAuthenticated = store.getters._isAuthenticated;
-
-	if (authNotRequiredRoutes.indexOf(to.name) > -1 && _isAuthenticated) next(false);
-
-	if (authRequiredRoutes.indexOf(to.name) > -1) {
-		if (_isAuthenticated) next();
-		else next({path: "/"});
-	} else {
-		next();
-	}
-});
+// router.beforeEach((to, _, next) => {
+// 	const authRequiredRoutes = [""];
+// 	const authNotRequiredRoutes = [];
+// 	const _isAuthenticated = store.getters._isAuthenticated;
+//
+// 	if (authNotRequiredRoutes.indexOf(to.name) > -1 && _isAuthenticated) next(false);
+//
+// 	if (authRequiredRoutes.indexOf(to.name) > -1) {
+// 		if (_isAuthenticated) next();
+// 		else next({path: "/"});
+// 	} else {
+// 		next();
+// 	}
+// });

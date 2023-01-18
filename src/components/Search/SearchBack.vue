@@ -7,7 +7,7 @@
           <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
         </div>
         <div class="d-flex search">
-          <input v-model="searchText" placeholder="Search for a movie, tv show, person......">
+          <input @keydown.enter="goToSearchPage" v-model="searchText" placeholder="Search for a movie, tv show, person......">
           <button @click="goToSearchPage">Search</button>
         </div>
       </section>
@@ -29,9 +29,6 @@ export default {
 
       random: Math.floor(Math.random() * 200),
       second: '',
-
-      BOS : 'ASDASDASDA SDASDQWEQWE'
-
     }
   },
   async mounted() {
@@ -43,7 +40,8 @@ export default {
         })
   },
   methods: {
-    goToSearchPage() {
+    goToSearchPage(e) {
+      // this.$router.push(`/search/${e.target.value}`)
       this.$router.push({name: "search", params: {query: this.searchText}});
     },
   }
