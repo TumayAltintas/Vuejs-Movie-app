@@ -44,7 +44,6 @@ export default {
         axios
             .get(TOP_MOVIE_URL + API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
-
               this.Movies = response.data.results
             })
       } catch (error) {

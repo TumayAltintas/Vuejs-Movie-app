@@ -26,9 +26,11 @@ export default {
       MoviesDetails: '',
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
       searchText: "",
-      random: Math.floor(Math.random() * 200),
-      second: ''
 
+      random: Math.floor(Math.random() * 200),
+      second: '',
+
+      BOS : 'ASDASDASDA SDASDQWEQWE'
 
     }
   },
@@ -80,7 +82,10 @@ input[type="text"] {
   background-position: 50% 50%;
   align-content: center;
   justify-content: center;
+
+
 }
+
 
 .search {
   margin-top: 40px;

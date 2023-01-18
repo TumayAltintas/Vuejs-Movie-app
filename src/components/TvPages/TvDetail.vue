@@ -9,7 +9,7 @@
                 <img :src="IMG_URL + TvDetails.poster_path">
               </div>
               <section class="section-link" :style="{backgroundColor}">
-                <div class="title row">
+                <div class="title  row">
                   <div class="d-flex">
                     <h2 style="color:white;"><a>{{ TvDetails.name }}</a>
                       <a>({{ TvDetails.first_air_date }})</a></h2>
@@ -92,7 +92,7 @@ export default {
   methods: {
     handleResize() {
       if (window.innerWidth < 868) {
-        this.backgroundColor = 'blue'
+        this.backgroundColor = 'grey'
       } else {
         this.backgroundColor = ''
       }

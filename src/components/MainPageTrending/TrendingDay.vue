@@ -46,7 +46,6 @@ export default {
     axios
         .get(TOP_MOVIE_URL + API_KEY)
         .then((response) => {
-
           this.slides = response.data.results
         })
   },
