@@ -5,8 +5,10 @@ import {appAxios} from "./axios/AppAxios.js";
 import store from "./store/store.js";
 import Header from "./components/HeaderAndOthers/Header.vue";
 
-const app = createApp(App)
 
+
+
+const app = createApp(App)
 app.use(store)
 app.use(router)
 app.config.globalProperties.$appAxios = appAxios

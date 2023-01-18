@@ -17,7 +17,7 @@
 
 <script>
 import axios from "axios";
-
+const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
 export default {
   name: "SearchBack",
   data() {
@@ -31,7 +31,7 @@ export default {
     }
   },
   async created() {
-    const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
+
     const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + 98 + '?';
     axios
         .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
