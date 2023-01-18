@@ -33,7 +33,8 @@ const router = createRouter({
 
 		{path: '/t', name: 't', component: () => import('../components/test/test4.vue')},
 
-		{path: '/test2', name: 'test2', component: () => import('../components/test/test2.vue')},
+		{path: '/t3', name: 't3', component: () => import('../components/test/test3.vue')},
+
 
 
 

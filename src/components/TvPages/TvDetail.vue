@@ -16,7 +16,7 @@
                   </div>
                   <div class="d-flex">
                     <div class="fact" v-for="(genres, index) in TvDetails.genres" :key="index">
-                      <span style="color:white;" class="genres" v-if="!$last">{{ genres.name }},</span>
+                      <span style="color:white;" class="genres">{{ genres.name }},</span>
                     </div>
                   </div>
                 </div>
@@ -56,6 +56,7 @@
 
 <script>
 import axios from "axios";
+
 const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
 export default {
   name: "Tv",
@@ -66,7 +67,7 @@ export default {
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
       currentSlide: 0,
       TvDetails: '',
-      backgroundColor : ''
+      backgroundColor: ''
 
     }
   },
@@ -78,19 +79,16 @@ export default {
         .then((response) => {
           this.TvDetails = response.data
         })
-    window.addEventListener('resize', this.handleResize)
-
-  },
-  created() {
-
-
     const TOP_MOVIE_CAST = 'https://api.themoviedb.org/3/tv/' + this.$route.params.id + '/credits?'
     axios
         .get(TOP_MOVIE_CAST + API_KEY + '&language=en-US')
         .then((res) => {
           this.slides = res.data.cast
         })
+    window.addEventListener('resize', this.handleResize)
+
   },
+
   methods: {
     handleResize() {
       if (window.innerWidth < 868) {
@@ -116,10 +114,12 @@ export default {
   font-size: 0.9em;
   color: black;
 }
-a{
+
+a {
   font-weight: 700;
   font-size: 2rem;
 }
+
 .title2 {
   width: 100%;
   position: relative;
@@ -140,7 +140,6 @@ img.ImgCast {
 }
 
 
-
 span.genres {
   margin-right: 5px;
   color: rebeccapurple;
@@ -152,16 +151,19 @@ span.genres {
   transition: transform 0.5s;
   height: 350px;
 }
+
 .genres {
-  padding-left:0;
+  padding-left: 0;
   top: 0;
   left: 0;
 }
-h3{
+
+h3 {
   color: white;
   margin: 0 0 8px 0;
 }
-.tagline{
+
+.tagline {
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 1.1em;
@@ -170,15 +172,17 @@ h3{
   opacity: 0.7;
 
 }
-.fact{
+
+.fact {
   display: flex;
   width: max-content;
 }
 
-p{
+p {
   color: white;
 }
-.all{
+
+.all {
   border-bottom: 1px solid var(--primaryColor);
   --primaryColor: rgba(31.5, 31.5, 31.5, 1);
   background-position: left calc((50vw - 170px) - 340px) top;
@@ -187,14 +191,14 @@ p{
   width: 100%;
   z-index: 1;
   border-bottom: 1px solid rgba(var(--lightGrey), 1);
-  --lightGrey: rgb(227,227,227);
+  --lightGrey: rgb(227, 227, 227);
 }
-.custonbg{
+
+.custonbg {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-image: linear-gradient(to right, rgba(31.5, 31.5, 31.5, 1)
-  calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 31.5, 0.84) 30%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
+  background-image: linear-gradient(to right, rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 31.5, 0.84) 30%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
 }
 
 .genres::before {
@@ -228,7 +232,6 @@ p{
   border-radius: var(--imageBorderRadius);
   --imageBorderRadius: 8px;
 }
-
 
 
 h2 {

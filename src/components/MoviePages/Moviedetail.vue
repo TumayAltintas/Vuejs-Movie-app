@@ -16,13 +16,17 @@
                   </div>
                   <div class="d-flex">
                     <div class="fact" v-for="(genres, index) in MoviesDetails.genres" :key="index">
-                      <span style="color:white;" class="genres" v-if="!$last">{{ genres.name }},</span>
+                      <span style="color:white;" class="genres">{{ genres.name }},</span>
                     </div>
                   </div>
                 </div>
-                <h3 class="tagline">
-                  {{ MoviesDetails.tagline }}
-                </h3>
+                <div class="triangle">
+                </div>
+                <div>
+                  <h3 class="tagline">
+                    {{ MoviesDetails.tagline }}
+                  </h3>
+                </div>
                 <div class="info">
                   <h2>Overview</h2>
                   <div>
@@ -69,8 +73,6 @@ export default {
       slides: [],
       currentSlide: 0,
       backgroundColor: ''
-
-
     }
   },
   async mounted() {
@@ -80,18 +82,15 @@ export default {
         .then((response) => {
           this.MoviesDetails = response.data
         })
-    window.addEventListener('resize', this.handleResize)
-  },
-  created() {
-
     const TOP_MOVIE_CAST = 'https://api.themoviedb.org/3/movie/' + this.$route.params.id + '/credits?'
     axios
         .get(TOP_MOVIE_CAST + API_KEY + '&language=en-US')
         .then((res) => {
           this.slides = res.data.cast
         })
-
+    window.addEventListener('resize', this.handleResize)
   },
+
   methods: {
     handleResize() {
       if (window.innerWidth < 968) {
@@ -118,6 +117,16 @@ export default {
   padding: 0;
   font-size: 0.9em;
   color: black;
+}
+
+.triangle {
+
+  width: 10px;
+  height: 10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 30px solid red;
+  transform: rotate(90deg);
 }
 
 a {

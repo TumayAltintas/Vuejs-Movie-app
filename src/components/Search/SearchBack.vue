@@ -1,6 +1,6 @@
 <template>
   <div class="img-container container">
-    <div class="img-c" v-bind:style="{ 'background-image': 'url(' + IMG_URL + MoviesDetails + ')' }">
+    <div class="img-c" :style="{ 'background-image': 'url(' + IMG_URL + MoviesDetails + ')' }">
       <section class="warms">
         <div class="textinput">
           <h2>Welcome.</h2>
@@ -17,6 +17,7 @@
 
 <script>
 import axios from "axios";
+
 const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
 export default {
   name: "SearchBack",
@@ -26,19 +27,18 @@ export default {
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
       searchText: "",
       random: Math.floor(Math.random() * 200),
+      second: ''
 
 
     }
   },
-  async created() {
-
-    const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + 98 + '?';
+  async mounted() {
+    const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + this.random + '?';
     axios
         .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
         .then((response) => {
           this.MoviesDetails = response.data.backdrop_path
         })
-
   },
   methods: {
     goToSearchPage() {
