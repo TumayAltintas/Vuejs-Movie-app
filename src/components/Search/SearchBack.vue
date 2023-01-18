@@ -7,7 +7,8 @@
           <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
         </div>
         <div class="d-flex search">
-          <input @keydown.enter="goToSearchPage" v-model="searchText" placeholder="Search for a movie, tv show, person......">
+          <input @keydown.enter="goToSearchPage" v-model="searchText"
+                 placeholder="Search for a movie, tv show, person......">
           <button @click="goToSearchPage">Search</button>
         </div>
       </section>
@@ -26,7 +27,6 @@ export default {
       MoviesDetails: '',
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
       searchText: "",
-
       random: Math.floor(Math.random() * 200),
       second: '',
     }
@@ -41,9 +41,9 @@ export default {
   },
   methods: {
     goToSearchPage() {
-      if (this.searchText ===''){
-        alert('Please enter a movie, tv or person name')
-      }else {
+      if (this.searchText === '') {
+        alert('Please enter a movie, tv show or person name')
+      } else {
         this.$router.push({name: "search", params: {query: this.searchText}});
       }
     },
