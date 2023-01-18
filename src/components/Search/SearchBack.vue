@@ -40,9 +40,12 @@ export default {
         })
   },
   methods: {
-    goToSearchPage(e) {
-      // this.$router.push(`/search/${e.target.value}`)
-      this.$router.push({name: "search", params: {query: this.searchText}});
+    goToSearchPage() {
+      if (this.searchText ===''){
+        alert('Please enter a movie, tv or person name')
+      }else {
+        this.$router.push({name: "search", params: {query: this.searchText}});
+      }
     },
   }
 }
