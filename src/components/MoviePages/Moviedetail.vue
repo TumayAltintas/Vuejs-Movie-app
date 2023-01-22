@@ -6,13 +6,13 @@
           <div class="single">
             <section class="d-flex">
               <div class="origin">
-                <img :src="IMG_URL + MoviesDetails.poster_path">
+                <img :src="IMG_URL + MoviesDetails.poster_path" alt="">
               </div>
               <section class="section-link" :style="{backgroundColor}">
                 <div class="title row">
-                  <div class="d-flex">
-                    <h2 style="color:white;"><a>{{ MoviesDetails.title }}</a>
-                      <a>({{ MoviesDetails.release_date }})</a></h2>
+                  <div class="d-flex align-items-center">
+                    <h2><a>{{ MoviesDetails.title }}</a></h2>
+                    <h2><a class="airdate"> ({{ airdate }})</a></h2>
                   </div>
                   <div class="d-flex">
                     <div class="fact" v-for="(genres, index) in MoviesDetails.genres" :key="index">
@@ -20,8 +20,8 @@
                     </div>
                   </div>
                 </div>
-                <div class="d-flex gap-3 align-items-center">
-                  <div type="button" class="triangle" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <div  class="d-flex gap-3 align-items-center">
+                  <div class="triangle" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   </div>
                   <h3>Play Trailer</h3>
                 </div>
@@ -49,8 +49,8 @@
              style="width: 138px;height: 320px;display: inline-block; flex: 0 0 auto;">
           <div>
             <img v-if="cast.profile_path == null" class="ImgCast" style="height: 207px"
-                 src="../photo/empty-profile-picture-png-2-2.png">
-            <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path">
+                 src="../photo/empty-profile-picture-png-2-2.png" alt="">
+            <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path" alt="">
             <p class=" title2">{{ cast.name }}</p>
             <p class=" title">{{ cast.character }}</p>
           </div>
@@ -74,7 +74,8 @@ export default {
       MoviesCast: [],
       slides: [],
       currentSlide: 0,
-      backgroundColor: ''
+      backgroundColor: '',
+      airdate : ''
     }
   },
   async mounted() {
@@ -83,6 +84,7 @@ export default {
         .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
         .then((response) => {
           this.MoviesDetails = response.data
+          this.airdate =response.data.release_date.slice(0,4)
         })
     const TOP_MOVIE_CAST = 'https://api.themoviedb.org/3/movie/' + this.$route.params.id + '/credits?'
     axios
@@ -109,6 +111,12 @@ export default {
 </script>
 
 <style scoped>
+.airdate{
+  font-weight: 200;
+  white-space: nowrap;
+  text-decoration: none;
+  color: white;
+}
 .title {
   width: 100%;
   white-space: normal;
@@ -254,7 +262,8 @@ p {
 h2 {
   font-weight: 600;
   font-size: 1.3em;
-  margin-bottom: 8px;
+  margin: 0;
+  padding: 0;
   color: white;
 }
 
@@ -280,7 +289,7 @@ img {
   min-width: 100%;
   height: 100%;
   min-height: 100%;
-  border-width: 0px;
+  border-width: 0;
   outline: none;
 }
 

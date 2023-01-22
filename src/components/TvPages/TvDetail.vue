@@ -10,9 +10,11 @@
               </div>
               <section class="section-link" :style="{backgroundColor}">
                 <div class="title  row">
-                  <div class="d-flex">
-                    <h2 style="color:white;"><a>{{ TvDetails.name }}</a>
-                      <a>({{ TvDetails.first_air_date }})</a></h2>
+                  <div class="d-flex align-items-center">
+                    <h2 style="color:white;">
+                      <a>{{ TvDetails.name }}</a>
+                    </h2>
+                   <h2> <a class="airdate">({{ airdate }})</a></h2>
                   </div>
                   <div class="d-flex">
                     <div class="fact" v-for="(genres, index) in TvDetails.genres" :key="index">
@@ -67,7 +69,8 @@ export default {
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
       currentSlide: 0,
       TvDetails: '',
-      backgroundColor: ''
+      backgroundColor: '',
+      airdate: ''
 
     }
   },
@@ -78,6 +81,7 @@ export default {
         .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
         .then((response) => {
           this.TvDetails = response.data
+          this.airdate = response.data.first_air_date.slice(0, 4)
         })
     const TOP_MOVIE_CAST = 'https://api.themoviedb.org/3/tv/' + this.$route.params.id + '/credits?'
     axios
@@ -103,6 +107,12 @@ export default {
 </script>
 
 <style scoped>
+.airdate{
+  font-weight: 200;
+  white-space: nowrap;
+  text-decoration: none;
+  color: white;
+}
 .title {
   width: 100%;
   white-space: normal;
@@ -114,12 +124,14 @@ export default {
   font-size: 0.9em;
   color: black;
 }
-
-a {
+a{
   font-weight: 700;
   font-size: 2rem;
 }
-
+.airdate{
+  font-weight: 200;
+  color: white;
+}
 .title2 {
   width: 100%;
   position: relative;
@@ -237,8 +249,10 @@ p {
 h2 {
   font-weight: 600;
   font-size: 1.3em;
-  margin-bottom: 8px;
+  margin: 0;
+  padding: 0;
   color: white;
+
 }
 
 .section-link {
