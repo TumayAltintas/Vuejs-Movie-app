@@ -1,6 +1,6 @@
 <template>
   <div class="img-container container">
-    <div class="img-c" :style="{ 'background-image': 'url(' + IMG_URL + MoviesDetails + ')' }">
+    <div class="img-c">
       <section class="warms">
         <div class="textinput">
           <h2>Welcome.</h2>
@@ -83,6 +83,7 @@ input[type="text"] {
   background-position: 50% 50%;
   align-content: center;
   justify-content: center;
+  background-image: url('./src/components/photo/backgraound.png');
 
 
 }
