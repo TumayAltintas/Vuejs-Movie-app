@@ -20,7 +20,10 @@
                     </div>
                   </div>
                 </div>
-                <div class="triangle">
+                <div class="d-flex gap-3 align-items-center">
+                  <div type="button" class="triangle" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  </div>
+                  <h3>Play Trailer</h3>
                 </div>
                 <div>
                   <h3 class="tagline">
@@ -62,7 +65,6 @@
 import axios from "axios";
 
 const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
-
 export default {
   name: "MovieDetail",
   data() {
@@ -120,12 +122,11 @@ export default {
 }
 
 .triangle {
-
   width: 10px;
   height: 10px;
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
-  border-bottom: 30px solid red;
+  border-bottom: 20px solid red;
   transform: rotate(90deg);
 }
 
@@ -212,7 +213,9 @@ p {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  background-image: linear-gradient(to right, rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 31.5, 0.84) 30%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
+  background-image: linear-gradient(to right,
+  rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px),
+  rgba(31.5, 31.5, 31.5, 0.84) 30%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
 }
 
 .genres::before {
@@ -256,7 +259,6 @@ h2 {
 }
 
 .section-link {
-  display: flex;
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: center;

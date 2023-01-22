@@ -10,7 +10,8 @@
 import MoviePopular from "../../components/MoviePages/MoviePopular.vue";
 export default {
   name: "Popular",
-  components: {MoviePopular}
+  components: {MoviePopular},
+
 }
 </script>
 

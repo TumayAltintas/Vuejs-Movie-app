@@ -1,29 +1,29 @@
 <template>
-    <div class="container">
-      <div>
-        <button v-on:click.prevent="previous()">next</button>
-        <button v-on:click.prevent="next()">next</button>
-        <button @click="tvbutton">tv</button>
-        <button @click="moviebutton">movie</button>
-      </div>
-      <div>
-        <section>
-          <div class="row">
-            <div v-for="data in search" :key="data.id" class="col-lg-2 col-md-3 m-3">
-              <img style="width: 150px; height: 225px" class="opacity-100 shadow-lg rounded rounded-150 "
-                   v-if="data.poster_path == null" src="../photo/empty.jpg">
-              <img v-else class="opacity-100 shadow-lg rounded rounded-150 " :src="IMG_URL + data.poster_path">
-              <router-link class="link-item" :to="'/Tv/'+ data.id">
-                <h2>{{data.name}}</h2>
-              </router-link>
-              <router-link class="link-item" :to="'/Movie/'+ data.id">
-                <h2>{{data.title}}</h2>
-              </router-link>
-            </div>
-          </div>
-        </section>
-      </div>
+  <div class="container">
+    <div>
+      <button v-on:click.prevent="previous()">next</button>
+      <button v-on:click.prevent="next()">next</button>
+      <button @click="tvbutton">tv</button>
+      <button @click="moviebutton">movie</button>
     </div>
+    <div>
+      <section>
+        <div class="row">
+          <div v-for="data in search" :key="data.id" class="col-lg-2 col-md-3 m-3">
+            <img style="width: 150px; height: 225px" class="opacity-100 shadow-lg rounded rounded-150 "
+                 v-if="data.poster_path == null" src="../photo/empty.jpg">
+            <img v-else class="opacity-100 shadow-lg rounded rounded-150 " :src="IMG_URL + data.poster_path">
+            <router-link class="link-item" :to="'/Tv/'+ data.id">
+              <h2>{{ data.name }}</h2>
+            </router-link>
+            <router-link class="link-item" :to="'/Movie/'+ data.id">
+              <h2>{{ data.title }}</h2>
+            </router-link>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -50,7 +50,7 @@ export default {
         const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
         const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/search/' + this.text + '?';
         axios
-            .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US&query='+ this.$route.params.query + '&page=' + page)
+            .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US&query=' + this.$route.params.query + '&page=' + page)
 
             .then((response) => {
               this.search = response.data.results
@@ -59,11 +59,11 @@ export default {
         console.log(error)
       }
     },
-    tvbutton(){
+    tvbutton() {
       this.text = 'tv'
       this.fetchActors(currentPage)
     },
-    moviebutton(){
+    moviebutton() {
       this.text = 'movie'
       this.fetchActors(currentPage)
     },
@@ -106,10 +106,12 @@ h2 {
   text-decoration: none;
 
 }
-.link-item{
+
+.link-item {
   text-decoration: none;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
+
 </style>
 
