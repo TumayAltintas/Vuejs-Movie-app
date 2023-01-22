@@ -209,10 +209,11 @@ p {
   justify-content: center;
   flex-wrap: wrap;
   background-image: linear-gradient(to right,
-  rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px),
-  rgba(31.5, 31.5, 31.5, 0.84) 30%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
+  rgba(31.5, 31.5, 52.5, 1)
+  calc((50vw - 170px) - 340px),
+  rgba(31.5, 31.5, 52.5, 0.84) 30%,
+  rgba(31.5, 31.5, 52.5, 0.84) 100%);
 }
-
 
 .single {
   padding-top: 30px;
@@ -230,7 +231,6 @@ p {
   border-radius: var(--imageBorderRadius);
   --imageBorderRadius: 8px;
 }
-
 
 h2 {
   font-weight: 600;
