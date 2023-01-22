@@ -6,7 +6,7 @@
           <div class="single">
             <section class="d-flex">
               <div class="origin">
-                <img :src="IMG_URL + TvDetails.poster_path">
+                <img :src="IMG_URL + TvDetails.poster_path" alt="">
               </div>
               <section class="section-link" :style="{backgroundColor}">
                 <div class="title  row">
@@ -14,7 +14,7 @@
                     <h2 style="color:white;">
                       <a>{{ TvDetails.name }}</a>
                     </h2>
-                   <h2> <a class="airdate">({{ airdate }})</a></h2>
+                    <h2><a class="airdate">({{ airdate }})</a></h2>
                   </div>
                   <div class="d-flex">
                     <div class="fact" v-for="(genres, index) in TvDetails.genres" :key="index">
@@ -44,8 +44,8 @@
              style="width: 138px;height: 320px;display: inline-block; flex: 0 0 auto;">
           <div>
             <img v-if="cast.profile_path == null" class="ImgCast" style="height: 207px"
-                 src="../photo/empty-profile-picture-png-2-2.png">
-            <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path">
+                 src="../photo/empty-profile-picture-png-2-2.png" alt="">
+            <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path" alt="">
             <p class=" title2">{{ cast.name }}</p>
             <p class=" title">{{ cast.character }}</p>
           </div>
@@ -107,12 +107,13 @@ export default {
 </script>
 
 <style scoped>
-.airdate{
+.airdate {
   font-weight: 200;
   white-space: nowrap;
   text-decoration: none;
   color: white;
 }
+
 .title {
   width: 100%;
   white-space: normal;
@@ -124,14 +125,17 @@ export default {
   font-size: 0.9em;
   color: black;
 }
-a{
+
+a {
   font-weight: 700;
   font-size: 2rem;
 }
-.airdate{
+
+.airdate {
   font-weight: 200;
   color: white;
 }
+
 .title2 {
   width: 100%;
   position: relative;
@@ -213,8 +217,6 @@ p {
   background-image: linear-gradient(to right, rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 31.5, 0.84) 30%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
 }
 
-
-
 .single {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -265,7 +267,7 @@ img {
   min-width: 100%;
   height: 100%;
   min-height: 100%;
-  border-width: 0px;
+  border-width: 0;
   outline: none;
 }
 
