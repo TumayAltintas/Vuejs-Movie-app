@@ -8,10 +8,10 @@
             {{ Tv.vote_average }}
           </span>
           </div>
-          <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Tv.poster_path">
-          <router-link class="link-item" :to="'/Tv/' + Tv.id">
+          <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Tv.poster_path" alt="">
+          <router-link class="LinkItem" :to="'/Tv/' + Tv.id">
             <div class="title">
-              <h6 class="ptext">{{ Tv.name }}</h6>
+              <h6 class="TitleText">{{ Tv.name }}</h6>
             </div>
           </router-link>
         </div>
@@ -48,13 +48,7 @@ export default {
 
 
   },
-  computed: {
-    rows() {
-      return this.filmler.length
-    }
 
-
-  },
 }
 
 
@@ -87,11 +81,11 @@ div.average {
 img {
   width: 165px;
 }
-.link-item {
+.LinkItem {
   text-decoration: none;
 }
 
-.ptext {
+.TitleText {
   color: black;
   font-weight: 700;
 }

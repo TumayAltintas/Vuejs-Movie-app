@@ -1,21 +1,21 @@
 <template>
   <div class="row mb-5">
     <div class="Trending blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
-      <div v-for="(week,index) in slides" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
+      <div v-for="(Day,index) in slides" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
         <div class="average">
           <span style="color:#000;">
-            {{ week.vote_average }}
+            {{ Day.vote_average }}
           </span>
         </div>
-        <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + week.poster_path">
-        <div v-if="week.media_type='movie'" class="title">
-          <router-link class="link-item" v-if="week.media_type='tv'" :to="'/Movie/' + week.id">
-            <p>{{ week.title }}</p>
+        <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Day.poster_path" alt="">
+        <div v-if="Day.media_type='movie'" class="title">
+          <router-link class="LinkItem" v-if="Day.media_type='tv'" :to="'/Movie/' + Day.id">
+            <p>{{ Day.title }}</p>
           </router-link>
         </div>
-        <div v-if="week.media_type='tv'" class="title2">
-          <router-link class="link-item" :to="'/Tv/'+ week.id">
-            <p>{{ week.name }}</p>
+        <div v-if="Day.media_type='tv'" class="title2">
+          <router-link class="LinkItem" :to="'/Tv/'+ Day.id">
+            <p>{{ Day.name }}</p>
           </router-link>
         </div>
       </div>
@@ -28,7 +28,7 @@ import axios from 'axios'
 
 
 export default {
-  name: 'TrendingWeek',
+  name: 'TrendingDay',
 
   data() {
     return {
@@ -98,7 +98,7 @@ div.title2 {
   flex-wrap: wrap;
 }
 
-.link-item {
+.LinkItem {
   text-decoration: none;
 }
 

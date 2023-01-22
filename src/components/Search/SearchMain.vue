@@ -3,20 +3,20 @@
     <div>
       <button v-on:click.prevent="previous()">next</button>
       <button v-on:click.prevent="next()">next</button>
-      <button @click="tvbutton">tv</button>
-      <button @click="moviebutton">movie</button>
+      <button @click="TvButton">tv</button>
+      <button @click="MovieButton">movie</button>
     </div>
     <div>
       <section>
         <div class="row">
           <div v-for="data in search" :key="data.id" class="col-lg-2 col-md-3 m-3">
             <img style="width: 150px; height: 225px" class="opacity-100 shadow-lg rounded rounded-150 "
-                 v-if="data.poster_path == null" src="../photo/empty.jpg">
-            <img v-else class="opacity-100 shadow-lg rounded rounded-150 " :src="IMG_URL + data.poster_path">
-            <router-link class="link-item" :to="'/Tv/'+ data.id">
+                 v-if="data.poster_path == null" src="../photo/empty.jpg" alt="">
+            <img v-else class="opacity-100 shadow-lg rounded rounded-150 " :src="IMG_URL + data.poster_path" alt="">
+            <router-link class="LinkItem" :to="'/Tv/'+ data.id">
               <h2>{{ data.name }}</h2>
             </router-link>
-            <router-link class="link-item" :to="'/Movie/'+ data.id">
+            <router-link class="LinkItem" :to="'/Movie/'+ data.id">
               <h2>{{ data.title }}</h2>
             </router-link>
           </div>
@@ -59,20 +59,20 @@ export default {
         console.log(error)
       }
     },
-    tvbutton() {
+    TvButton() {
       this.text = 'tv'
       this.fetchActors(currentPage)
     },
-    moviebutton() {
+    MovieButton() {
       this.text = 'movie'
       this.fetchActors(currentPage)
     },
     scroll() {
       window.onscroll = () => {
-        let bottomofWindow =
+        let BottomWindow =
             document.documentElement.scrollTop + window.innerWidth ===
             document.documentElement.offsetHeight;
-        if (bottomofWindow) {
+        if (BottomWindow) {
           currentPage += 1;
           this.fetchActors((currentPage += 1))
         }
@@ -107,7 +107,7 @@ h2 {
 
 }
 
-.link-item {
+.LinkItem {
   text-decoration: none;
   margin: 0;
   padding: 0;

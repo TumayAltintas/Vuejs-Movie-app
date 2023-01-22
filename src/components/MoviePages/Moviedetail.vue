@@ -1,61 +1,61 @@
 <template>
-    <div v-bind:style="{ 'background-image': 'url(' + IMG_URL + MoviesDetails.backdrop_path + ')' }" class="all">
-      <div class="custonbg">
-        <div class="container">
-          <div class="single">
-            <section class="d-flex">
-              <div class="origin">
-                <img :src="IMG_URL + MoviesDetails.poster_path" alt="">
+  <div v-bind:style="{ 'background-image': 'url(' + IMG_URL + MoviesDetails.backdrop_path + ')' }" class="all">
+    <div class="CustomBg">
+      <div class="container">
+        <div class="single">
+          <section class="d-flex">
+            <div class="origin">
+              <img :src="IMG_URL + MoviesDetails.poster_path" alt="">
+            </div>
+            <section class="section-link" :style="{backgroundColor}">
+              <div class="title row">
+                <div class="d-flex align-items-center">
+                  <h2><a>{{ MoviesDetails.title }}</a></h2>
+                  <h2><a class="AirDate"> ({{ AirDate }})</a></h2>
+                </div>
+                <div class="d-flex">
+                  <div v-for="(genres, index) in MoviesDetails.genres" :key="index">
+                    <span style="color:white;" class="genres">{{ genres.name }}</span>
+                  </div>
+                </div>
               </div>
-              <section class="section-link" :style="{backgroundColor}">
-                <div class="title row">
-                  <div class="d-flex align-items-center">
-                    <h2><a>{{ MoviesDetails.title }}</a></h2>
-                    <h2><a class="airdate"> ({{ airdate }})</a></h2>
-                  </div>
-                  <div class="d-flex">
-                    <div  v-for="(genres, index) in MoviesDetails.genres" :key="index">
-                      <span style="color:white;" class="genres">{{ genres.name }}</span>
-                    </div>
-                  </div>
+              <div class="d-flex gap-3 align-items-center">
+                <div class="triangle" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 </div>
-                <div class="d-flex gap-3 align-items-center">
-                  <div class="triangle" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                  </div>
-                  <h3>Play Trailer</h3>
-                </div>
+                <h3>Play Trailer</h3>
+              </div>
+              <div>
+                <h3 class="tagline">
+                  {{ MoviesDetails.tagline }}
+                </h3>
+              </div>
+              <div>
+                <h2>Overview</h2>
                 <div>
-                  <h3 class="tagline">
-                    {{ MoviesDetails.tagline }}
-                  </h3>
+                  <p>{{ MoviesDetails.overview }}</p>
                 </div>
-                <div>
-                  <h2>Overview</h2>
-                  <div>
-                    <p>{{ MoviesDetails.overview }}</p>
-                  </div>
-                </div>
-              </section>
+              </div>
             </section>
-          </div>
+          </section>
         </div>
       </div>
     </div>
-    <div class=" container">
-      <div class="blur container" ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
-        <div v-for="(cast,index) in slides" :key="index"
-             class="opacity-100 shadow-lg rounded-3 col-lg-2 col-md-3 col-sm-4 m-2"
-             style="width: 138px;height: 320px;display: inline-block; flex: 0 0 auto;">
-          <div>
-            <img v-if="cast.profile_path == null" class="ImgCast" style="height: 207px"
-                 src="../photo/empty-profile-picture-png-2-2.png" alt="">
-            <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path" alt="">
-            <p class=" title2">{{ cast.name }}</p>
-            <p class=" title">{{ cast.character }}</p>
-          </div>
+  </div>
+  <div class=" container">
+    <div class="blur container" ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+      <div v-for="(cast,index) in slides" :key="index"
+           class="opacity-100 shadow-lg rounded-3 col-lg-2 col-md-3 col-sm-4 m-2"
+           style="width: 138px;height: 320px;display: inline-block; flex: 0 0 auto;">
+        <div>
+          <img v-if="cast.profile_path == null" class="ImgCast" style="height: 207px"
+               src="../photo/empty-profile-picture-png-2-2.png" alt="">
+          <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path" alt="">
+          <p class=" title2">{{ cast.name }}</p>
+          <p class=" title">{{ cast.character }}</p>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -72,7 +72,7 @@ export default {
       slides: [],
       currentSlide: 0,
       backgroundColor: '',
-      airdate: ''
+      AirDate: ''
     }
   },
   async mounted() {
@@ -81,7 +81,7 @@ export default {
         .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
         .then((response) => {
           this.MoviesDetails = response.data
-          this.airdate = response.data.release_date.slice(0, 4)
+          this.AirDate = response.data.release_date.slice(0, 4)
         })
     const TOP_MOVIE_CAST = 'https://api.themoviedb.org/3/movie/' + this.$route.params.id + '/credits?'
     axios
@@ -107,7 +107,7 @@ export default {
 </script>
 
 <style scoped>
-.airdate {
+.AirDate {
   font-weight: 200;
   white-space: nowrap;
   text-decoration: none;
@@ -193,11 +193,6 @@ h3 {
 
 }
 
-.fact {
-  display: flex;
-  width: max-content;
-}
-
 p {
   color: white;
 }
@@ -209,7 +204,7 @@ p {
   background-repeat: no-repeat;
 }
 
-.custonbg {
+.CustomBg {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -217,7 +212,6 @@ p {
   rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px),
   rgba(31.5, 31.5, 31.5, 0.84) 30%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
 }
-
 
 
 .single {

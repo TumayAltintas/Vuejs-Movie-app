@@ -1,7 +1,7 @@
 <template>
   <div>
     <div v-bind:style="{ 'background-image': 'url(' + IMG_URL + TvDetails.backdrop_path + ')' }" class="all">
-      <div class="custonbg">
+      <div class="CustomBg">
         <div class="container">
           <div class="single">
             <section class="d-flex">
@@ -14,7 +14,7 @@
                     <h2 style="color:white;">
                       <a>{{ TvDetails.name }}</a>
                     </h2>
-                    <h2><a class="airdate">({{ airdate }})</a></h2>
+                    <h2><a class="AirDate">({{ AirDate }})</a></h2>
                   </div>
                   <div class="d-flex">
                     <div class="fact" v-for="(genres, index) in TvDetails.genres" :key="index">
@@ -70,7 +70,7 @@ export default {
       currentSlide: 0,
       TvDetails: '',
       backgroundColor: '',
-      airdate: ''
+      AirDate: ''
 
     }
   },
@@ -81,7 +81,7 @@ export default {
         .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
         .then((response) => {
           this.TvDetails = response.data
-          this.airdate = response.data.first_air_date.slice(0, 4)
+          this.AirDate = response.data.first_air_date.slice(0, 4)
         })
     const TOP_MOVIE_CAST = 'https://api.themoviedb.org/3/tv/' + this.$route.params.id + '/credits?'
     axios
@@ -107,7 +107,7 @@ export default {
 </script>
 
 <style scoped>
-.airdate {
+.AirDate {
   font-weight: 200;
   white-space: nowrap;
   text-decoration: none;
@@ -131,7 +131,7 @@ a {
   font-size: 2rem;
 }
 
-.airdate {
+.AirDate {
   font-weight: 200;
   color: white;
 }
@@ -210,7 +210,7 @@ p {
   --lightGrey: rgb(227, 227, 227);
 }
 
-.custonbg {
+.CustomBg {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

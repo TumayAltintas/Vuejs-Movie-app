@@ -2,7 +2,7 @@
   <div class="img-container container">
     <div class="img-c">
       <section class="warms">
-        <div class="textinput">
+        <div>
           <h2>Welcome.</h2>
           <h3>Millions of movies, TV shows and people to discover. Explore now.</h3>
         </div>
@@ -17,28 +17,28 @@
 </template>
 
 <script>
-import axios from "axios";
+// import axios from "axios";
 
 const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
 export default {
   name: "SearchBack",
   data() {
     return {
-      MoviesDetails: '',
+      // MoviesDetails: '',
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
       searchText: "",
       random: Math.floor(Math.random() * 200),
       second: '',
     }
   },
-  async mounted() {
-    const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + 98 + '?';
-    axios
-        .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
-        .then((response) => {
-          this.MoviesDetails = response.data.backdrop_path
-        })
-  },
+  // async mounted() {
+  //   const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + 98 + '?';
+  //   axios
+  //       .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
+  //       .then((response) => {
+  //         this.MoviesDetails = response.data.backdrop_path
+  //       })
+  // },
   methods: {
     goToSearchPage() {
       if (this.searchText === '') {

@@ -2,29 +2,29 @@
   <header>
       <div class="container d-flex">
         <div class="" style="position: absolute; top: 25%">
-          <router-link to="/" class="TopA">ANASAYFA</router-link>
+          <router-link to="/" class="TopA">HOME</router-link>
           <div style="margin-left: 25px" class="dropdown">
             <a style="color: white;cursor: pointer;position: relative" >Movies</a>
             <div class="dropdown-content">
-              <router-link class="link-item" to="/Movie/Popular">Popular</router-link>
-              <router-link class="link-item" to="/Movie/NowPlaying">Now Playing</router-link>
-              <router-link class="link-item" to="/Movie/MovieUpComing">Upcoming</router-link>
-              <router-link class="link-item" to="">Top Rated</router-link>
+              <router-link class="LinkItem" to="/Movie/Popular">Popular</router-link>
+              <router-link class="LinkItem" to="/Movie/NowPlaying">Now Playing</router-link>
+              <router-link class="LinkItem" to="/Movie/MovieUpComing">Upcoming</router-link>
+              <router-link class="LinkItem" to="">Top Rated</router-link>
             </div>
           </div>
           <div style="margin-left: 25px" class="dropdown">
             <a style="color: white;cursor: pointer;" >Tv Shows</a>
             <div class="dropdown-content">
-              <router-link class="link-item" to="/Tv/Popular">Popular</router-link>
-              <router-link class="link-item" to="/Tv/AiringToday">Airing Today</router-link>
-              <router-link class="link-item" to="/Tv/OnTheAir">On Tv</router-link>
-              <router-link class="link-item" to="/Tv/TopRated">Top Rated</router-link>
+              <router-link class="LinkItem" to="/Tv/Popular">Popular</router-link>
+              <router-link class="LinkItem" to="/Tv/AiringToday">Airing Today</router-link>
+              <router-link class="LinkItem" to="/Tv/OnTheAir">On Tv</router-link>
+              <router-link class="LinkItem" to="/Tv/TopRated">Top Rated</router-link>
             </div>
           </div>
           <div style="margin-left: 25px" class="dropdown">
             <a style="color: white;cursor: pointer;" >People</a>
             <div class="dropdown-content">
-              <router-link class="link-item" to="#">Popular People</router-link>
+              <router-link class="LinkItem" to="#">Popular People</router-link>
             </div>
           </div>
         </div>
@@ -35,21 +35,21 @@
 <script>
 export default {
   name: "Header",
-  methods: {
-    onLogout() {
-      this.$store.commit("logoutUser");
-      this.$router.push({name: "home"});
-    }
-  },
+  // methods: {
+  //   onLogout() {
+  //     this.$store.commit("logoutUser");
+  //     this.$router.push({name: "home"});
+  //   }
+  // },
 }
 </script>
 
 <style scoped>
-.logout {
-  position: absolute;
-  right: 0;
-  margin-right: 20px;
-}
+/*.logout {*/
+/*  position: absolute;*/
+/*  right: 0;*/
+/*  margin-right: 20px;*/
+/*}*/
 header {
   background-color: #032541;
   width: 100%;
@@ -78,7 +78,7 @@ header {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.link-item{
+.LinkItem{
   white-space: nowrap;
   cursor: pointer;
   text-decoration: none;

@@ -9,7 +9,7 @@
         <div class="row">
           <div v-for="tv in Tv" :key="tv.id" class="col-lg-2 col-md-3 m-3">
             <router-link :to="'/Tv/' + tv.id">
-              <img class="opacity-100 shadow-lg rounded rounded-150 " :src="IMG_URL + tv.poster_path">
+              <img class="opacity-100 shadow-lg rounded rounded-150 " :src="IMG_URL + tv.poster_path" alt="">
             </router-link>
             <h2>{{ tv.name }}</h2>
           </div>
@@ -54,10 +54,10 @@ export default {
     },
     scroll() {
       window.onscroll = () => {
-        let bottomofWindow =
+        let BottomWindow =
             document.documentElement.scrollTop + window.innerWidth ===
             document.documentElement.offsetHeight;
-        if (bottomofWindow) {
+        if (BottomWindow) {
           currentPage += 1;
           this.fetchActors((currentPage += 1))
         }

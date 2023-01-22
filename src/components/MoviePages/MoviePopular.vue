@@ -10,7 +10,7 @@
           <div v-for="movie in Movies" :key="movie.id"
                class="col-lg-2 col-md-3 m-3">
             <router-link :to="'/Movie/'+ movie.id">
-              <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + movie.poster_path">
+              <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + movie.poster_path" alt="">
             </router-link>
             <h2>{{ movie.title }}</h2>
           </div>
@@ -53,10 +53,10 @@ export default {
     },
     scroll() {
       window.onscroll = () => {
-        let bottomofWindow =
+        let BottomWindow =
             document.documentElement.scrollTop + window.innerWidth ===
             document.documentElement.offsetHeight;
-        if (bottomofWindow) {
+        if (BottomWindow) {
           currentPage += 1;
           this.fetchActors((currentPage += 1))
         }

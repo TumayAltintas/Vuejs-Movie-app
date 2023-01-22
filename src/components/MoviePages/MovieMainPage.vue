@@ -9,10 +9,10 @@
             {{ Movie.vote_average }}
           </span>
           </div>
-          <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Movie.poster_path">
-          <router-link class="link-item" :to="'/Movie/' + Movie.id">
+          <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Movie.poster_path" alt="">
+          <router-link class="LinkItem" :to="'/Movie/' + Movie.id">
             <div class="title">
-              <h6 class="ptext">{{ Movie.title }}</h6>
+              <h6 class="TitleText">{{ Movie.title }}</h6>
             </div>
           </router-link>
         </div>
@@ -103,11 +103,11 @@ img {
 
 }
 
-.link-item {
+.LinkItem {
   text-decoration: none;
 }
 
-.ptext {
+.TitleText {
   color: black;
   font-weight: 700;
 }

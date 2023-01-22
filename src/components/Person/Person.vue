@@ -12,13 +12,13 @@
         <div>
         </div>
         <div>
-          <section  :people="People">
+          <section >
             <div class="row">
               <div v-for="person in People" :key="person.id"  class="col-lg-2 col-md-3 m-3">
                 <div>
                   <div>
                     <router-link to="">
-                      <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + person.profile_path">
+                      <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + person.profile_path" alt="">
                     </router-link>
                   </div>
                 </div>
