@@ -83,7 +83,7 @@ input[type="text"] {
   background-position: 50% 50%;
   align-content: center;
   justify-content: center;
-  background-image: url('./src/components/photo/backgraound.png');
+  background-image: url('https://initiate.alphacoders.com/images/644/cropped-1300-300-644681.png?975');
 
 
 }
