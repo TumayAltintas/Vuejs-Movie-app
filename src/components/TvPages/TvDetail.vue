@@ -213,20 +213,7 @@ p {
   background-image: linear-gradient(to right, rgba(31.5, 31.5, 31.5, 1) calc((50vw - 170px) - 340px), rgba(31.5, 31.5, 31.5, 0.84) 30%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
 }
 
-.genres::before {
-  content: '';
-  font-size: 1.1em;
-  line-height: 1;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 7px;
-  display: inline-flex;
-  align-content: center;
-  align-items: center;
-  z-index: -1;
-}
+
 
 .single {
   padding-top: 30px;

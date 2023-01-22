@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div v-bind:style="{ 'background-image': 'url(' + IMG_URL + MoviesDetails.backdrop_path + ')' }" class="all">
       <div class="custonbg">
         <div class="container">
@@ -15,12 +14,12 @@
                     <h2><a class="airdate"> ({{ airdate }})</a></h2>
                   </div>
                   <div class="d-flex">
-                    <div class="fact" v-for="(genres, index) in MoviesDetails.genres" :key="index">
-                      <span style="color:white;" class="genres">{{ genres.name }},</span>
+                    <div  v-for="(genres, index) in MoviesDetails.genres" :key="index">
+                      <span style="color:white;" class="genres">{{ genres.name }}</span>
                     </div>
                   </div>
                 </div>
-                <div  class="d-flex gap-3 align-items-center">
+                <div class="d-flex gap-3 align-items-center">
                   <div class="triangle" data-bs-toggle="modal" data-bs-target="#exampleModal">
                   </div>
                   <h3>Play Trailer</h3>
@@ -30,7 +29,7 @@
                     {{ MoviesDetails.tagline }}
                   </h3>
                 </div>
-                <div class="info">
+                <div>
                   <h2>Overview</h2>
                   <div>
                     <p>{{ MoviesDetails.overview }}</p>
@@ -57,8 +56,6 @@
         </div>
       </div>
     </div>
-  </div>
-
 </template>
 
 <script>
@@ -75,7 +72,7 @@ export default {
       slides: [],
       currentSlide: 0,
       backgroundColor: '',
-      airdate : ''
+      airdate: ''
     }
   },
   async mounted() {
@@ -84,7 +81,7 @@ export default {
         .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
         .then((response) => {
           this.MoviesDetails = response.data
-          this.airdate =response.data.release_date.slice(0,4)
+          this.airdate = response.data.release_date.slice(0, 4)
         })
     const TOP_MOVIE_CAST = 'https://api.themoviedb.org/3/movie/' + this.$route.params.id + '/credits?'
     axios
@@ -106,17 +103,17 @@ export default {
 
   }
 
-
 }
 </script>
 
 <style scoped>
-.airdate{
+.airdate {
   font-weight: 200;
   white-space: nowrap;
   text-decoration: none;
   color: white;
 }
+
 .title {
   width: 100%;
   white-space: normal;
@@ -207,14 +204,9 @@ p {
 
 .all {
   border-bottom: 1px solid var(--primaryColor);
-  --primaryColor: rgba(31.5, 31.5, 31.5, 1);
-  background-position: left calc((50vw - 170px) - 340px) top;
+  background-position: left calc((40vw - 170px) - 340px) top;
   background-size: cover;
   background-repeat: no-repeat;
-  width: 100%;
-  z-index: 1;
-  border-bottom: 1px solid rgba(var(--lightGrey), 1);
-  --lightGrey: rgb(227, 227, 227);
 }
 
 .custonbg {
@@ -226,20 +218,7 @@ p {
   rgba(31.5, 31.5, 31.5, 0.84) 30%, rgba(31.5, 31.5, 31.5, 0.84) 100%);
 }
 
-.genres::before {
-  content: '';
-  font-size: 1.1em;
-  line-height: 1;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 7px;
-  display: inline-flex;
-  align-content: center;
-  align-items: center;
-  z-index: -1;
-}
+
 
 .single {
   padding-top: 30px;
