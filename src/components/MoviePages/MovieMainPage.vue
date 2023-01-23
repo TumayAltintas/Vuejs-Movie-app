@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="row">
-      <div class="blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+      <div class="blur" id="carousel-wrapper">
         <div v-for="(Movie,index) in slides" :key="index"
              style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
           <div class="average">
@@ -49,15 +49,6 @@ export default {
         })
   },
 
-  computed: {
-    rows() {
-      return this.Movies.length
-    },
-    slidesLength() {
-      return this.slides.length;
-    }
-  },
-
 }
 </script>
 
@@ -86,7 +77,10 @@ div.average {
   width: max-content;
 }
 
-
+.blur {
+  overflow-y: hidden;
+  white-space: nowrap;
+}
 
 img {
   width: 165px;
