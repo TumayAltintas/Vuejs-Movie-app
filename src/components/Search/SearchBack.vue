@@ -83,7 +83,7 @@ input[type="text"] {
   background-position: 50% 50%;
   align-content: center;
   justify-content: center;
-  background-image: url('./src/components/photo/backgraound.png');
+  background-image: url(./src/components/photo/backgraound.png);
 
 
 }
