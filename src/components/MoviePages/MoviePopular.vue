@@ -5,17 +5,18 @@
       <button v-on:click.prevent="next()">Back</button>
     </div>
     <div>
-      <section>
         <div class="row">
-          <div v-for="movie in Movies" :key="movie.id"
-               class="col-lg-2 col-md-3 m-3">
-            <router-link :to="'/Movie/'+ movie.id">
-              <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + movie.poster_path" alt="">
-            </router-link>
-            <h2>{{ movie.title }}</h2>
+          <div v-for="(movie,index) in Movies" :key="index" class="col" style="margin-right: 40px;padding: 0; border: 1px solid #e3e3e3;;max-width: 180px;border-radius: 8px">
+            <div style="width: 180px">
+              <router-link :to="'/Movie/'+ movie.id">
+                <img style="width: 100%;border-radius: 8px"  :src="IMG_URL + movie.poster_path" alt="">
+              </router-link>
+            </div>
+            <div>
+              <h2>{{ movie.title }}</h2>
+            </div>
           </div>
-        </div>
-      </section>
+      </div>
     </div>
   </div>
 </template>
@@ -85,4 +86,6 @@ h2 {
   font-size: 16px;
   color: #000000
 }
+
+
 </style>
