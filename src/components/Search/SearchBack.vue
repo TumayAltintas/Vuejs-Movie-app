@@ -1,6 +1,6 @@
 <template>
   <div class="img-container container">
-    <div class="img-c">
+    <div class="img-c" v-bind:style="{ backgroundImage: 'url(' + require('src/components/photo/backgraound.png')  + ')' }">
       <section class="warms">
         <div>
           <h2>Welcome.</h2>
@@ -83,7 +83,7 @@ input[type="text"] {
   background-position: 50% 50%;
   align-content: center;
   justify-content: center;
-  background-image: url(./src/components/photo/backgraound.png);
+  /*background-image: url(./src/components/photo/backgraound.png);*/
 
 
 }
