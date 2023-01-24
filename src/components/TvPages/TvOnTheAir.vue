@@ -6,10 +6,10 @@
     </div>
     <div>
       <div class="row">
-        <div v-for="(tv,index) in Tv" :key="index" class="col" style="margin-right: 40px;padding: 0; border: 1px solid #e3e3e3;;max-width: 180px;border-radius: 8px">
-          <div style="width: 180px">
-            <router-link :to="'/Movie/'+ tv.id">
-              <img style="width: 100%;border-radius: 8px"  :src="IMG_URL + tv.poster_path" alt="">
+        <div v-for="(tv,index) in Tv" :key="index" class="col item">
+          <div class="item-product">
+            <router-link :to="'/Tv/'+ tv.id">
+              <img class="image" :src="IMG_URL + tv.poster_path" alt="">
             </router-link>
           </div>
           <div>
@@ -20,6 +20,7 @@
     </div>
   </div>
 </template>
+
 
 
 <script>
@@ -81,12 +82,23 @@ export default {
 
 
 <style scoped>
-img {
-  width: 150px;
+.image {
+  width: 100%;
+  border-radius: 8px
+}
+.item-product{
+  width: 180px;
+}
+.item {
+  margin-right: 40px;
+  padding: 0;
+  border: 1px solid #e3e3e3;;
+  max-width: 180px;
+  border-radius: 8px
 }
 
 h2 {
   font-size: 16px;
-  color: blue
+  color: #000000
 }
 </style>

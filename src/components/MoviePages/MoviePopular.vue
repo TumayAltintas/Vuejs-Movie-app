@@ -5,21 +5,22 @@
       <button v-on:click.prevent="next()">Back</button>
     </div>
     <div>
-        <div class="row">
-          <div v-for="(movie,index) in Movies" :key="index" class="col" style="margin-right: 40px;padding: 0; border: 1px solid #e3e3e3;;max-width: 180px;border-radius: 8px">
-            <div style="width: 180px">
-              <router-link :to="'/Movie/'+ movie.id">
-                <img style="width: 100%;border-radius: 8px"  :src="IMG_URL + movie.poster_path" alt="">
-              </router-link>
-            </div>
-            <div>
-              <h2>{{ movie.title }}</h2>
-            </div>
+      <div class="row">
+        <div v-for="(movie,index) in Movies" :key="index" class="col item">
+          <div class="item-product">
+            <router-link :to="'/Movie/'+ movie.id">
+              <img class="image" :src="IMG_URL + movie.poster_path" alt="">
+            </router-link>
           </div>
+          <div>
+            <h2>{{ movie.title }}</h2>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </template>
+
 
 <script>
 import axios from "axios";
@@ -78,14 +79,23 @@ export default {
 
 
 <style scoped>
-img {
-  width: 150px;
+.image {
+  width: 100%;
+  border-radius: 8px
+}
+.item-product{
+  width: 180px;
+}
+.item {
+  margin-right: 40px;
+  padding: 0;
+  border: 1px solid #e3e3e3;;
+  max-width: 180px;
+  border-radius: 8px
 }
 
 h2 {
   font-size: 16px;
   color: #000000
 }
-
-
 </style>
