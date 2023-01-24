@@ -1,18 +1,17 @@
 <template>
   <div class="container">
     <div>
-      <button v-on:click.prevent="previous()">next</button>
-      <button v-on:click.prevent="next()">next</button>
-      <button @click="TvButton">tv</button>
-      <button @click="MovieButton">movie</button>
+      <button v-on:click.prevent="previous()">Next</button>
+      <button v-on:click.prevent="next()">Back</button>
     </div>
     <div>
-      <section>
-        <div class="row">
-          <div v-for="data in search" :key="data.id" class="col-lg-2 col-md-3 m-3">
-            <img style="width: 150px; height: 225px" class="opacity-100 shadow-lg rounded rounded-150 "
-                 v-if="data.poster_path == null" src="../photo/empty.jpg" alt="">
-            <img v-else class="opacity-100 shadow-lg rounded rounded-150 " :src="IMG_URL + data.poster_path" alt="">
+      <div class="row">
+        <div v-for="(data,index) in search" :key="index" class="col item">
+          <div class="item-product">
+            <img v-if="data.poster_path == null" class="image" :src="IMG_URL + data.poster_path" alt="">
+            <img v-else class="image" :src="IMG_URL + data.poster_path" alt="">
+          </div>
+          <div>
             <router-link class="LinkItem" :to="'/Tv/'+ data.id">
               <h2>{{ data.name }}</h2>
             </router-link>
@@ -21,12 +20,23 @@
             </router-link>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   </div>
 </template>
 
+<!--<img style="width: 150px; height: 225px" class="opacity-100 shadow-lg rounded rounded-150 "-->
+<!--//      v-if="data.poster_path == null" src="../photo/empty.jpg" alt="">-->
+<!--//   <img v-else class="opacity-100 shadow-lg rounded rounded-150 " :src="IMG_URL + data.poster_path" alt="">-->
+<!--//   <router-link class="LinkItem" :to="'/Tv/'+ data.id">-->
+<!--//   <h2>{{ data.name }}</h2>-->
+<!--// </router-link>-->
+<!--// <router-link class="LinkItem" :to="'/Movie/'+ data.id">-->
+<!--//     <h2>{{ data.title }}</h2>-->
+<!--// </router-link>-->
 <script>
+
+
 import axios from "axios";
 
 let currentPage = 1;
@@ -93,25 +103,30 @@ export default {
 
 
 <style scoped>
-img {
-  width: 150px;
+.image {
+  width: 100%;
+  border-radius: 8px
+}
+
+.item-product {
+  width: 180px;
+}
+
+.item {
+  margin-right: 40px;
+  padding: 0;
+  border: 1px solid #e3e3e3;;
+  max-width: 180px;
+  border-radius: 8px
 }
 
 h2 {
   font-size: 16px;
-  color: black;
-  display: flex;
-  align-content: flex-start;
-  flex-wrap: wrap;
-  text-decoration: none;
-
+  color: #000000
 }
-
 .LinkItem {
   text-decoration: none;
   margin: 0;
   padding: 0;
 }
-
 </style>
-
