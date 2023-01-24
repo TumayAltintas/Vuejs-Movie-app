@@ -3,8 +3,8 @@
     <div>
       <button v-on:click.prevent="previous()">Next</button>
       <button v-on:click.prevent="next()">Back</button>
-      <button class="btn btn-primary" v-on:click.prevent="TvButton()">Tv</button>
-      <button class="btn btn-primary" v-on:click.prevent="MovieButton()">Movie</button>
+      <button class="btn btn-primary" @click="TvButton()">Tv</button>
+      <button class="btn btn-primary" @click="MovieButton()">Movie</button>
     </div>
     <div>
       <div class="row">
