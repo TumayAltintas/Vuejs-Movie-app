@@ -29,7 +29,7 @@ export default {
       searchText: "",
       random: Math.floor(Math.random() * 200),
       second: '',
-      image : "./src/components/photo/backgraound.png"
+      image : "../components/photo/backgraound.png"
     }
   },
   // async mounted() {
