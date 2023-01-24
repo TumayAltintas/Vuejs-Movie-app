@@ -3,12 +3,14 @@
     <div>
       <button v-on:click.prevent="previous()">Next</button>
       <button v-on:click.prevent="next()">Back</button>
+      <button class="btn btn-primary" v-on:click.prevent="TvButton()">Tv</button>
+      <button class="btn btn-primary" v-on:click.prevent="MovieButton()">Movie</button>
     </div>
     <div>
       <div class="row">
         <div v-for="(data,index) in search" :key="index" class="col item">
           <div class="item-product">
-            <img v-if="data.poster_path == null" class="image" :src="IMG_URL + data.poster_path" alt="">
+            <img class="imageE" v-if="data.poster_path == null" src="../photo/empty.jpg" alt="">
             <img v-else class="image" :src="IMG_URL + data.poster_path" alt="">
           </div>
           <div>
@@ -26,7 +28,10 @@
 </template>
 
 <script>
+
+
 import axios from "axios";
+
 let currentPage = 1;
 export default {
   name: "SearchMain",
@@ -95,6 +100,10 @@ export default {
   width: 100%;
   border-radius: 8px
 }
+.imageE{
+ width: 100%;
+  height: 270px;
+}
 
 .item-product {
   width: 180px;
@@ -112,7 +121,6 @@ h2 {
   font-size: 16px;
   color: #000000
 }
-
 .LinkItem {
   text-decoration: none;
   margin: 0;
