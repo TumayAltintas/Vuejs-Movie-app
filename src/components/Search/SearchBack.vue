@@ -29,7 +29,7 @@ export default {
       searchText: "",
       random: Math.floor(Math.random() * 200),
       second: '',
-      image : "../components/photo/backgraound.png"
+      image : "./src/components/photo/backgraound.jpg"
     }
   },
   // async mounted() {
@@ -84,7 +84,7 @@ input[type="text"] {
   background-position: 50% 50%;
   align-content: center;
   justify-content: center;
-  /*background-image: url(./src/components/photo/backgraound.png);*/
+  /*background-image: url(./src/components/photo/backgraound.jpg);*/
 
 
 }
