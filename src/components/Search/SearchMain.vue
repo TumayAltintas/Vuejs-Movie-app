@@ -25,20 +25,8 @@
   </div>
 </template>
 
-<!--<img style="width: 150px; height: 225px" class="opacity-100 shadow-lg rounded rounded-150 "-->
-<!--//      v-if="data.poster_path == null" src="../photo/empty.jpg" alt="">-->
-<!--//   <img v-else class="opacity-100 shadow-lg rounded rounded-150 " :src="IMG_URL + data.poster_path" alt="">-->
-<!--//   <router-link class="LinkItem" :to="'/Tv/'+ data.id">-->
-<!--//   <h2>{{ data.name }}</h2>-->
-<!--// </router-link>-->
-<!--// <router-link class="LinkItem" :to="'/Movie/'+ data.id">-->
-<!--//     <h2>{{ data.title }}</h2>-->
-<!--// </router-link>-->
 <script>
-
-
 import axios from "axios";
-
 let currentPage = 1;
 export default {
   name: "SearchMain",
@@ -124,6 +112,7 @@ h2 {
   font-size: 16px;
   color: #000000
 }
+
 .LinkItem {
   text-decoration: none;
   margin: 0;
