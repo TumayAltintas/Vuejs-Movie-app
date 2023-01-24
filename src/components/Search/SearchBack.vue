@@ -1,6 +1,6 @@
 <template>
   <div class="img-container container">
-    <div class="img-c" v-bind:style="{ backgroundImage: 'url(' + require('src/components/photo/backgraound.png')  + ')' }">
+    <div class="img-c" v-bind:style="{ 'background-image': 'url(' + image + ')' }">
       <section class="warms">
         <div>
           <h2>Welcome.</h2>
@@ -29,6 +29,7 @@ export default {
       searchText: "",
       random: Math.floor(Math.random() * 200),
       second: '',
+      image : "./src/components/photo/backgraound.png"
     }
   },
   // async mounted() {
