@@ -1,6 +1,6 @@
 <template>
   <div class="img-container container">
-    <div class="img-c" >
+    <div class="img-c" style="background-image: url(src/components/photo/backgraound.jpg);">
       <section class="warms">
         <div>
           <h2>Welcome.</h2>
@@ -73,7 +73,7 @@ input[type="text"] {
 }
 
 .img-c {
-  background-image: url(src/components/photo/backgraound.jpg);
+
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
