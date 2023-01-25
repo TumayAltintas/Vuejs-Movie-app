@@ -52,10 +52,9 @@ export default {
   methods: {
     async fetchActors(page) {
       try {
-        const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
         const People = 'https://api.themoviedb.org/3/person/popular?';
         axios
-          .get(People + API_KEY + '&language=en-US&page=' + page)
+          .get(People + this.API_KEY + '&language=en-US&page=' + page)
           .then((response) => {
 
             this.People = response.data.results

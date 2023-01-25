@@ -1,6 +1,6 @@
 <template>
   <div class="img-container container">
-    <div class="img-c" v-bind:style="{ 'background-image': 'url(' + image + ')' }">
+    <div class="img-c" >
       <section class="warms">
         <div>
           <h2>Welcome.</h2>
@@ -19,7 +19,7 @@
 <script>
 // import axios from "axios";
 
-const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
+
 export default {
   name: "SearchBack",
   data() {
@@ -29,13 +29,12 @@ export default {
       searchText: "",
       random: Math.floor(Math.random() * 200),
       second: '',
-      image : "../components/photo/backgraound.jpg"
     }
   },
   // async mounted() {
   //   const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + 98 + '?';
   //   axios
-  //       .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
+  //       .get(TOP_MOVIE_DETAILS + this.API_KEY + '&language=en-US')
   //       .then((response) => {
   //         this.MoviesDetails = response.data.backdrop_path
   //       })
@@ -84,7 +83,7 @@ input[type="text"] {
   background-position: 50% 50%;
   align-content: center;
   justify-content: center;
-  /*background-image: url(./src/components/photo/backgraound.jpg);*/
+  background-image: url(./src/components/photo/backgraound.jpg);
 
 
 }

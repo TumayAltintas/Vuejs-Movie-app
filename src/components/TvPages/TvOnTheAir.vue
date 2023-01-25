@@ -44,10 +44,10 @@ export default {
   methods: {
     async fetchActors(page) {
       try {
-        const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
+
         const TOP_MOVIE_URL = 'https://api.themoviedb.org/3/search/';
         axios
-            .get(TOP_MOVIE_URL + this.key + '&language=en-US&page=' + API_KEY + this.$route.params.id + page)
+            .get(TOP_MOVIE_URL + this.key + '&language=en-US&page=' + this.API_KEY + this.$route.params.id + page)
             .then((response) => {
 
               this.Tv = response.data.results

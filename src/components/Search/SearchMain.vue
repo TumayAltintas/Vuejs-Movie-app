@@ -50,10 +50,9 @@ export default {
   methods: {
     async fetchActors(page) {
       try {
-        const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
         const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/search/' + this.text + '?';
         axios
-            .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US&query=' + this.$route.params.query + '&page=' + page)
+            .get(TOP_MOVIE_DETAILS + this.API_KEY + '&language=en-US&query=' + this.$route.params.query + '&page=' + page)
 
             .then((response) => {
               this.search = response.data.results

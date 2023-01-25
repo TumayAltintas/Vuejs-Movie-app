@@ -34,16 +34,14 @@ export default {
       slides: [],
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
       currentSlide: 0,
-
     }
   },
 
   mounted() {
-    const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
     const TOP_MOVIE_URL = 'https://api.themoviedb.org/3/trending/all/week?';
 
     axios
-        .get(TOP_MOVIE_URL + API_KEY)
+        .get(TOP_MOVIE_URL + this.API_KEY)
         .then((response) => {
           this.slides = response.data.results
         })

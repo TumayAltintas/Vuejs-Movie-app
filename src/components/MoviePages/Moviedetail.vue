@@ -61,7 +61,7 @@
 <script>
 import axios from "axios";
 
-const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
+
 export default {
   name: "MovieDetail",
   data() {
@@ -85,7 +85,7 @@ export default {
         })
     const TOP_MOVIE_CAST = 'https://api.themoviedb.org/3/movie/' + this.$route.params.id + '/credits?'
     axios
-        .get(TOP_MOVIE_CAST + API_KEY + '&language=en-US')
+        .get(TOP_MOVIE_CAST + this.API_KEY + '&language=en-US')
         .then((res) => {
           this.slides = res.data.cast
         })
