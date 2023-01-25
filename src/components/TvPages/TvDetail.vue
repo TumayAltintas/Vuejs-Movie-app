@@ -78,7 +78,7 @@ export default {
 
     const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/tv/' + this.$route.params.id + '?';
     axios
-        .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
+        .get(TOP_MOVIE_DETAILS + this.API_KEY + '&language=en-US')
         .then((response) => {
           this.TvDetails = response.data
           this.AirDate = response.data.first_air_date.slice(0, 4)

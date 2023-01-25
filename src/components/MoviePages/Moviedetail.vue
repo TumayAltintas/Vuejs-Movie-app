@@ -78,7 +78,7 @@ export default {
   async mounted() {
     const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + this.$route.params.id + '?';
     axios
-        .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
+        .get(TOP_MOVIE_DETAILS + this.API_KEY + '&language=en-US')
         .then((response) => {
           this.MoviesDetails = response.data
           this.AirDate = response.data.release_date.slice(0, 4)

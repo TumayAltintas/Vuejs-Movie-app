@@ -73,7 +73,6 @@ input[type="text"] {
 }
 
 .img-c {
-
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
