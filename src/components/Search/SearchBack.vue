@@ -73,6 +73,7 @@ input[type="text"] {
 }
 
 .img-c {
+  background-image: url(src/components/photo/backgraound.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -83,7 +84,6 @@ input[type="text"] {
   background-position: 50% 50%;
   align-content: center;
   justify-content: center;
-  background-image: url(src/components/photo/backgraound.jpg);
 
 
 }
