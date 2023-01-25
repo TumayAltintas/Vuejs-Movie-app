@@ -53,7 +53,7 @@ export default {
     }
   },
   async mounted() {
-    const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
+
     const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/tv/' + 100088 + '?';
     axios
         .get(TOP_MOVIE_DETAILS + API_KEY + '&language=en-US')
@@ -65,10 +65,9 @@ export default {
   },
   created() {
 
-    const API_KEY = 'api_key=0fd2eb610862a35172254f63379f6e14';
     const TOP_MOVIE_CAST = 'https://api.themoviedb.org/3/tv/' + 100088 + '/credits?'
     axios
-        .get(TOP_MOVIE_CAST + API_KEY + '&language=en-US')
+        .get(TOP_MOVIE_CAST + this.API_KEY + '&language=en-US')
         .then((res) => {
           this.slides = res.data.cast
         })
