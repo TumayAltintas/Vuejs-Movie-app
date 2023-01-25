@@ -2,7 +2,7 @@
   <div class="row mb-5">
     <div class="Trending blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
       <div v-for="(week,index) in slides" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
-        <div class="average">
+        <div  class="average">
           <span style="color:#000;">
             {{ week.vote_average }}
           </span>

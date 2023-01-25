@@ -9,7 +9,7 @@
               <router-link class="LinkItem" to="/Movie/Popular">Popular</router-link>
               <router-link class="LinkItem" to="/Movie/NowPlaying">Now Playing</router-link>
               <router-link class="LinkItem" to="/Movie/MovieUpComing">Upcoming</router-link>
-              <router-link class="LinkItem" to="">Top Rated</router-link>
+<!--              <router-link class="LinkItem" to="">Top Rated</router-link>-->
             </div>
           </div>
           <div style="margin-left: 25px" class="dropdown">
@@ -17,7 +17,7 @@
             <div class="dropdown-content">
               <router-link class="LinkItem" to="/Tv/Popular">Popular</router-link>
               <router-link class="LinkItem" to="/Tv/AiringToday">Airing Today</router-link>
-              <router-link class="LinkItem" to="/Tv/OnTheAir">On Tv</router-link>
+<!--              <router-link class="LinkItem" to="/Tv/OnTheAir">On Tv</router-link>-->
               <router-link class="LinkItem" to="/Tv/TopRated">Top Rated</router-link>
             </div>
           </div>
