@@ -4,7 +4,7 @@ import router from './router/router.js'
 import {appAxios} from "./axios/AppAxios.js";
 import store from "./store/store.js";
 import Header from "./components/HeaderAndOthers/Header.vue";
-import{API_KEY} from "./components/HeaderAndOthers/Globaljs.js"
+import{API_KEY} from "./Globaljs/Globaljs.js"
 
 
 

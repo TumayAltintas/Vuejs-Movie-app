@@ -6,8 +6,8 @@
           <span style="color:#000;">
             {{ Day.vote_average }}
           </span>
-          </div>
-          <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Day.poster_path" alt="">
+        </div>
+        <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Day.poster_path" alt="">
         <div v-if="Day.media_type='movie'" class="title">
           <router-link class="LinkItem" v-if="Day.media_type='tv'" :to="'/Movie/' + Day.id">
             <p>{{ Day.title }}</p>

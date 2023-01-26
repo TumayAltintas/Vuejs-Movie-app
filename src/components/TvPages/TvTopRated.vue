@@ -76,20 +76,27 @@ export default {
 
 }
 </script>
+
+
+
 <style scoped>
 .image {
   width: 100%;
-  border-radius: 8px
+  height: 300px;
+  border-top-left-radius: 8px 8px;
+  border-top-right-radius: 8px 8px;
+
 }
 .item-product{
-  width: 180px;
+  width: 200px;
 }
 .item {
   margin-right: 40px;
   padding: 0;
   border: 1px solid #e3e3e3;;
-  max-width: 180px;
-  border-radius: 8px
+  max-width: 200px;
+  border-radius: 8px;
+  margin-bottom: 25px;
 }
 
 h2 {
