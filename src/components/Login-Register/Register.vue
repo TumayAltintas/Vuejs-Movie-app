@@ -28,7 +28,6 @@ export default {
     onSave() {
       this.$appAxios.post("/users",{...this.userData}).then((res) =>{
         this.$router.push({ name: "home" });
-       console.log(this.userData)
      }).catch((err) =>{
        console.log(err)
      })

@@ -58,7 +58,6 @@ export default {
           .then((response) => {
 
             this.People = response.data.results
-            console.log(this.People)
           })
       } catch (error) {
         console.log(error)
