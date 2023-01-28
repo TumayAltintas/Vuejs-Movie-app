@@ -24,7 +24,7 @@
           <div style="margin-left: 25px" class="dropdown">
             <a style="color: white;cursor: pointer;" >People</a>
             <div class="dropdown-content">
-              <router-link class="LinkItem" to="#">Popular People</router-link>
+              <router-link class="LinkItem" to="/Person/Popular">Popular People</router-link>
             </div>
           </div>
         </div>

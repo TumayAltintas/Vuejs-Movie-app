@@ -2,7 +2,7 @@
   <div class="row mb-5">
     <div class="Trending blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
       <div v-for="(week,index) in slides" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
-        <div  class="average">
+        <div class="average">
           <span style="color:#000;">
             {{ week.vote_average }}
           </span>
@@ -25,7 +25,6 @@
 
 <script>
 import axios from 'axios'
-import {API_TRENDING_WEEK} from "../../Globaljs/Globaljs.js";
 
 export default {
   name: 'TrendingWeek',
@@ -40,7 +39,7 @@ export default {
   mounted() {
 
     axios
-        .get(this.API_TRENDING_WEEK + this.API_KEY)
+        .get(this.API + 'trending/all/week?' + this.API_KEY)
         .then((response) => {
           this.slides = response.data.results
         })

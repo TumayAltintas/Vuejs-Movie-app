@@ -25,8 +25,6 @@
 
 <script>
 import axios from 'axios'
-import {API_TRENDING_DAY} from "../../Globaljs/Globaljs.js";
-
 
 export default {
   name: 'TrendingDay',
@@ -42,7 +40,7 @@ export default {
 
   mounted() {
     axios
-        .get(this.API_TRENDING_DAY + this.API_KEY)
+        .get(this.API + 'trending/all/day?' + this.API_KEY)
         .then((response) => {
           this.slides = response.data.results
         })

@@ -40,7 +40,7 @@ export default {
     async fetchActors(page) {
       try {
         axios
-            .get(this.API_TV + 'airing_today?' + this.API_KEY + '&language=en-US&page=' + page)
+            .get(this.API + 'tv/airing_today?' + this.API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
 
               this.Tv = response.data.results

@@ -39,7 +39,7 @@ export default {
 
 
     axios
-        .get(this.API_TV + 'top_rated?' + this.API_KEY + '&language=en-US&page=' + this.currentPage)
+        .get(this.API+ 'tv/top_rated?' + this.API_KEY + '&language=en-US&page=' + this.currentPage)
         .then((response) => {
 
           this.slides = response.data.results

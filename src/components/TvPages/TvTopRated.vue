@@ -41,7 +41,7 @@ export default {
       try {
 
         axios
-            .get(this.API_TV + 'top_rated?' + this.API_KEY + '&language=en-US&page=' + page)
+            .get(this.API + 'tv/top_rated?' + this.API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
 
               this.Tv = response.data.results

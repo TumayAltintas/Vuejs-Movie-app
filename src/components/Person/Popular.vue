@@ -1,36 +1,24 @@
 <template>
-  <section>
+  <div class="container">
     <div>
-      <Header></Header>
+      <button v-on:click.prevent="previous()">Next</button>
+      <button v-on:click.prevent="next()">Back</button>
     </div>
     <div>
-      <div class="container">
-        <div>
-          <button v-on:click.prevent="previous()"><<</button>
-          <button v-on:click.prevent="next()">>></button>
-        </div>
-        <div>
-        </div>
-        <div>
-          <section >
-            <div class="row">
-              <div v-for="person in People" :key="person.id"  class="col-lg-2 col-md-3 m-3">
-                <div>
-                  <div>
-                    <router-link to="">
-                      <img class="opacity-100 shadow-lg rounded rounded-150" :src="this.API_IMG_URL + person.profile_path" alt="">
-                    </router-link>
-                  </div>
-                </div>
-                <h2>{{ person.name }}</h2>
-              </div>
-            </div>
-          </section>
+      <div class="row">
+        <div  v-for="person in People" :key="person.id" class="col item">
+          <div class="item-product">
+            <router-link to="">
+              <img class="image" :src="this.API_IMG_URL + person.profile_path" alt="">
+            </router-link>
+          </div>
+          <div>
+            <h2>{{ person.name }}</h2>
+          </div>
         </div>
       </div>
     </div>
-  </section>
-
+  </div>
 </template>
 
 <script>
@@ -53,7 +41,7 @@ export default {
     async fetchActors(page) {
       try {
         axios
-          .get(this.API_PEOPLE + this.API_KEY + '&language=en-US&page=' + page)
+          .get(this.API + 'person/popular?' + this.API_KEY + '&language=en-US&page=' + page)
           .then((response) => {
 
             this.People = response.data.results
@@ -88,10 +76,29 @@ export default {
 
 
 <style scoped>
-img{
-  width: 150px;
+.image {
+  width: 100%;
+  height: 300px;
+  border-top-left-radius: 8px 8px;
+  border-top-right-radius: 8px 8px;
+
 }
-h2{
-  font-size: 16px; color: blue
+
+.item-product {
+  width: 200px;
+}
+
+.item {
+  margin-right: 40px;
+  padding: 0;
+  border: 1px solid #e3e3e3;;
+  max-width: 200px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+h2 {
+  font-size: 16px;
+  color: #000000
 }
 </style>

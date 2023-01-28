@@ -52,7 +52,7 @@ export default {
       try {
 
         axios
-            .get(this.API_SEARCH + this.text + '?' + this.API_KEY + '&language=en-US&query=' + this.$route.params.query + '&page=' + page)
+            .get(this.API + 'search/' + this.text + '?' + this.API_KEY + '&language=en-US&query=' + this.$route.params.query + '&page=' + page)
 
             .then((response) => {
               this.search = response.data.results
