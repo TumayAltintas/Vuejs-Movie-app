@@ -39,7 +39,7 @@ export default {
   mounted() {
 
     axios
-        .get(this.API_MOVIE_TOP_URL + this.API_KEY + '&language=en-US&page=' + this.currentPage)
+        .get(this.API_MOVIE + 'top_rated?' + this.API_KEY + '&language=en-US&page=' + this.currentPage)
         .then((response) => {
 
           this.slides = response.data.results

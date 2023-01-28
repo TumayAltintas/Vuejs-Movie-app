@@ -75,13 +75,13 @@ export default {
   async mounted() {
 
     axios
-        .get(this.API_MOVIE_DETAILS+ this.$route.params.id + '?' + this.API_KEY + '&language=en-US')
+        .get(this.API_MOVIE+ this.$route.params.id + '?' + this.API_KEY + '&language=en-US')
         .then((response) => {
           this.MoviesDetails = response.data
           this.AirDate = response.data.release_date.slice(0, 4)
         })
     axios
-        .get(this.API_MOVIE_DETAILS + this.$route.params.id + '/credits?' + this.API_KEY + '&language=en-US')
+        .get(this.API_MOVIE + this.$route.params.id + '/credits?' + this.API_KEY + '&language=en-US')
         .then((res) => {
           this.slides = res.data.cast
         })

@@ -38,9 +38,8 @@ export default {
   async mounted() {
 
 
-
     axios
-        .get(this.TOP_TV_TOP_URL + this.API_KEY + '&language=en-US&page=' + this.currentPage)
+        .get(this.API_TV + 'top_rated?' + this.API_KEY + '&language=en-US&page=' + this.currentPage)
         .then((response) => {
 
           this.slides = response.data.results
@@ -81,6 +80,7 @@ div.average {
 img {
   width: 165px;
 }
+
 .LinkItem {
   text-decoration: none;
 }

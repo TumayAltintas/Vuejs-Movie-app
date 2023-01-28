@@ -41,7 +41,7 @@ export default {
       try {
 
         axios
-            .get(this.TOP_TV_TOP_URL + this.API_KEY + '&language=en-US&page=' + page)
+            .get(this.API_TV + 'top_rated?' + this.API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
 
               this.Tv = response.data.results
@@ -75,7 +75,6 @@ export default {
 </script>
 
 
-
 <style scoped>
 .image {
   width: 100%;
@@ -84,9 +83,11 @@ export default {
   border-top-right-radius: 8px 8px;
 
 }
-.item-product{
+
+.item-product {
   width: 200px;
 }
+
 .item {
   margin-right: 40px;
   padding: 0;

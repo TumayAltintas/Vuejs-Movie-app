@@ -42,7 +42,7 @@ export default {
     async fetchActors(page) {
       try {
         axios
-            .get(this.API_MOVIE_POPULAR_URL + this.API_KEY + '&language=en-US&page=' + page)
+            .get(this.API_MOVIE+ 'popular?' + this.API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
 
               this.Movies = response.data.results

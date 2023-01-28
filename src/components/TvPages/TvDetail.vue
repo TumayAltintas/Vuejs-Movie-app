@@ -77,13 +77,13 @@ export default {
 
 
     axios
-        .get(this.API_TV_DETAILS + this.$route.params.id + '?' + this.API_KEY + '&language=en-US')
+        .get(this.API_TV + this.$route.params.id + '?' + this.API_KEY + '&language=en-US')
         .then((response) => {
           this.TvDetails = response.data
           this.AirDate = response.data.first_air_date.slice(0, 4)
         })
     axios
-        .get(this.API_TV_DETAILS + this.$route.params.id + '/credits?' + this.API_KEY + '&language=en-US')
+        .get(this.API_TV + this.$route.params.id + '/credits?' + this.API_KEY + '&language=en-US')
         .then((res) => {
           this.slides = res.data.cast
         })

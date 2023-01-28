@@ -40,7 +40,7 @@ export default {
     async fetchActors(page) {
       try {
         axios
-            .get(this.API_TV_AIRINGTODAY_URL + this.API_KEY + '&language=en-US&page=' + page)
+            .get(this.API_TV + 'airing_today?' + this.API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
 
               this.Tv = response.data.results
@@ -74,7 +74,6 @@ export default {
 </script>
 
 
-
 <style scoped>
 .image {
   width: 100%;
@@ -83,9 +82,11 @@ export default {
   border-top-right-radius: 8px 8px;
 
 }
-.item-product{
+
+.item-product {
   width: 200px;
 }
+
 .item {
   margin-right: 40px;
   padding: 0;
