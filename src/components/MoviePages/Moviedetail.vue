@@ -60,8 +60,7 @@
 
 <script>
 import axios from "axios";
-
-
+import {API_MOVIE_DETAILS} from "../../Globaljs/Globaljs.js";
 export default {
   name: "MovieDetail",
   data() {
@@ -76,16 +75,15 @@ export default {
     }
   },
   async mounted() {
-    const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + this.$route.params.id + '?';
+
     axios
-        .get(TOP_MOVIE_DETAILS + this.API_KEY + '&language=en-US')
+        .get(this.API_MOVIE_DETAILS+ this.$route.params.id + '?' + this.API_KEY + '&language=en-US')
         .then((response) => {
           this.MoviesDetails = response.data
           this.AirDate = response.data.release_date.slice(0, 4)
         })
-    const TOP_MOVIE_CAST = 'https://api.themoviedb.org/3/movie/' + this.$route.params.id + '/credits?'
     axios
-        .get(TOP_MOVIE_CAST + this.API_KEY + '&language=en-US')
+        .get(this.API_MOVIE_DETAILS + this.$route.params.id + '/credits?' + this.API_KEY + '&language=en-US')
         .then((res) => {
           this.slides = res.data.cast
         })

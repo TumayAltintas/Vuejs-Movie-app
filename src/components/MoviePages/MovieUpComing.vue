@@ -41,9 +41,8 @@ export default {
   methods: {
     async fetchActors(page) {
       try {
-        const TOP_MOVIE_URL = 'https://api.themoviedb.org/3/movie/upcoming?';
         axios
-            .get(TOP_MOVIE_URL + this.API_KEY + '&language=en-US&page=' + page)
+            .get(this.API_MOVIE_UPCOMING_URL + this.API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
               this.Movies = response.data.results
             })

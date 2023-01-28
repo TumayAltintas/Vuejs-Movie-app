@@ -25,6 +25,7 @@
 
 <script>
 import axios from "axios";
+import {API_TV_POPULAR_URL} from "../../Globaljs/Globaljs.js";
 
 let currentPage = 1;
 export default {
@@ -43,10 +44,8 @@ export default {
   methods: {
     async fetchActors(page) {
       try {
-
-        const TOP_MOVIE_URL = 'https://api.themoviedb.org/3/tv/popular?';
         axios
-            .get(TOP_MOVIE_URL + this.API_KEY + '&language=en-US&page=' + page)
+            .get(this.API_TV_POPULAR_URL + this.API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
 
               this.Tv = response.data.results

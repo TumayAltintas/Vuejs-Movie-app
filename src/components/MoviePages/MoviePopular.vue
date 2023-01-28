@@ -25,6 +25,8 @@
 <script>
 import axios from "axios";
 
+
+
 let currentPage = 1;
 export default {
   name: "MoviePopular",
@@ -41,9 +43,8 @@ export default {
   methods: {
     async fetchActors(page) {
       try {
-        const TOP_MOVIE_URL = 'https://api.themoviedb.org/3/movie/top_rated?';
         axios
-            .get(TOP_MOVIE_URL + this.API_KEY + '&language=en-US&page=' + page)
+            .get(this.API_MOVIE_POPULAR_URL + this.API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
 
               this.Movies = response.data.results

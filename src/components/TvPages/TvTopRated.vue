@@ -42,9 +42,8 @@ export default {
     async fetchActors(page) {
       try {
 
-        const TOP_MOVIE_URL = 'https://api.themoviedb.org/3/tv/top_rated?';
         axios
-            .get(TOP_MOVIE_URL + this.API_KEY + '&language=en-US&page=' + page)
+            .get(this.TOP_TV_TOP_URL + this.API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
 
               this.Tv = response.data.results

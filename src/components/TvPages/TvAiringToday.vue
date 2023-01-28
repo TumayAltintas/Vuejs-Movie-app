@@ -40,10 +40,8 @@ export default {
   methods: {
     async fetchActors(page) {
       try {
-
-        const TOP_MOVIE_URL = 'https://api.themoviedb.org/3/tv/airing_today?';
         axios
-            .get(TOP_MOVIE_URL + this.API_KEY + '&language=en-US&page=' + page)
+            .get(this.API_TV_AIRINGTODAY_URL + this.API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
 
               this.Tv = response.data.results

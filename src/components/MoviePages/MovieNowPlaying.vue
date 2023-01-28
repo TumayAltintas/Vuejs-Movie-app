@@ -24,7 +24,6 @@
 <script>
 import axios from "axios";
 import Header from "../HeaderAndOthers/Header.vue";
-
 let currentPage = 1;
 export default {
   name: "MovieNowPlaying",
@@ -42,10 +41,8 @@ export default {
   methods: {
     async fetchActors(page) {
       try {
-
-        const TOP_MOVIE_URL = 'https://api.themoviedb.org/3/movie/now_playing?';
         axios
-            .get(TOP_MOVIE_URL + this.API_KEY + '&language=en-US&page=' + page)
+            .get(this.API_MOVIE_NOWPLAYING_URL + this.API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
               this.Movies = response.data.results
             })

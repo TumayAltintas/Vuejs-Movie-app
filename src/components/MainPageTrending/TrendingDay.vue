@@ -25,6 +25,7 @@
 
 <script>
 import axios from 'axios'
+import {API_TRENDING_DAY} from "../../Globaljs/Globaljs.js";
 
 
 export default {
@@ -40,9 +41,8 @@ export default {
   },
 
   mounted() {
-    const TOP_MOVIE_URL = 'https://api.themoviedb.org/3/trending/all/day?';
     axios
-        .get(TOP_MOVIE_URL + this.API_KEY)
+        .get(this.API_TRENDING_DAY + this.API_KEY)
         .then((response) => {
           this.slides = response.data.results
         })

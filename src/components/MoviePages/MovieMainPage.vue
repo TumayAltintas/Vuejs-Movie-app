@@ -39,10 +39,8 @@ export default {
 
   mounted() {
 
-    const TOP_MOVIE_URL = 'https://api.themoviedb.org/3/movie/top_rated?';
-
     axios
-        .get(TOP_MOVIE_URL + this.API_KEY + '&language=en-US&page=' + this.currentPage)
+        .get(this.API_MOVIE_TOP_URL + this.API_KEY + '&language=en-US&page=' + this.currentPage)
         .then((response) => {
 
           this.slides = response.data.results

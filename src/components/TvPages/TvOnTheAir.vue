@@ -22,21 +22,17 @@
 </template>
 
 
-
 <script>
 import axios from "axios";
 
 let currentPage = 1;
 export default {
-  name: "SearchMain",
+  name: "tvPopular",
   data() {
     return {
       Tv: [],
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
-      key: 'keyword?'
-
     }
-
   },
   mounted() {
     this.fetchActors(currentPage)
@@ -44,10 +40,8 @@ export default {
   methods: {
     async fetchActors(page) {
       try {
-
-        const TOP_MOVIE_URL = 'https://api.themoviedb.org/3/search/';
         axios
-            .get(TOP_MOVIE_URL + this.key + '&language=en-US&page=' + this.API_KEY + this.$route.params.id + page)
+            .get(this.API_TV_ONTHEAIR_URL + this.API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
 
               this.Tv = response.data.results

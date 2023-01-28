@@ -25,6 +25,7 @@
 
 <script>
 import axios from 'axios'
+import {API_TRENDING_WEEK} from "../../Globaljs/Globaljs.js";
 
 export default {
   name: 'TrendingWeek',
@@ -38,10 +39,9 @@ export default {
   },
 
   mounted() {
-    const TOP_MOVIE_URL = 'https://api.themoviedb.org/3/trending/all/week?';
 
     axios
-        .get(TOP_MOVIE_URL + this.API_KEY)
+        .get(this.API_TRENDING_WEEK + this.API_KEY)
         .then((response) => {
           this.slides = response.data.results
         })
