@@ -1,12 +1,12 @@
 <template>
   <div>
-    <div v-bind:style="{ 'background-image': 'url(' + IMG_URL + TvDetails.backdrop_path + ')' }" class="all">
+    <div v-bind:style="{ 'background-image': 'url(' + this.API_IMG_URL + TvDetails.backdrop_path + ')' }" class="all">
       <div class="CustomBg">
         <div class="container">
           <div class="single">
             <section class="d-flex">
               <div class="origin">
-                <img :src="IMG_URL + TvDetails.poster_path" alt="">
+                <img :src="this.API_IMG_URL + TvDetails.poster_path" alt="">
               </div>
               <section class="section-link" :style="{backgroundColor}">
                 <div class="title  row">
@@ -45,7 +45,7 @@
           <div>
             <img v-if="cast.profile_path == null" class="ImgCast" style="height: 207px"
                  src="../photo/empty-profile-picture-png-2-2.png" alt="">
-            <img v-else class="ImgCast" :src="IMG_URL + cast.profile_path" alt="">
+            <img v-else class="ImgCast" :src="this.API_IMG_URL + cast.profile_path" alt="">
             <p class=" title2">{{ cast.name }}</p>
             <p class=" title">{{ cast.character }}</p>
           </div>
@@ -66,7 +66,6 @@ export default {
   data() {
     return {
       slides: [],
-      IMG_URL: 'https://image.tmdb.org/t/p/w500',
       currentSlide: 0,
       TvDetails: '',
       backgroundColor: '',

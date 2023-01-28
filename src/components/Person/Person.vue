@@ -18,7 +18,7 @@
                 <div>
                   <div>
                     <router-link to="">
-                      <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + person.profile_path" alt="">
+                      <img class="opacity-100 shadow-lg rounded rounded-150" :src="this.API_IMG_URL + person.profile_path" alt="">
                     </router-link>
                   </div>
                 </div>
@@ -42,7 +42,7 @@ export default {
   data() {
     return {
       People: [],
-      IMG_URL: 'https://image.tmdb.org/t/p/w500',
+
 
     }
   },
@@ -52,9 +52,8 @@ export default {
   methods: {
     async fetchActors(page) {
       try {
-        const People = 'https://api.themoviedb.org/3/person/popular?';
         axios
-          .get(People + this.API_KEY + '&language=en-US&page=' + page)
+          .get(this.API_PEOPLE + this.API_KEY + '&language=en-US&page=' + page)
           .then((response) => {
 
             this.People = response.data.results

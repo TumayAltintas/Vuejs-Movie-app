@@ -8,7 +8,7 @@
             {{ Tv.vote_average }}
           </span>
           </div>
-          <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Tv.poster_path" alt="">
+          <img class="opacity-100 shadow-lg rounded rounded-150" :src="this.API_IMG_URL + Tv.poster_path" alt="">
           <router-link class="LinkItem" :to="'/Tv/' + Tv.id">
             <div class="title">
               <h6 class="TitleText">{{ Tv.name }}</h6>
@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       slides: [],
-      IMG_URL: 'https://image.tmdb.org/t/p/w500',
+
       currentSlide: 0,
     }
   },

@@ -9,7 +9,7 @@
         <div v-for="(tv,index) in Tv" :key="index" class="col item">
           <div class="item-product">
             <router-link :to="'/Tv/'+ tv.id">
-              <img class="image" :src="IMG_URL + tv.poster_path" alt="">
+              <img class="image" :src="this.API_IMG_URL + tv.poster_path" alt="">
             </router-link>
           </div>
           <div>
@@ -25,7 +25,7 @@
 
 <script>
 import axios from "axios";
-import {API_TV_POPULAR_URL} from "../../Globaljs/Globaljs.js";
+
 
 let currentPage = 1;
 export default {
@@ -33,7 +33,6 @@ export default {
   data() {
     return {
       Tv: [],
-      IMG_URL: 'https://image.tmdb.org/t/p/w500',
 
     }
 

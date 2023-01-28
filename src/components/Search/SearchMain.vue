@@ -11,7 +11,7 @@
         <div v-for="(data,index) in search" :key="index" class="col item">
           <div class="item-product">
             <img class="imageE" v-if="data.poster_path == null" src="../photo/empty.jpg" alt="">
-            <img v-else class="image" :src="IMG_URL + data.poster_path" alt="">
+            <img v-else class="image" :src="this.API_IMG_URL + data.poster_path" alt="">
           </div>
           <div>
             <router-link class="LinkItem" :to="'/Tv/'+ data.id">
@@ -32,13 +32,13 @@
 
 import axios from "axios";
 
+
 let currentPage = 1;
 export default {
   name: "SearchMain",
   data() {
     return {
       search: [],
-      IMG_URL: 'https://image.tmdb.org/t/p/w500',
       text: 'movie',
       MoviesDetails: ''
 
@@ -50,9 +50,9 @@ export default {
   methods: {
     async fetchActors(page) {
       try {
-        const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/search/' + this.text + '?';
+
         axios
-            .get(TOP_MOVIE_DETAILS + this.API_KEY + '&language=en-US&query=' + this.$route.params.query + '&page=' + page)
+            .get(this.API_SEARCH + this.text + '?' + this.API_KEY + '&language=en-US&query=' + this.$route.params.query + '&page=' + page)
 
             .then((response) => {
               this.search = response.data.results

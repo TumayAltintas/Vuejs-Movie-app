@@ -25,7 +25,6 @@ export default {
   data() {
     return {
       // MoviesDetails: '',
-      IMG_URL: 'https://image.tmdb.org/t/p/w500',
       searchText: "",
       random: Math.floor(Math.random() * 200),
       second: '',
