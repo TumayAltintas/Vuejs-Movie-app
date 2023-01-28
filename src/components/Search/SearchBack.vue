@@ -1,7 +1,6 @@
 <template>
   <div class="img-container container">
-    <div class="img-c" style="background-image: url(src/components/photo/backgraound.jpg);">
-      <img src="src/components/photo/backgraound.jpg">
+    <div class="img-c" style="background-image: url(src/components/photo/2.png);">
       <section class="warms">
         <div>
           <h2>Welcome.</h2>
