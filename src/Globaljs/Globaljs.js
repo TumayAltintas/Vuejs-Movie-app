@@ -10,8 +10,6 @@ export const API_MOVIE = 'https://api.themoviedb.org/3/movie/';
 
 export const API_TV = 'https://api.themoviedb.org/3/tv/';
 
-export const API_TV_POPULAR_URL = 'https://api.themoviedb.org/3/tv/';
-
 export const API_TRENDING_DAY = 'https://api.themoviedb.org/3/trending/all/day?';
 
 export const API_TRENDING_WEEK = 'https://api.themoviedb.org/3/trending/all/week?';
