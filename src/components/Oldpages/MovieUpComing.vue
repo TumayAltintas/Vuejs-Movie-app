@@ -1,17 +1,17 @@
 <template>
 <div>
   <Top-Header style="margin-bottom: 50px"/>
-
-  <MoviePopular/>
+  <MovieUpComing/>
 </div>
 </template>
 
 <script>
-import MoviePopular from "../../components/MoviePages/MoviePopular.vue";
+import MovieUpComing from "../MoviePages/MovieUpComing.vue";
 export default {
-  name: "Popular",
-  components: {MoviePopular},
-
+  name: "UpComing",
+  components: {
+    MovieUpComing
+  }
 }
 </script>
 

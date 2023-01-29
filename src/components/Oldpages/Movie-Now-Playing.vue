@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MovieNowPlaying from "../../components/MoviePages/MovieNowPlaying.vue";
+import MovieNowPlaying from "../MoviePages/MovieNowPlaying.vue";
 export default {
   name: "Movies",
   components: {MovieNowPlaying}

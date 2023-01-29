@@ -1,16 +1,17 @@
 <template>
 <div>
   <Top-Header style="margin-bottom: 50px"/>
-  <TvAiringToday/>
+
+  <TvPopular/>
 </div>
 </template>
 
 <script>
-import TvAiringToday from "../../components/TvPages/TvAiringToday.vue";
+import TvPopular from "./TvPopular.vue";
 export default {
-  name: "AiringNow",
+  name: "Popular",
   components: {
-    TvAiringToday
+    TvPopular
   }
 }
 </script>

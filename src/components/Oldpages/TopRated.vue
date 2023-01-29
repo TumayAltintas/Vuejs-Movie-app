@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import TvTopRated from "../../components/TvPages/TvTopRated.vue";
+import TvTopRated from "./TvTopRated.vue";
 export default {
   name: "TopRated",
   components: {

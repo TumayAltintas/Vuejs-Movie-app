@@ -6,19 +6,19 @@
           <div style="margin-left: 25px" class="dropdown">
             <a style="color: white;cursor: pointer;position: relative" >Movies</a>
             <div class="dropdown-content">
-              <router-link class="LinkItem" to="/Movie/Popular">Popular</router-link>
-              <router-link class="LinkItem" to="/Movie/NowPlaying">Now Playing</router-link>
-              <router-link class="LinkItem" to="/Movie/MovieUpComing">Upcoming</router-link>
-<!--              <router-link class="LinkItem" to="">Top Rated</router-link>-->
+              <router-link class="LinkItem" :to="'/Movie/' + 'popular' ">Popular</router-link>
+              <router-link class="LinkItem" :to="'/Movie/' + 'now_playing'">Now Playing</router-link>
+              <router-link class="LinkItem" :to="'/Movie/' + 'top_rated'">Top Rated</router-link>
+              <router-link class="LinkItem" :to="'/Movie/' + 'upcoming'">Upcoming</router-link>
             </div>
           </div>
           <div style="margin-left: 25px" class="dropdown">
             <a style="color: white;cursor: pointer;" >Tv Shows</a>
             <div class="dropdown-content">
-              <router-link class="LinkItem" to="/Tv/Popular">Popular</router-link>
-              <router-link class="LinkItem" to="/Tv/AiringToday">Airing Today</router-link>
-              <router-link class="LinkItem" to="/Tv/OnTheAir">On The air</router-link>
-              <router-link class="LinkItem" to="/Tv/TopRated">Top Rated</router-link>
+              <router-link class="LinkItem" :to="'/Tv/' + 'popular'">Popular</router-link>
+              <router-link class="LinkItem" :to="'/Tv/' + 'airing_today'">Airing Today</router-link>
+              <router-link class="LinkItem" :to="'/Tv/' + 'on_the_air'">On The air</router-link>
+              <router-link class="LinkItem" :to="'/Tv/' + 'top_rated'">Top Rated</router-link>
             </div>
           </div>
           <div style="margin-left: 25px" class="dropdown">

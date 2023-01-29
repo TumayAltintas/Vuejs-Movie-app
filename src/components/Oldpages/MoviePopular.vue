@@ -2,17 +2,16 @@
 <div>
   <Top-Header style="margin-bottom: 50px"/>
 
-  <TvPopular/>
+  <MoviePopular/>
 </div>
 </template>
 
 <script>
-import TvPopular from "../../components/TvPages/TvPopular.vue";
+import MoviePopular from "../MoviePages/MoviePopular.vue";
 export default {
   name: "Popular",
-  components: {
-    TvPopular
-  }
+  components: {MoviePopular},
+
 }
 </script>
 

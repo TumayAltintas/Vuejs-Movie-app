@@ -6,31 +6,25 @@ const router = createRouter({
 	routes: [
 		{path: '/', name: 'home', component: () => import('../views/Home.vue')},
 
-		{path: '/Movie/NowPlaying', name: 'NowPlaying', component: () => import('../views/MovieView/Movie-Now-Playing.vue')},
+		// {path: '/Movie/NowPlaying', name: 'NowPlaying', component: () => import('../components/Oldpages/Movie-Now-Playing.vue')},
 
-		{path: '/Movie/Popular', name: 'Popular', component: () => import('../views/MovieView/Popular.vue')},
+		// {path: '/Movie/Popular', name: 'Popular', component: () => import('../components/Oldpages/MoviePopular.vue')},
 
-		{path: '/Movie/MovieUpComing', name: 'MovieUpComing', component: () => import('../views/MovieView/UpComing.vue')},
+		// {path: '/Movie/MovieUpComing', name: 'MovieUpComing', component: () => import('../components/Oldpages/MovieUpComing.vue')},
 
-		{path: '/Movie/:id', name: 'MovieDetail', component: () => import('../views/MovieView/MovieDetails.vue')},
+		{path: '/MovieDetail/:id', name: 'MovieDetail', component: () => import('../views/MovieView/MovieDetails.vue')},
+
+		{path: '/Movie/:name', name: 'MovieDetail', component: () => import('../views/MovieView/Movie.vue')},
 
 		{ path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('../views/404.vue') },
 
 		// {path: '/Tv/:id/name/:name', name: 'TvDetail', component: () => import('../views/TvView/TvDetails.vue')},
 
-		{path: '/Tv/:id', name: 'TvDetail', component: () => import('../views/TvView/TvDetails.vue')},
+		{path: '/TvDetail/:id', name: 'TvDetail', component: () => import('../views/TvView/TvDetails.vue')},
 
-		{path: '/Tv/AiringToday', name: 'TvAiringToday', component: () => import('../views/TvView/AiringNow.vue')},
-
-		{path: '/Tv/OnTheAir', name: 'TvOnTheAir', component: () => import('../views/TvView/OnTheAir.vue')},
-
-		{path: '/Person/Popular', name: 'PersonPopular', component: () => import('../views/Person/PopularPeople.vue')},
+		{path: '/Tv/:name', name: 'Tv', component: () => import('../views/TvView/Tv.vue')},
 
 		{path: '/Person/:id/:name', name: 'Person', component: () => import('../views/Person/Person.vue')},
-
-		{path: '/Tv/Popular', name: 'TvPopular', component: () => import('../views/TvView/Popular.vue')},
-
-		{path: '/Tv/TopRated', name: 'TvTopRated', component: () => import('../views/TvView/TopRated.vue')},
 
 		{path: '/Register', name: 'Register', component: () => import('../components/Login-Register/Register.vue')},
 

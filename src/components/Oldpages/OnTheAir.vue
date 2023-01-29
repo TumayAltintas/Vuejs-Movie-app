@@ -1,16 +1,17 @@
 <template>
 <div>
   <Top-Header style="margin-bottom: 50px"/>
-  <MovieUpComing/>
+
+ <TvOnTheAir/>
 </div>
 </template>
 
 <script>
-import MovieUpComing from "../../components/MoviePages/MovieUpComing.vue";
+import TvOnTheAir from "./TvOnTheAir.vue";
 export default {
-  name: "UpComing",
-  components: {
-    MovieUpComing
+  name: "OnTheAir",
+  components:{
+    TvOnTheAir
   }
 }
 </script>
