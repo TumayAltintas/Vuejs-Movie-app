@@ -6,9 +6,9 @@
     </div>
     <div>
       <div class="row">
-        <div  v-for="person in People" :key="person.id" class="col item">
+        <div v-for="person in People" :key="person.id" class="col item">
           <div class="item-product">
-            <router-link to="">
+            <router-link :to="'/Person/' + person.id + '/' + person.name">
               <img class="image" :src="this.API_IMG_URL + person.profile_path" alt="">
             </router-link>
           </div>
@@ -41,11 +41,11 @@ export default {
     async fetchActors(page) {
       try {
         axios
-          .get(this.API + 'person/popular?' + this.API_KEY + '&language=en-US&page=' + page)
-          .then((response) => {
+            .get(this.API + 'person/popular?' + this.API_KEY + '&language=en-US&page=' + page)
+            .then((response) => {
 
-            this.People = response.data.results
-          })
+              this.People = response.data.results
+            })
       } catch (error) {
         console.log(error)
       }
@@ -53,8 +53,8 @@ export default {
     scroll() {
       window.onscroll = () => {
         let bottomofWindow =
-          document.documentElement.scrollTop + window.innerWidth ===
-          document.documentElement.offsetHeight;
+            document.documentElement.scrollTop + window.innerWidth ===
+            document.documentElement.offsetHeight;
         if (bottomofWindow) {
           currentPage += 1;
           this.fetchActors((currentPage += 1))

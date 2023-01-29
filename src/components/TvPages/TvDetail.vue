@@ -43,9 +43,14 @@
              class="opacity-100 shadow-lg rounded-3 col-lg-2 col-md-3 col-sm-4 m-2"
              style="width: 138px;height: 320px;display: inline-block; flex: 0 0 auto;">
           <div>
-            <img v-if="cast.profile_path == null" class="ImgCast" style="height: 207px"
-                 src="../photo/empty-profile-picture-png-2-2.png" alt="">
-            <img v-else class="ImgCast" :src="this.API_IMG_URL + cast.profile_path" alt="">
+            <router-link v-if="cast.profile_path == null" :to="'/Person/' + cast.id + '/' + cast.name">
+              <img class="ImgCast" style="height: 207px" src="../photo/empty-profile-picture-png-2-2.png" alt="">
+
+            </router-link>
+            <router-link v-else :to="'/Person/' + cast.id + '/' + cast.name">
+              <img class="ImgCast" :src="this.API_IMG_URL + cast.profile_path" alt="">
+
+            </router-link>
             <p class=" title2">{{ cast.name }}</p>
             <p class=" title">{{ cast.character }}</p>
           </div>

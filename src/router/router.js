@@ -14,6 +14,10 @@ const router = createRouter({
 
 		{path: '/Movie/:id', name: 'MovieDetail', component: () => import('../views/MovieView/MovieDetails.vue')},
 
+		{ path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('../views/404.vue') },
+
+		// {path: '/Tv/:id/name/:name', name: 'TvDetail', component: () => import('../views/TvView/TvDetails.vue')},
+
 		{path: '/Tv/:id', name: 'TvDetail', component: () => import('../views/TvView/TvDetails.vue')},
 
 		{path: '/Tv/AiringToday', name: 'TvAiringToday', component: () => import('../views/TvView/AiringNow.vue')},
@@ -22,7 +26,7 @@ const router = createRouter({
 
 		{path: '/Person/Popular', name: 'PersonPopular', component: () => import('../views/Person/PopularPeople.vue')},
 
-		{path: '/Person/:id', name: 'Person', component: () => import('../views/Person/Person.vue')},
+		{path: '/Person/:id/:name', name: 'Person', component: () => import('../views/Person/Person.vue')},
 
 		{path: '/Tv/Popular', name: 'TvPopular', component: () => import('../views/TvView/Popular.vue')},
 

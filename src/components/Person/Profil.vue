@@ -43,7 +43,13 @@
                   <bdi>Birthday</bdi>
                 </strong>
                 <br>
-                {{ person.birthday }} ({{age}} years old)
+                {{ person.birthday }} ({{age -1 }} years old)
+                <br>
+                <strong v-if="person.deathday !=null">
+                  <bdi>Deathday</bdi>
+                </strong>
+                <br>
+                {{person.deathday}}
               </p>
               <p>
                 <strong>
@@ -84,11 +90,11 @@
               <ul class="col know-img-d" v-for="(know,index) in knowfor" :key="index" v-show="know.vote_average > 8">
 
                   <div class="know-img-d" v-if="know.media_type === 'movie'">
-                    <img class="know-img" :src="this.API_IMG_URL + know.poster_path">
+                    <img class="know-img" :src="this.API_IMG_URL + know.poster_path" alt="">
                     <p>{{know.title}}</p>
                   </div>
                   <div class="know-img-d" v-if="know.media_type === 'tv'">
-                    <img class="know-img" :src="this.API_IMG_URL + know.poster_path">
+                    <img class="know-img" :src="this.API_IMG_URL + know.poster_path" alt="">
                     <p>{{know.name}}</p>
                   </div>
 

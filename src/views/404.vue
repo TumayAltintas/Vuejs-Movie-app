@@ -1,6 +1,11 @@
 <template>
-  <input  v-model="searchText" placeholder="Enter search text">
-  <button @click="goToSearchPage">Go</button>
+  <div>
+    <Top-Header/>
+    <div class="container">
+      <h1>404 not found</h1>
+    </div>
+
+  </div>
 </template>
 
 <script>
