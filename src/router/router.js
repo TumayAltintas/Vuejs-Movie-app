@@ -6,15 +6,9 @@ const router = createRouter({
 	routes: [
 		{path: '/', name: 'home', component: () => import('../views/Home.vue')},
 
-		// {path: '/Movie/NowPlaying', name: 'NowPlaying', component: () => import('../components/Oldpages/Movie-Now-Playing.vue')},
-
-		// {path: '/Movie/Popular', name: 'Popular', component: () => import('../components/Oldpages/MoviePopular.vue')},
-
-		// {path: '/Movie/MovieUpComing', name: 'MovieUpComing', component: () => import('../components/Oldpages/MovieUpComing.vue')},
-
 		{path: '/MovieDetail/:id', name: 'MovieDetail', component: () => import('../views/MovieView/MovieDetails.vue')},
 
-		{path: '/Movie/:name', name: 'MovieDetail', component: () => import('../views/MovieView/Movie.vue')},
+		{path: '/Movie/:name', name: 'Movie', component: () => import('../views/MovieView/Movie.vue')},
 
 		{ path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('../views/404.vue') },
 

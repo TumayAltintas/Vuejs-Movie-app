@@ -8,7 +8,7 @@
       <div class="row">
         <div v-for="(movie,index) in Movies" :key="index" class="col item">
           <div class="item-product">
-            <router-link :to="'/Movie/'+ movie.id">
+            <router-link :to="'/MovieDetail/'+ movie.id">
               <img class="image" :src="this.API_IMG_URL + movie.poster_path" alt="">
             </router-link>
           </div>
