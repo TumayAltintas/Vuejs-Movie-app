@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div>
-      <button v-on:click.prevent="previous()">Next</button>
-      <button v-on:click.prevent="next()">Back</button>
+      <button v-on:click.prevent="previous()">Back</button>
+      <button v-on:click.prevent="next()">Next</button>
     </div>
     <div>
       <div class="row">
@@ -43,9 +43,8 @@ export default {
     }
 
   },
-  watch:{
-    getQuary(newValue,oldValue){
-       console.log(newValue + '==' + oldValue)
+  watch: {
+    getQuary(newValue, oldValue) {
       if (newValue !== oldValue) {
         window.location.reload();
       }

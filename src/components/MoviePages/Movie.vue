@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <div>
-      <button v-on:click.prevent="previous()">Next</button>
-      <button v-on:click.prevent="next()">Back</button>
+      <button v-on:click.prevent="previous()">Back</button>
+      <button v-on:click.prevent="next()">Next</button>
     </div>
     <div>
       <div class="row">
@@ -24,6 +24,7 @@
 <script>
 import axios from "axios";
 import Header from "../HeaderAndOthers/Header.vue";
+
 let currentPage = 1;
 export default {
   name: "MovieNowPlaying",
@@ -43,9 +44,8 @@ export default {
     }
 
   },
-  watch:{
-    getQuary(newValue,oldValue){
-      console.log(newValue + '==' + oldValue)
+  watch: {
+    getQuary(newValue, oldValue) {
       if (newValue !== oldValue) {
         window.location.reload();
       }
@@ -96,9 +96,11 @@ export default {
   border-top-right-radius: 8px 8px;
 
 }
-.item-product{
+
+.item-product {
   width: 200px;
 }
+
 .item {
   margin-right: 40px;
   padding: 0;
