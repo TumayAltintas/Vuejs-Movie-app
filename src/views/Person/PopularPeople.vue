@@ -1,19 +1,20 @@
 <template>
   <div>
     <Top-Header style="margin-bottom: 50px"/>
-    <div>
-      <Profil></Profil>
-    </div>
+   <div>
+     <Popular/>
+   </div>
   </div>
 </template>
 
 <script>
-import Profil from "../../components/Person/Profil.vue";
+import Popular from "../../components/Person/Popular.vue";
 export default {
   name: "Person",
-  components : {
-    Profil
+  components:{
+    Popular
   }
+
 }
 </script>
 

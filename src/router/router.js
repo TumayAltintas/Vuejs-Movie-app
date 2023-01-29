@@ -20,7 +20,9 @@ const router = createRouter({
 
 		{path: '/Tv/OnTheAir', name: 'TvOnTheAir', component: () => import('../views/TvView/OnTheAir.vue')},
 
-		{path: '/Person/Popular', name: 'PersonPopular', component: () => import('../views/Person/Person.vue')},
+		{path: '/Person/Popular', name: 'PersonPopular', component: () => import('../views/Person/PopularPeople.vue')},
+
+		{path: '/Person/:id', name: 'Person', component: () => import('../views/Person/Person.vue')},
 
 		{path: '/Tv/Popular', name: 'TvPopular', component: () => import('../views/TvView/Popular.vue')},
 

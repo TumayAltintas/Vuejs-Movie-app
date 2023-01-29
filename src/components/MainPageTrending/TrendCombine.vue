@@ -2,7 +2,7 @@
   <div>
     <div class="d-flex">
       <div class="row col-lg-6">
-        <h3 class="trend" style="width: max-content">Trending</h3>
+        <h3 class="trend">Trending</h3>
         <div class="select d-flex">
           <div :class="{ SelectedFirst: SelectedFirst}"><h3 class="text" @click="toggleActive"><a>Today</a></h3></div>
           <span></span>
@@ -56,6 +56,7 @@ export default {
   margin-right: 15px;
   font-size: 1.5em;
   padding: 0;
+  width: max-content;
 }
 
 .SelectedFirst {
