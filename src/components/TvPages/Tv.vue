@@ -105,7 +105,7 @@ export default {
 }
 
 .item {
-  margin-right: 40px;
+  margin-right: 20px;
   padding: 0;
   border: 1px solid #e3e3e3;;
   max-width: 200px;
