@@ -45,11 +45,13 @@
                 <br>
                 {{ person.birthday }} ({{age -1 }} years old)
                 <br>
-                <strong v-if="person.deathday !=null">
+              </p>
+              <p v-if="person.deathday !=null">
+                <strong >
                   <bdi>Deathday</bdi>
                 </strong>
                 <br>
-                {{person.deathday}}
+             {{person.deathday}} ({{deadage}} years old)
               </p>
               <p>
                 <strong>
@@ -118,7 +120,8 @@ export default {
     return {
       person: '',
       knowfor : '',
-      age : ''
+      age : '',
+      deadage : ''
     }
   },
   async mounted() {
@@ -128,6 +131,7 @@ export default {
         .then((response) => {
           this.person = response.data
           this.age = 2023 - this.person.birthday.slice(0,4)
+          this.deadage = this.person.deathday.slice(0,4) - this.person.birthday.slice(0,4)
 
         })
     axios
