@@ -61,7 +61,6 @@ export default {
   // },
     mounted() {
       this.fetchActors(currentPage)
-      console.log(this.qar)
     },
     methods: {
       async fetchActors(page) {

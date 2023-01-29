@@ -12,9 +12,13 @@
         </section>
         <div>
           <section>
-            <div class="social-media">
-
-            </div>
+<!--            <div class="d-flex">-->
+<!--              <div>-->
+<!--                <a class="social_link" title="Visit Instagram"-->
+<!--                   :href="'https://instagram.com/'+ socialmedia.instagram_id"-->
+<!--                   target="_blank" rel="noopener" data-role="tooltip"><span class="glyphicons_v2 instagram"></span></a>-->
+<!--              </div>-->
+<!--            </div>-->
             <h3>Personal Info</h3>
             <section>
               <p>
@@ -43,15 +47,15 @@
                   <bdi>Birthday</bdi>
                 </strong>
                 <br>
-                {{ person.birthday }} ({{age -1 }} years old)
+                {{ person.birthday }} ({{ age - 1 }} years old)
                 <br>
               </p>
               <p v-if="person.deathday !=null">
-                <strong >
+                <strong>
                   <bdi>Deathday</bdi>
                 </strong>
                 <br>
-             {{person.deathday}} ({{deadage}} years old)
+                {{ person.deathday }} ({{ deadage }} years old)
               </p>
               <p>
                 <strong>
@@ -81,24 +85,24 @@
           <h3>Biography</h3>
           <div class="out-text">
             <div class="inline-text">
-              <p>{{person.biography}}</p>
+              <p>{{ person.biography }}</p>
             </div>
           </div>
         </section>
-        <section class="person-know-for container"  >
-        <h3>Known For</h3>
+        <section class="person-know-for container">
+          <h3>Known For</h3>
           <div style="overflow-y: hidden; width: 100%">
             <div class="row">
               <ul class="col know-img-d" v-for="(know,index) in knowfor" :key="index" v-show="know.vote_average > 8">
 
-                  <div class="know-img-d" v-if="know.media_type === 'movie'">
-                    <img class="know-img" :src="this.API_IMG_URL + know.poster_path" alt="">
-                    <p>{{know.title}}</p>
-                  </div>
-                  <div class="know-img-d" v-if="know.media_type === 'tv'">
-                    <img class="know-img" :src="this.API_IMG_URL + know.poster_path" alt="">
-                    <p>{{know.name}}</p>
-                  </div>
+                <div class="know-img-d" v-if="know.media_type === 'movie'">
+                  <img class="know-img" :src="this.API_IMG_URL + know.poster_path" alt="">
+                  <p>{{ know.title }}</p>
+                </div>
+                <div class="know-img-d" v-if="know.media_type === 'tv'">
+                  <img class="know-img" :src="this.API_IMG_URL + know.poster_path" alt="">
+                  <p>{{ know.name }}</p>
+                </div>
 
               </ul>
             </div>
@@ -110,7 +114,6 @@
 </template>
 
 
-
 <script>
 import axios from "axios";
 
@@ -119,9 +122,10 @@ export default {
   data() {
     return {
       person: '',
-      knowfor : '',
-      age : '',
-      deadage : ''
+      knowfor: '',
+      age: '',
+      deadage: '',
+      socialmedia: '',
     }
   },
   async mounted() {
@@ -130,15 +134,21 @@ export default {
         .get(this.API + 'person/' + this.$route.params.id + '?' + this.API_KEY + '&language=en-US')
         .then((response) => {
           this.person = response.data
-          this.age = 2023 - this.person.birthday.slice(0,4)
-          this.deadage = this.person.deathday.slice(0,4) - this.person.birthday.slice(0,4)
+          this.age = 2023 - this.person.birthday.slice(0, 4)
+          this.deadage = this.person.deathday.slice(0, 4) - this.person.birthday.slice(0, 4)
 
         })
     axios
-        .get(this.API + 'person/'  + this.$route.params.id + '/combined_credits?' + this.API_KEY + '&language=en-US')
+        .get(this.API + 'person/' + this.$route.params.id + '/combined_credits?' + this.API_KEY + '&language=en-US')
         .then((response) => {
           this.knowfor = response.data.cast
-          console.log(this.knowfor)
+        })
+
+    axios
+        .get(this.API + 'person/' + this.$route.params.id + '/external_ids?' + this.API_KEY + '&language=en-US')
+        .then((response) => {
+          this.socialmedia = response.data
+          console.log(this.socialmedia)
         })
 
   },
@@ -147,36 +157,46 @@ export default {
 </script>
 
 <style scoped>
+a.social_link {
+  display: block;
+  font-size: 1.9em;
+}
 
-.know-img-d{
+.know-img-d {
   width: 130px;
   height: 195px;
 }
-.know-img{
+
+.know-img {
   width: 100%;
   height: 100%;
   border-radius: 8px;
 
 }
-.person-know-for{
+
+.person-know-for {
   margin-top: 30px;
   width: 100%;
 }
-.title{
+
+.title {
   font-weight: 700;
   color: #000;
 }
-.out-text{
+
+.out-text {
   position: relative;
   top: 0;
   left: 0;
 }
-.inline-text{
+
+.inline-text {
   line-height: 1.4em;
   max-height: none;
   overflow: hidden;
   text-align: start;
 }
+
 .person-biography {
   margin-top: 30px;
   width: 100%;
@@ -202,12 +222,6 @@ export default {
 .person {
   width: 300px;
   height: max-content;
-}
-
-.social-media {
-  width: 100%;
-  background-color: black;
-  height: 50px;
 }
 
 .posterImg-profil {
