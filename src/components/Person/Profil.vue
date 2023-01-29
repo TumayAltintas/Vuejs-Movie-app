@@ -35,12 +35,19 @@
                 <br>
                 {{ person.popularity }}
               </p>
-              <p>
+              <p v-if="person.gender === 2 ">
                 <strong>
                   <bdi>Gender</bdi>
                 </strong>
                 <br>
-                {{ person.gender }}
+                Male
+              </p>
+              <p v-else>
+                <strong>
+                  <bdi>Gender</bdi>
+                </strong>
+                <br>
+                Female
               </p>
               <p>
                 <strong>
@@ -157,10 +164,10 @@ export default {
 </script>
 
 <style scoped>
-a.social_link {
-  display: block;
-  font-size: 1.9em;
-}
+/*a.social_link {*/
+/*  display: block;*/
+/*  font-size: 1.9em;*/
+/*}*/
 
 .know-img-d {
   width: 130px;
