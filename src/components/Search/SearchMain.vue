@@ -38,58 +38,73 @@ export default {
   name: "SearchMain",
   data() {
     return {
-      search: [],
+      search: '',
       text: 'movie',
-      MoviesDetails: ''
+      MoviesDetails: '',
+      quary : this.$route.params.query.split(" ")
+
 
     }
   },
-  mounted() {
-    this.fetchActors(currentPage)
-  },
-  methods: {
-    async fetchActors(page) {
-      try {
 
-        axios
-            .get(this.API + 'search/' + this.text + '?' + this.API_KEY + '&language=en-US&query=' + this.$route.params.query + '&page=' + page)
+  // computed: {
+  //   filteritem() {
+  //     const quary = this.searchQuery.toLowerCase()
+  //     if (this.searchQuery === '') {
+  //       return this.search
+  //     }
+  //     return this.search.filter((user) => {
+  //       return Object.values(user).some((word) =>
+  //           String(word).toLowerCase().includes(quary))
+  //     })
+  //   },
+  // },
+    mounted() {
+      this.fetchActors(currentPage)
+      console.log(this.qar)
+    },
+    methods: {
+      async fetchActors(page) {
+        try {
 
-            .then((response) => {
-              this.search = response.data.results
-            })
-      } catch (error) {
-        console.log(error)
-      }
-    },
-    TvButton() {
-      this.text = 'tv'
-      this.fetchActors(currentPage)
-    },
-    MovieButton() {
-      this.text = 'movie'
-      this.fetchActors(currentPage)
-    },
-    scroll() {
-      window.onscroll = () => {
-        let BottomWindow =
-            document.documentElement.scrollTop + window.innerWidth ===
-            document.documentElement.offsetHeight;
-        if (BottomWindow) {
-          currentPage += 1;
-          this.fetchActors((currentPage += 1))
+          axios
+              .get(this.API + 'search/' + this.text + '?' + this.API_KEY + '&language=en-US&query=' + this.quary + '&page=' + page)
+
+              .then((response) => {
+                this.search = response.data.results
+              })
+        } catch (error) {
+          console.log(error)
         }
-      }
+      },
+      TvButton() {
+        this.text = 'tv'
+        this.fetchActors(currentPage)
+      },
+      MovieButton() {
+        this.text = 'movie'
+        this.fetchActors(currentPage)
+      },
+      scroll() {
+        window.onscroll = () => {
+          let BottomWindow =
+              document.documentElement.scrollTop + window.innerWidth ===
+              document.documentElement.offsetHeight;
+          if (BottomWindow) {
+            currentPage += 1;
+            this.fetchActors((currentPage += 1))
+          }
+        }
+      },
+      next() {
+        currentPage += 1;
+        this.fetchActors(currentPage);
+      },
+      previous() {
+        currentPage -= 1;
+        this.fetchActors(currentPage);
+      },
     },
-    next() {
-      currentPage += 1;
-      this.fetchActors(currentPage);
-    },
-    previous() {
-      currentPage -= 1;
-      this.fetchActors(currentPage);
-    },
-  },
-
 }
 </script>
 
@@ -99,8 +114,9 @@ export default {
   width: 100%;
   border-radius: 8px
 }
-.imageE{
- width: 100%;
+
+.imageE {
+  width: 100%;
   height: 270px;
 }
 
@@ -120,6 +136,7 @@ h2 {
   font-size: 16px;
   color: #000000
 }
+
 .LinkItem {
   text-decoration: none;
   margin: 0;

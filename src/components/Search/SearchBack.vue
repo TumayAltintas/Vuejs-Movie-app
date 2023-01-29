@@ -25,11 +25,13 @@ export default {
   data() {
     return {
       // MoviesDetails: '',
-      searchText: "",
+      searchText: [],
       random: Math.floor(Math.random() * 200),
       second: '',
+
     }
   },
+
   // async mounted() {
   //   const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + 98 + '?';
   //   axios
