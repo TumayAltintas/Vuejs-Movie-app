@@ -5,7 +5,7 @@
       <button v-on:click.prevent="next()">Back</button>
       <button class="btn btn-primary" @click="TvButton()">Tv</button>
       <button class="btn btn-primary" @click="MovieButton()">Movie</button>
-      <button class="btn btn-primary" @click="PersonButton()">Movie</button>
+      <button class="btn btn-primary" @click="PersonButton()">Person</button>
     </div>
     <div>
       <div class="row">
