@@ -17,9 +17,6 @@
 </template>
 
 <script>
-// import axios from "axios";
-
-
 export default {
   name: "SearchBack",
   data() {
@@ -27,24 +24,13 @@ export default {
       // MoviesDetails: '',
       searchText: [],
       random: Math.floor(Math.random() * 200),
-      second: '',
-
     }
   },
   computed: {
-    Quary(){
+    Quary() {
       return this.searchText.replace(/ /g, "+");
     }
   },
-
-  // async mounted() {
-  //   const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + 98 + '?';
-  //   axios
-  //       .get(TOP_MOVIE_DETAILS + this.API_KEY + '&language=en-US')
-  //       .then((response) => {
-  //         this.MoviesDetails = response.data.backdrop_path
-  //       })
-  // },
   methods: {
     goToSearchPage() {
       if (this.searchText === '') {
@@ -90,10 +76,7 @@ input[type="text"] {
   align-content: center;
   justify-content: center;
   background-image: url('./src/components/photo/backgraound.jpeg');
-
-
 }
-
 
 .search {
   margin-top: 40px;
@@ -137,7 +120,6 @@ button:hover {
 .warms {
   max-width: var(--maxPrimaryPageWidth);
   width: 100%;
-
   padding-left: 40px;
   padding-right: 40px;
   padding-top: 30px;
