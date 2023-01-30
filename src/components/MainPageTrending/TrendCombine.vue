@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="d-flex">
       <div class="row col-lg-6">
         <h3 class="trend">Trending</h3>
@@ -12,7 +11,6 @@
     </div>
     <TrendingDay v-if="ShowTrend"/>
     <TrendingWeek v-else/>
-  </div>
 </template>
 
 <script>

@@ -9,7 +9,7 @@
         </div>
         <img class="opacity-100 shadow-lg rounded rounded-150" :src="this.API_IMG_URL + Day.poster_path" alt="">
         <div v-if="Day.media_type='movie'" class="title">
-          <router-link class="LinkItem"  :to="'/MovieDetail/' + Day.id">
+          <router-link class="LinkItem" :to="'/MovieDetail/' + Day.id">
             <p>{{ Day.title }}</p>
           </router-link>
         </div>
