@@ -48,18 +48,6 @@ export default {
     }
   },
 
-  // computed: {
-  //   filteritem() {
-  //     const quary = this.searchQuery.toLowerCase()
-  //     if (this.searchQuery === '') {
-  //       return this.search
-  //     }
-  //     return this.search.filter((user) => {
-  //       return Object.values(user).some((word) =>
-  //           String(word).toLowerCase().includes(quary))
-  //     })
-  //   },
-  // },
     mounted() {
       this.fetchActors(currentPage)
     },

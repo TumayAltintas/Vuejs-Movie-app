@@ -12,13 +12,13 @@
         </section>
         <div>
           <section>
-<!--            <div class="d-flex">-->
-<!--              <div>-->
-<!--                <a class="social_link" title="Visit Instagram"-->
-<!--                   :href="'https://instagram.com/'+ socialmedia.instagram_id"-->
-<!--                   target="_blank" rel="noopener" data-role="tooltip"><span class="glyphicons_v2 instagram"></span></a>-->
-<!--              </div>-->
-<!--            </div>-->
+            <!--            <div class="d-flex">-->
+            <!--              <div>-->
+            <!--                <a class="social_link" title="Visit Instagram"-->
+            <!--                   :href="'https://instagram.com/'+ socialmedia.instagram_id"-->
+            <!--                   target="_blank" rel="noopener" data-role="tooltip"><span class="glyphicons_v2 instagram"></span></a>-->
+            <!--              </div>-->
+            <!--            </div>-->
             <h3>Personal Info</h3>
             <section>
               <p>
@@ -49,7 +49,7 @@
                 <br>
                 Female
               </p>
-              <p>
+              <p v-if="person.birthday != null">
                 <strong>
                   <bdi>Birthday</bdi>
                 </strong>
@@ -96,22 +96,21 @@
             </div>
           </div>
         </section>
-        <section class="person-know-for container">
+        <section class="person-know-for">
           <h3>Known For</h3>
-          <div style="overflow-y: hidden; width: 100%">
-            <div class="row">
-              <ul class="col know-img-d" v-for="(know,index) in knowfor" :key="index" v-show="know.vote_average > 8">
-
-                <div class="know-img-d" v-if="know.media_type === 'movie'">
-                  <img class="know-img" :src="this.API_IMG_URL + know.poster_path" alt="">
+          <div class="blur container" ref="carousel" style="max-width: 850px;overflow-y: hidden; white-space: nowrap;"
+               id="carousel-wrapper">
+            <div v-show="know.vote_average > 8" v-for="(know,index) in knowfor" :key="index" class="col"
+                 style="width: 150px;height: 350px;display: inline-block; flex: 0 0 auto;margin-right: 25px">
+              <div>
+                <img class="image" :src="this.API_IMG_URL + know.poster_path" alt="">
+                <router-link class="LinkItem" v-if="know.media_type === 'movie'" :to="'/MovieDetail/'+ know.id">
                   <p>{{ know.title }}</p>
-                </div>
-                <div class="know-img-d" v-if="know.media_type === 'tv'">
-                  <img class="know-img" :src="this.API_IMG_URL + know.poster_path" alt="">
+                </router-link>
+                <router-link class="LinkItem" v-if="know.media_type === 'tv'" :to="'/TvDetail/'+ know.id">
                   <p>{{ know.name }}</p>
-                </div>
-
-              </ul>
+                </router-link>
+              </div>
             </div>
           </div>
         </section>
@@ -155,7 +154,6 @@ export default {
         .get(this.API + 'person/' + this.$route.params.id + '/external_ids?' + this.API_KEY + '&language=en-US')
         .then((response) => {
           this.socialmedia = response.data
-          console.log(this.socialmedia)
         })
 
   },
@@ -164,20 +162,14 @@ export default {
 </script>
 
 <style scoped>
-/*a.social_link {*/
-/*  display: block;*/
-/*  font-size: 1.9em;*/
-/*}*/
-
-.know-img-d {
-  width: 130px;
-  height: 195px;
+.LinkItem {
+  text-decoration: none;
 }
-
-.know-img {
+.image {
   width: 100%;
-  height: 100%;
-  border-radius: 8px;
+  height: 300px;
+  border-top-left-radius: 8px 8px;
+  border-top-right-radius: 8px 8px;
 
 }
 
