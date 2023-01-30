@@ -75,7 +75,7 @@ input[type="text"] {
   background-position: 50% 50%;
   align-content: center;
   justify-content: center;
-  background-image: url('./src/components/photo/backgraound.jpeg');
+  background-image: url('src/components/photo/empty.jpg');
 }
 
 .search {
