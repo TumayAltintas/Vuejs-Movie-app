@@ -98,10 +98,8 @@
         </section>
         <section class="person-know-for">
           <h3>Known For</h3>
-          <div class="blur container" ref="carousel" style="max-width: 850px;overflow-y: hidden; white-space: nowrap;"
-               id="carousel-wrapper">
-            <div v-show="know.vote_average > 8" v-for="(know,index) in knowfor" :key="index" class="col"
-                 style="width: 150px;height: 350px;display: inline-block; flex: 0 0 auto;margin-right: 25px">
+          <div class="blur container" ref="carousel" id="carousel-wrapper">
+            <div v-show="know.vote_average > 8" v-for="(know,index) in knowfor" :key="index" class="col list">
               <div>
                 <img class="image" :src="this.API_IMG_URL + know.poster_path" alt="">
                 <router-link class="LinkItem" v-if="know.media_type === 'movie'" :to="'/MovieDetail/'+ know.id">
@@ -165,12 +163,27 @@ export default {
 .LinkItem {
   text-decoration: none;
 }
+
 .image {
   width: 100%;
   height: 300px;
   border-top-left-radius: 8px 8px;
   border-top-right-radius: 8px 8px;
 
+}
+
+.list {
+  width: 150px;
+  height: 350px;
+  display: inline-block;
+  flex: 0 0 auto;
+  margin-right: 25px
+}
+
+.blur {
+  max-width: 850px;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 .person-know-for {

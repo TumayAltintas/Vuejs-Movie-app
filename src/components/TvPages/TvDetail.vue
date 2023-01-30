@@ -47,9 +47,8 @@
               <img class="ImgCast" style="height: 207px" src="../photo/empty-profile-picture-png-2-2.png" alt="">
 
             </router-link>
-            <router-link v-else :to="'/Person/' + cast.id + '/' + cast.name">
+            <router-link v-else :to="'/Person/' + cast.id + '/' + cast.name.replace(/ /g, '+')">
               <img class="ImgCast" :src="this.API_IMG_URL + cast.profile_path" alt="">
-
             </router-link>
             <p class=" title2">{{ cast.name }}</p>
             <p class=" title">{{ cast.character }}</p>
