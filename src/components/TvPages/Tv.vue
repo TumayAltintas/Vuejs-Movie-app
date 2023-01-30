@@ -12,9 +12,7 @@
               <img class="image" :src="this.API_IMG_URL + tv.poster_path" alt="">
             </router-link>
           </div>
-          <div>
             <h2>{{ tv.name }}</h2>
-          </div>
         </div>
       </div>
     </div>

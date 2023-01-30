@@ -31,6 +31,11 @@ export default {
 
     }
   },
+  computed: {
+    Quary(){
+      return this.searchText.replace(/ /g, "+");
+    }
+  },
 
   // async mounted() {
   //   const TOP_MOVIE_DETAILS = 'https://api.themoviedb.org/3/movie/' + 98 + '?';
@@ -45,7 +50,7 @@ export default {
       if (this.searchText === '') {
         alert('Please enter a movie, tv show or person name')
       } else {
-        this.$router.push({name: "search", params: {query: this.searchText}});
+        this.$router.push({name: "search", params: {query: this.Quary}});
       }
     },
   }
