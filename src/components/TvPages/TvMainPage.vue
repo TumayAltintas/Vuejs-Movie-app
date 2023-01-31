@@ -8,7 +8,7 @@
             {{ Tv.vote_average }}
           </span>
           </div>
-          <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id">
+          <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id + Tv.name.replace(/ /g, '+')">
             <img class="opacity-100 shadow-lg rounded rounded-150" :src="this.API_IMG_URL + Tv.poster_path" alt="">
           </router-link>
           <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id">

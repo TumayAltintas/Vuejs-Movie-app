@@ -3,7 +3,7 @@
     <div class="row">
       <div v-for="(tv,index) in TvData" :key="index" class="col item">
         <div class="item-product">
-          <router-link :to="'/TvDetail/'+ tv.id">
+          <router-link :to="'/TvDetail/'+ tv.id + tv.name.replace(/ /g, '+')">
             <img class="image" :src="this.API_IMG_URL + tv.poster_path" alt="">
           </router-link>
         </div>

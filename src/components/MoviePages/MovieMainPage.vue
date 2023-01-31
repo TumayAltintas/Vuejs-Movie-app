@@ -9,10 +9,10 @@
             {{ Movie.vote_average }}
           </span>
           </div>
-          <router-link class="LinkItem" :to="'/MovieDetail/' + Movie.id">
+          <router-link class="LinkItem" :to="'/MovieDetail/' + Movie.id + Movie.title.replace(/ /g, '+')">
             <img class="opacity-100 shadow-lg rounded rounded-150" :src="this.API_IMG_URL + Movie.poster_path" alt="">
           </router-link>
-          <router-link class="LinkItem" :to="'/MovieDetail/' + Movie.id">
+          <router-link class="LinkItem" :to="'/MovieDetail/' + Movie.id + Movie.title.replace(/ /g, '+')">
             <div class="title">
               <h6 class="TitleText">{{ Movie.title }}</h6>
             </div>
