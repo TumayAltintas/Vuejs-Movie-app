@@ -1,7 +1,7 @@
 <template>
   <div class="row mb-5">
     <div class="Trending blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
-      <div v-for="(week,index) in slides" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
+      <div v-for="(week,index) in WeekData" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
         <div class="average">
           <span style="color:#000;">
             {{ week.vote_average }}
@@ -31,14 +31,14 @@ export default {
   components: {},
   data() {
     return {
-      slides: [],
+      WeekData: [],
     }
   },
   mounted() {
     axios
         .get(this.API + 'trending/all/week?' + this.API_KEY)
         .then((response) => {
-          this.slides = response.data.results
+          this.WeekData = response.data.results
         })
   },
 }

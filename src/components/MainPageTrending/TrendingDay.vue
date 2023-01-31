@@ -1,7 +1,7 @@
 <template>
   <div class="row mb-5">
     <div class="Trending blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
-      <div v-for="(Day,index) in slides" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
+      <div v-for="(Day,index) in DayData" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
         <div class="average">
           <span style="color:#000;">
             {{ Day.vote_average }}
@@ -31,14 +31,14 @@ export default {
 
   data() {
     return {
-      slides: [],
+      DayData: [],
     }
   },
   mounted() {
     axios
         .get(this.API + 'trending/all/day?' + this.API_KEY)
         .then((response) => {
-          this.slides = response.data.results
+          this.DayData = response.data.results
         })
   },
 }
