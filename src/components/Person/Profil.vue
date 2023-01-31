@@ -101,10 +101,10 @@
               <div>
                 <img class="image" :src="this.API_IMG_URL + know.poster_path" alt="">
                 <router-link class="LinkItem" v-if="know.media_type === 'movie'" :to="'/MovieDetail/'+ know.id">
-                  <p>{{ know.title }}</p>
+                  <p class="title2">{{ know.title }}</p>
                 </router-link>
                 <router-link class="LinkItem" v-if="know.media_type === 'tv'" :to="'/TvDetail/'+ know.id">
-                  <p>{{ know.name }}</p>
+                  <p class="title2">{{ know.name }}</p>
                 </router-link>
               </div>
             </div>
@@ -142,6 +142,12 @@ export default {
   display: inline-block;
   flex: 0 0 auto;
   margin-right: 25px
+}
+.title2 {
+  white-space: normal;
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
 }
 
 .blur {

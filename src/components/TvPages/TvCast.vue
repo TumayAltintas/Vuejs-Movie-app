@@ -34,7 +34,9 @@ export default {
   transition: transform 0.5s;
   height: 350px;
 }
-
+.title {
+  white-space: normal;
+}
 .title2 {
   width: 100%;
   position: relative;

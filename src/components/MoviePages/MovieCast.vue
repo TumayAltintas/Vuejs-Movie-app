@@ -41,6 +41,10 @@ export default {
   color: #000;
 }
 
+.title {
+  white-space: normal;
+}
+
 img.ImgCast {
   width: 138px;
   padding: 0;
