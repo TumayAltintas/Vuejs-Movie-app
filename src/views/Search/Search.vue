@@ -5,16 +5,16 @@
 <!--      <input v-model="searchText" placeholder="Search for a movie, tv show, person......">-->
 <!--      <button @click="goToSearchPage">Search</button>-->
 <!--    </div>-->
-    <SearchMain/>
+    <SearchData/>
   </div>
 </template>
 
 <script>
-import SearchMain from "../../components/Search/SearchMain.vue";
+import SearchData from "../../components/Search/SearchData.vue";
 
 export default {
   name: "search",
-  components: {SearchMain},
+  components: {SearchData},
   data() {
     return {
       searchText: ""
