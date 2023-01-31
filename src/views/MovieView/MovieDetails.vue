@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import DetailData from "../../components/MoviePages/DetailDataMovie.vue";
+import DetailData from "../../components/MoviePages/MovieDetailData.vue";
 
 export default {
   name: "MovieDetails",

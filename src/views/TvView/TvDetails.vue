@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import DetailDataTv from "../../components/TvPages/DetailDataTv.vue";
+import DetailDataTv from "../../components/TvPages/TvDetailData.vue";
 
 export default {
   name: "TvDetails",
