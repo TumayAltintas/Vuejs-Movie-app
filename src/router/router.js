@@ -18,6 +18,8 @@ const router = createRouter({
 
 		{path: '/Tv/:name', name: 'Tv', component: () => import('../views/TvView/Tv.vue')},
 
+		{path: '/Person/Popular', name: 'PersonPopular', component: () => import('../views/Person/PopularPeople.vue')},
+
 		{path: '/Person/:id/:name', name: 'Person', component: () => import('../views/Person/Person.vue')},
 
 		{path: '/Register', name: 'Register', component: () => import('../components/Login-Register/Register.vue')},
