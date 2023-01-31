@@ -10,79 +10,77 @@
             <img class="personImage" :src="this.API_IMG_URL + person.profile_path" alt="">
           </div>
         </section>
-        <div>
+        <section>
+          <!--            <div class="d-flex">-->
+          <!--              <div>-->
+          <!--                <a class="social_link" title="Visit Instagram"-->
+          <!--                   :href="'https://instagram.com/'+ socialmedia.instagram_id"-->
+          <!--                   target="_blank" rel="noopener" data-role="tooltip"><span class="glyphicons_v2 instagram"></span></a>-->
+          <!--              </div>-->
+          <!--            </div>-->
+          <h3>Personal Info</h3>
           <section>
-            <!--            <div class="d-flex">-->
-            <!--              <div>-->
-            <!--                <a class="social_link" title="Visit Instagram"-->
-            <!--                   :href="'https://instagram.com/'+ socialmedia.instagram_id"-->
-            <!--                   target="_blank" rel="noopener" data-role="tooltip"><span class="glyphicons_v2 instagram"></span></a>-->
-            <!--              </div>-->
-            <!--            </div>-->
-            <h3>Personal Info</h3>
-            <section>
-              <p>
-                <strong>
-                  <bdi>Known For</bdi>
-                </strong>
-                <br>
-                {{ person.known_for_department }}
-              </p>
-              <p>
-                <strong>
-                  <bdi>Known Credits</bdi>
-                </strong>
-                <br>
-                {{ person.popularity }}
-              </p>
-              <p v-if="person.gender === 2 ">
-                <strong>
-                  <bdi>Gender</bdi>
-                </strong>
-                <br>
-                Male
-              </p>
-              <p v-else>
-                <strong>
-                  <bdi>Gender</bdi>
-                </strong>
-                <br>
-                Female
-              </p>
-              <p v-if="person.birthday != null">
-                <strong>
-                  <bdi>Birthday</bdi>
-                </strong>
-                <br>
-                {{ person.birthday }} ({{ age - 1 }} years old)
-                <br>
-              </p>
-              <p v-if="person.deathday !=null">
-                <strong>
-                  <bdi>Deathday</bdi>
-                </strong>
-                <br>
-                {{ person.deathday }} ({{ deadage }} years old)
-              </p>
-              <p>
-                <strong>
-                  <bdi>Place of Birth</bdi>
-                </strong>
-                <br>
-                {{ person.place_of_birth }}
-              </p>
-              <ul class="person-know-ul">
-                <strong>
-                  <bdi>Also Known As</bdi>
-                </strong>
-                <br>
-                <li class="person-know" v-for="know in person.also_known_as">
-                  {{ know }}
-                </li>
-              </ul>
-            </section>
+            <p>
+              <strong>
+                <bdi>Known For</bdi>
+              </strong>
+              <br>
+              {{ person.known_for_department }}
+            </p>
+            <p>
+              <strong>
+                <bdi>Known Credits</bdi>
+              </strong>
+              <br>
+              {{ person.popularity }}
+            </p>
+            <p v-if="person.gender === 2 ">
+              <strong>
+                <bdi>Gender</bdi>
+              </strong>
+              <br>
+              Male
+            </p>
+            <p v-else>
+              <strong>
+                <bdi>Gender</bdi>
+              </strong>
+              <br>
+              Female
+            </p>
+            <p v-if="person.birthday != null">
+              <strong>
+                <bdi>Birthday</bdi>
+              </strong>
+              <br>
+              {{ person.birthday }} ({{ age - 1 }} years old)
+              <br>
+            </p>
+            <p v-if="person.deathday !=null">
+              <strong>
+                <bdi>Deathday</bdi>
+              </strong>
+              <br>
+              {{ person.deathday }} ({{ deadage }} years old)
+            </p>
+            <p>
+              <strong>
+                <bdi>Place of Birth</bdi>
+              </strong>
+              <br>
+              {{ person.place_of_birth }}
+            </p>
+            <ul class="person-know-ul">
+              <strong>
+                <bdi>Also Known As</bdi>
+              </strong>
+              <br>
+              <li class="person-know" v-for="know in person.also_known_as">
+                {{ know }}
+              </li>
+            </ul>
           </section>
-        </div>
+        </section>
       </div>
       <div class="person-information">
         <section>
@@ -119,43 +117,9 @@
 
 
 <script>
-import axios from "axios";
-
 export default {
   name: "Profil",
-  data() {
-    return {
-      person: '',
-      knowfor: '',
-      age: '',
-      deadage: '',
-      socialmedia: '',
-    }
-  },
-  async mounted() {
-
-    axios
-        .get(this.API + 'person/' + this.$route.params.id + '?' + this.API_KEY + '&language=en-US')
-        .then((response) => {
-          this.person = response.data
-          this.age = 2023 - this.person.birthday.slice(0, 4)
-          this.deadage = this.person.deathday.slice(0, 4) - this.person.birthday.slice(0, 4)
-
-        })
-    axios
-        .get(this.API + 'person/' + this.$route.params.id + '/combined_credits?' + this.API_KEY + '&language=en-US')
-        .then((response) => {
-          this.knowfor = response.data.cast
-        })
-
-    axios
-        .get(this.API + 'person/' + this.$route.params.id + '/external_ids?' + this.API_KEY + '&language=en-US')
-        .then((response) => {
-          this.socialmedia = response.data
-        })
-
-  },
-
+  props: ['socialmedia', 'person', 'knowfor', 'age', 'deadage'],
 }
 </script>
 

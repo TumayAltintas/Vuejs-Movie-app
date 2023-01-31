@@ -2,17 +2,18 @@
   <div>
     <Top-Header style="margin-bottom: 50px"/>
     <div>
-      <Profil></Profil>
+      <ProfilData/>
     </div>
   </div>
 </template>
 
 <script>
-import Profil from "../../components/Person/Profil.vue";
+import ProfilData from "../../components/Person/ProfilData.vue";
+
 export default {
   name: "Person",
-  components : {
-    Profil
+  components: {
+    ProfilData
   }
 }
 </script>
