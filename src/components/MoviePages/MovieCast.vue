@@ -2,7 +2,7 @@
   <div class=" container">
     <div class="blur container" ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
       <div v-for="(cast,index) in MoviesCast" :key="index"
-           class="opacity-100 shadow-lg rounded-3 col-lg-2 col-md-3 col-sm-4 m-2"
+           class="opacity-100 shadow-lg rounded-3 col"
            style="width: 138px;height: 320px;display: inline-block; flex: 0 0 auto;">
         <div>
           <router-link v-if="cast.profile_path == null" :to="'/Person/' + cast.id + '/' + cast.name">

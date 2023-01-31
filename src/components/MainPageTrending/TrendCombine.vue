@@ -1,6 +1,6 @@
 <template>
     <div class="d-flex">
-      <div class="row col-lg-6">
+      <div class="row col">
         <h3 class="trend">Trending</h3>
         <div class="select d-flex">
           <div :class="{ SelectedFirst: SelectedFirst}"><h3 class="text" @click="toggleActive"><a>Today</a></h3></div>
