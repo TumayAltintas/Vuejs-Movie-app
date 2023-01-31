@@ -1,31 +1,30 @@
 <template>
   <div class="container">
-      <div class="row">
-        <div v-for="(movie,index) in Movies" :key="index" class="col item">
-          <div class="item-product">
-            <router-link :to="'/MovieDetail/'+ movie.id">
-              <img class="image" :src="this.API_IMG_URL + movie.poster_path" alt="">
-            </router-link>
-          </div>
-          <div>
-            <h2>{{ movie.title }}</h2>
-          </div>
+    <div class="row">
+      <div v-for="(tv,index) in TvData" :key="index" class="col item">
+        <div class="item-product">
+          <router-link :to="'/TvDetail/'+ tv.id">
+            <img class="image" :src="this.API_IMG_URL + tv.poster_path" alt="">
+          </router-link>
         </div>
+        <h2>{{ tv.name }}</h2>
       </div>
+    </div>
   </div>
 </template>
 
-<script>
 
+<script>
+import axios from "axios";
 
 let currentPage = 1;
 export default {
-  name: "MovieNowPlaying",
-  props: ['Movies'],
+  name: "Tv",
+  props: ['TvData'],
+
 }
-
-
 </script>
+
 
 <style scoped>
 .image {

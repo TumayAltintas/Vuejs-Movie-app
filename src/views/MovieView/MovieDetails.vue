@@ -1,16 +1,17 @@
 <template>
-<div>
+  <div>
     <Top-Header/>
-  <MovieDetail/>
-</div>
+    <DetailData/>
+  </div>
 </template>
 
 <script>
-import MovieDetail from "../../components/MoviePages/Moviedetail.vue";
+import DetailData from "../../components/MoviePages/DetailDataMovie.vue";
+
 export default {
   name: "MovieDetails",
   components: {
-    MovieDetail
+    DetailData
   }
 }
 </script>

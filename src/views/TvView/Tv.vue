@@ -1,16 +1,16 @@
 <template>
   <div>
     <Top-Header/>
-    <Tv/>
+    <TvPagesData/>
   </div>
 </template>
 
 <script>
-import Tv from "../../components/TvPages/Tv.vue";
+import TvPagesData from "../../components/TvPages/TvPagesData.vue";
 export default {
   name: "TopRated",
   components: {
-    Tv
+    TvPagesData
   }
 }
 </script>

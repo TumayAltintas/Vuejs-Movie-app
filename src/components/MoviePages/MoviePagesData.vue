@@ -1,34 +1,21 @@
 <template>
   <div class="container">
-    <div>
-      <button v-on:click.prevent="previous()">Back</button>
-      <button v-on:click.prevent="next()">Next</button>
-    </div>
-    <div>
-      <div class="row">
-        <div v-for="(tv,index) in Tv" :key="index" class="col item">
-          <div class="item-product">
-            <router-link :to="'/TvDetail/'+ tv.id">
-              <img class="image" :src="this.API_IMG_URL + tv.poster_path" alt="">
-            </router-link>
-          </div>
-            <h2>{{ tv.name }}</h2>
-        </div>
-      </div>
-    </div>
+    <button v-on:click.prevent="previous()">Back</button>
+    <button v-on:click.prevent="next()">Next</button>
   </div>
+  <Movie :Movies="Movies"/>
 </template>
-
 
 <script>
 import axios from "axios";
-
+import Movie from "./Movie.vue";
 let currentPage = 1;
 export default {
-  name: "Tv",
+  name: "MoviePageData",
+  components: {Movie},
   data() {
     return {
-      Tv: [],
+      Movies: [],
     }
   },
   mounted() {
@@ -48,22 +35,19 @@ export default {
       }
     }
   },
-
-
   methods: {
     async fetchActors(page) {
       try {
         axios
-            .get(this.API + '/tv/' + this.getQuary + '?' + this.API_KEY + '&language=en-US&page=' + page)
+            .get(this.API + '/movie/' + this.getQuary + '?' + this.API_KEY + '&language=en-US&page=' + page)
             .then((response) => {
 
-              this.Tv = response.data.results
+              this.Movies = response.data.results
             })
       } catch (error) {
         console.log(error)
       }
     },
-
     scroll() {
       window.onscroll = () => {
         let BottomWindow =
@@ -86,33 +70,9 @@ export default {
   },
 
 }
+
 </script>
 
-
 <style scoped>
-.image {
-  width: 100%;
-  height: 300px;
-  border-top-left-radius: 8px 8px;
-  border-top-right-radius: 8px 8px;
 
-}
-
-.item-product {
-  width: 200px;
-}
-
-.item {
-  margin-right: 20px;
-  padding: 0;
-  border: 1px solid #e3e3e3;;
-  max-width: 200px;
-  border-radius: 8px;
-  margin-bottom: 25px;
-}
-
-h2 {
-  font-size: 16px;
-  color: #000000
-}
 </style>

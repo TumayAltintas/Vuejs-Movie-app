@@ -1,17 +1,17 @@
 <template>
-
-<div>
-  <Top-Header/>
-    <TvDetail/>
-</div>
+  <div>
+    <Top-Header/>
+    <DetailDataTv/>
+  </div>
 </template>
 
 <script>
-import TvDetail from "../../components/TvPages/TvDetail.vue";
+import DetailDataTv from "../../components/TvPages/DetailDataTv.vue";
+
 export default {
   name: "TvDetails",
   components: {
-    TvDetail
+    DetailDataTv
   }
 }
 </script>

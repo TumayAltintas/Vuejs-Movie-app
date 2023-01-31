@@ -1,16 +1,16 @@
 <template>
   <div>
     <Top-Header/>
-   <Movie/>
+   <MoviePagesData/>
   </div>
 </template>
 
 <script>
-import Movie from "../../components/MoviePages/Movie.vue";
+import MoviePagesData from "../../components/MoviePages/MoviePagesData.vue";
 export default {
   name: "Moviepage",
   components: {
-    Movie
+    MoviePagesData
   }
 
 }
