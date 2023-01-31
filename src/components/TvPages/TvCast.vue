@@ -7,7 +7,6 @@
         <div>
           <router-link v-if="cast.profile_path == null" :to="'/Person/' + cast.id + '/' + cast.name">
             <img class="ImgCast" style="height: 207px" src="../photo/empty-profile-picture-png-2-2.png" alt="">
-
           </router-link>
           <router-link v-else :to="'/Person/' + cast.id + '/' + cast.name.replace(/ /g, '+')">
             <img class="ImgCast" :src="this.API_IMG_URL + cast.profile_path" alt="">
@@ -23,7 +22,7 @@
 <script>
 export default {
   name: "TvCast",
-  props : ['TvCast'],
+  props: ['TvCast'],
 }
 </script>
 
@@ -34,9 +33,11 @@ export default {
   transition: transform 0.5s;
   height: 350px;
 }
+
 .title {
   white-space: normal;
 }
+
 .title2 {
   width: 100%;
   position: relative;
