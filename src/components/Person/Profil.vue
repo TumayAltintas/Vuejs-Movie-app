@@ -93,7 +93,6 @@
               <p>{{ person.biography }}</p>
             </div>
           </div>
-          <div v-else class="out-text">We don't have a biography for {{person.name}}.</div>
         </section>
         <section class="person-know-for">
           <h3>Known For</h3>
