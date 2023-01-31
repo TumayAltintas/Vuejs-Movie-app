@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="row">
       <div class="blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
         <div v-for="(Tv,index) in slides" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
@@ -11,7 +10,7 @@
           <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id + Tv.name.replace(/ /g, '+')">
             <img class="opacity-100 shadow-lg rounded rounded-150" :src="this.API_IMG_URL + Tv.poster_path" alt="">
           </router-link>
-          <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id">
+          <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id + Tv.name.replace(/ /g, '+')">
             <div class="title">
               <h6 class="TitleText">{{ Tv.name }}</h6>
             </div>
@@ -19,7 +18,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -35,18 +33,13 @@ export default {
 
     }
   },
-
   async mounted() {
-
-
     axios
         .get(this.API+ 'tv/top_rated?' + this.API_KEY + '&language=en-US&page=' + this.currentPage)
         .then((response) => {
 
           this.slides = response.data.results
         })
-
-
   },
 
 }

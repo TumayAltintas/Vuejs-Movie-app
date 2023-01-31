@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="row">
       <div class="blur" id="carousel-wrapper">
         <div v-for="(Movie,index) in slides" :key="index"
@@ -20,7 +19,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
