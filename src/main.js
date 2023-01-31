@@ -4,9 +4,7 @@ import router from './router/router.js'
 import {appAxios} from "./axios/AppAxios.js";
 import store from "./store/store.js";
 import Header from "./components/HeaderAndOthers/Header.vue";
-import {
-    API_KEY,API_IMG_URL,API
-} from "./Globaljs/Globaljs.js"
+import {API_KEY, API_IMG_URL, API} from "./Globaljs/Globaljs.js"
 
 const app = createApp(App)
 app.use(store)
