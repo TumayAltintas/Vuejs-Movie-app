@@ -17,7 +17,6 @@ export default {
   data() {
     return {
       TvCast: [],
-      currentSlide: 0,
       TvDetails: '',
       AirDate: ''
     }

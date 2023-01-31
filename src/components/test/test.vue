@@ -1,21 +1,18 @@
 <template>
   <div id="carousel-container container Full">
     <div class="row">
-      <div ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper"
-           :style="{ width: (slides.length * 100) + '%', transform: 'translateX(' + (-currentSlide * (100 / slides.length)) + '%)' }">
-        <div v-for="(Movie,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
-             style="width: 165px;height: 250px;display: inline-block; flex: 0 0 auto;">
-          <div>
-            <div class="average">
-              <span>{{ Movie.vote_average }}</span>
-            </div>
-            <router-link to="">
-              <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Movie.poster_path">
-            </router-link>
+      <div v-for="(Movie,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
+           style="width: 165px;height: 250px;display: inline-block; flex: 0 0 auto;">
+        <div>
+          <div class="average">
+            <span>{{ Movie.vote_average }}</span>
           </div>
-          <div class="title">
-            <p>{{ Movie.title }}</p>
-          </div>
+          <router-link to="">
+            <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Movie.poster_path">
+          </router-link>
+        </div>
+        <div class="title">
+          <p>{{ Movie.title }}</p>
         </div>
       </div>
     </div>
@@ -33,7 +30,6 @@ export default {
     return {
       slides: [],
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
-      currentSlide: 0,
 
     }
   },
@@ -94,6 +90,7 @@ p.title {
 img {
   width: 165px;
 }
+
 .cat {
   position: relative;
   width: 200px;
@@ -127,14 +124,6 @@ img {
 </style>
 
 
-
-
-
-
-
-
-
-
 <script>
 import axios from 'axios'
 
@@ -146,8 +135,6 @@ export default {
     return {
       slides: [],
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
-      currentSlide: 0,
-
     }
   },
 

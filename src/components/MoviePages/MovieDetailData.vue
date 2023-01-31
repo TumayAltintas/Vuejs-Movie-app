@@ -14,7 +14,6 @@ export default {
     return {
       MoviesDetails: '',
       MoviesCast: [],
-      currentSlide: 0,
       AirDate: ''
     }
   },

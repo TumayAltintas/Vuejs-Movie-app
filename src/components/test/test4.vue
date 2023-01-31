@@ -46,7 +46,6 @@ export default {
     return {
       slides: [],
       IMG_URL: 'https://image.tmdb.org/t/p/w500',
-      currentSlide: 0,
       TvDetails: [],
       backgroundColor : ''
 

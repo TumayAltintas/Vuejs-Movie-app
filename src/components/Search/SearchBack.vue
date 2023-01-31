@@ -21,7 +21,6 @@ export default {
   name: "SearchBack",
   data() {
     return {
-      // MoviesDetails: '',
       searchText: [],
       random: Math.floor(Math.random() * 200),
     }

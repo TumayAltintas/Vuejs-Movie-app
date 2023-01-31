@@ -33,7 +33,6 @@ export default {
   data() {
     return {
       slides: [],
-      currentSlide: 0,
 
     }
   },
