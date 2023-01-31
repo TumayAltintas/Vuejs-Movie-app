@@ -32,12 +32,8 @@ export default {
   data() {
     return {
       slides: [],
-
-      currentSlide: 0,
-
     }
   },
-
   mounted() {
     axios
         .get(this.API + 'trending/all/day?' + this.API_KEY)
@@ -46,8 +42,6 @@ export default {
         })
   },
 }
-
-
 </script>
 
 <style scoped>
