@@ -1,33 +1,36 @@
 <template>
   <header>
-      <div class="container d-flex">
-        <div class="" style="position: absolute; top: 25%">
-          <router-link to="/" class="TopA">HOME</router-link>
-          <div style="margin-left: 25px" class="dropdown">
-            <a style="color: white;cursor: pointer;position: relative" >Movies</a>
-            <div class="dropdown-content">
-              <router-link class="LinkItem" :to="'/Movie/' + 'popular' ">Popular</router-link>
-              <router-link class="LinkItem" :to="'/Movie/' + 'now_playing'">Now Playing</router-link>
-              <router-link class="LinkItem" :to="'/Movie/' + 'top_rated'">Top Rated</router-link>
-              <router-link class="LinkItem" :to="'/Movie/' + 'upcoming'">Upcoming</router-link>
-            </div>
-          </div>
-          <div style="margin-left: 25px" class="dropdown">
-            <a style="color: white;cursor: pointer;" >Tv Shows</a>
-            <div class="dropdown-content">
-              <router-link class="LinkItem" :to="'/Tv/' + 'popular'">Popular</router-link>
-              <router-link class="LinkItem" :to="'/Tv/' + 'airing_today'">Airing Today</router-link>
-              <router-link class="LinkItem" :to="'/Tv/' + 'on_the_air'">On The air</router-link>
-              <router-link class="LinkItem" :to="'/Tv/' + 'top_rated'">Top Rated</router-link>
-            </div>
-          </div>
-          <div style="margin-left: 25px" class="dropdown">
-            <a style="color: white;cursor: pointer;" >People</a>
-            <div class="dropdown-content">
-              <router-link class="LinkItem" to="/Person/Popular">Popular People</router-link>
-            </div>
+    <div class="d-flex">
+      <a href="https://www.themoviedb.org/ " class="flash">Go to MovieDb</a>
+    </div>
+    <div class="container d-flex">
+      <div class="" style="position: absolute; top: 25%">
+        <router-link to="/" class="TopA">HOME</router-link>
+        <div style="margin-left: 25px" class="dropdown">
+          <a style="color: white;cursor: pointer;position: relative">Movies</a>
+          <div class="dropdown-content">
+            <router-link class="LinkItem" :to="'/Movie/' + 'popular' ">Popular</router-link>
+            <router-link class="LinkItem" :to="'/Movie/' + 'now_playing'">Now Playing</router-link>
+            <router-link class="LinkItem" :to="'/Movie/' + 'top_rated'">Top Rated</router-link>
+            <router-link class="LinkItem" :to="'/Movie/' + 'upcoming'">Upcoming</router-link>
           </div>
         </div>
+        <div style="margin-left: 25px" class="dropdown">
+          <a style="color: white;cursor: pointer;">Tv Shows</a>
+          <div class="dropdown-content">
+            <router-link class="LinkItem" :to="'/Tv/' + 'popular'">Popular</router-link>
+            <router-link class="LinkItem" :to="'/Tv/' + 'airing_today'">Airing Today</router-link>
+            <router-link class="LinkItem" :to="'/Tv/' + 'on_the_air'">On The air</router-link>
+            <router-link class="LinkItem" :to="'/Tv/' + 'top_rated'">Top Rated</router-link>
+          </div>
+        </div>
+        <div style="margin-left: 25px" class="dropdown">
+          <a style="color: white;cursor: pointer;">People</a>
+          <div class="dropdown-content">
+            <router-link class="LinkItem" to="/Person/Popular">Popular People</router-link>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 </template>
@@ -45,6 +48,29 @@ export default {
 </script>
 
 <style scoped>
+.flash {
+  animation: flash 3s infinite;
+  cursor: pointer;
+  text-decoration: none;
+  -ms-flex-direction: row;
+  -ms-flex-align: center;
+  font-weight: 800;
+  margin-top: 15px;
+  color: white;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 /*.logout {*/
 /*  position: absolute;*/
 /*  right: 0;*/
@@ -56,6 +82,7 @@ header {
   height: 64px;
   position: relative
 }
+
 .dropdown {
   position: relative;
   display: inline-block;
@@ -66,7 +93,7 @@ header {
   position: absolute;
   z-index: 1;
   width: 160px;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   padding: 12px 16px;
   background-color: white;
   flex-direction: column;
@@ -78,7 +105,8 @@ header {
 .dropdown:hover .dropdown-content {
   display: block;
 }
-.LinkItem{
+
+.LinkItem {
   white-space: nowrap;
   cursor: pointer;
   text-decoration: none;
@@ -95,7 +123,8 @@ header {
   align-items: center;
   position: relative;
 }
-.TopA{
+
+.TopA {
   color: white;
   white-space: nowrap;
   cursor: pointer;
