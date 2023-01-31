@@ -15,10 +15,10 @@
             <img v-else class="image" :src="this.API_IMG_URL + data.poster_path" alt="">
           </div>
           <div>
-            <router-link class="LinkItem" :to="'/Tv/'+ data.id">
+            <router-link class="LinkItem" :to="'/TvDetail/'+ data.id">
               <h2>{{ data.name }}</h2>
             </router-link>
-            <router-link class="LinkItem" :to="'/Movie/'+ data.id">
+            <router-link class="LinkItem" :to="'/MovieDetail/'+ data.id">
               <h2>{{ data.title }}</h2>
             </router-link>
           </div>
