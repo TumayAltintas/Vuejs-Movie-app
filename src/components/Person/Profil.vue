@@ -88,11 +88,12 @@
         </section>
         <section class="person-biography">
           <h3>Biography</h3>
-          <div class="out-text">
+          <div v-if="person.biography ==null" class="out-text">
             <div class="inline-text">
               <p>{{ person.biography }}</p>
             </div>
           </div>
+          <div v-else class="out-text">We don't have a biography for {{person.name}}.</div>
         </section>
         <section class="person-know-for">
           <h3>Known For</h3>
@@ -148,6 +149,8 @@ export default {
   font-weight: 700;
   color: #000;
   cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
 
 .blur {
