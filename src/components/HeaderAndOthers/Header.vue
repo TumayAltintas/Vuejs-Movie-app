@@ -57,6 +57,9 @@ export default {
   font-weight: 800;
   margin-top: 15px;
   color: white;
+  position: absolute;
+  right: 0;
+  margin-right: 20px;
 }
 
 @keyframes flash {
@@ -71,11 +74,6 @@ export default {
   }
 }
 
-/*.logout {*/
-/*  position: absolute;*/
-/*  right: 0;*/
-/*  margin-right: 20px;*/
-/*}*/
 header {
   background-color: #032541;
   width: 100%;
