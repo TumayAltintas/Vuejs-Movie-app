@@ -49,7 +49,7 @@ export default {
   props: ['MoviesDetails', 'MoviesCast', 'AirDate'],
   data(){
     return{
-      backgroundColor: ''
+      backgroundColor: 'rgba(31.5, 31.5, 52.5, 0.5)',
     }
   },
   methods: {

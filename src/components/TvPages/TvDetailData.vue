@@ -18,7 +18,9 @@ export default {
     return {
       TvCast: [],
       TvDetails: '',
-      AirDate: ''
+      AirDate: '',
+      backgroundColor: '',
+
     }
   },
   async mounted() {
@@ -35,6 +37,16 @@ export default {
         })
     window.addEventListener('resize', this.handleResize)
   },
+  methods: {
+    handleResize() {
+      if (window.innerWidth < 868) {
+        this.backgroundColor = 'grey'
+      } else {
+        this.backgroundColor = ''
+      }
+    }
+  },
+
 
 }
 </script>
