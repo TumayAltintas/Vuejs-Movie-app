@@ -45,7 +45,7 @@ export default {
   props: ['TvDetails', 'AirDate'],
   data(){
     return{
-      backgroundColor: 'rgba(31.5, 31.5, 52.5, 0.5)',
+      backgroundColor: 'rgba(31.5, 31.5, 52.5, 0.2)',
     }
   },
   methods: {
