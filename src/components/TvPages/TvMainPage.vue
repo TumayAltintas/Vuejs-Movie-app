@@ -1,23 +1,25 @@
 <template>
-    <div class="row">
-      <div class="blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
-        <div v-for="(Tv,index) in slides" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
-          <div class="average">
+  <div class="row">
+    <div class="blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+      <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id + Tv.name.replace(/ /g, '+')" v-for="(Tv,index) in slides"
+                   :key="index"
+      >
+        <div class="average">
           <span style="color:#000;">
             {{ Tv.vote_average }}
           </span>
-          </div>
-          <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id + Tv.name.replace(/ /g, '+')">
-            <img class="opacity-100 shadow-lg rounded rounded-150" :src="this.API_IMG_URL + Tv.poster_path" alt="">
-          </router-link>
-          <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id + Tv.name.replace(/ /g, '+')">
-            <div class="title">
-              <h6 class="TitleText">{{ Tv.name }}</h6>
-            </div>
-          </router-link>
         </div>
-      </div>
+        <div>
+          <img class="opacity-100 shadow-lg rounded rounded-150" :src="this.API_IMG_URL + Tv.poster_path" alt="">
+        </div>
+        <div>
+          <div class="title">
+            <h6 class="TitleText">{{ Tv.name }}</h6>
+          </div>
+        </div>
+      </router-link>
     </div>
+  </div>
 </template>
 
 <script>
@@ -35,7 +37,7 @@ export default {
   },
   async mounted() {
     axios
-        .get(this.API+ 'tv/top_rated?' + this.API_KEY + '&language=en-US&page=' + this.currentPage)
+        .get(this.API + 'tv/top_rated?' + this.API_KEY + '&language=en-US&page=' + this.currentPage)
         .then((response) => {
 
           this.slides = response.data.results
@@ -77,6 +79,10 @@ img {
 
 .LinkItem {
   text-decoration: none;
+  padding: 0;
+  margin-right: 25px;
+  width: 165px;
+  height: 350px
 }
 
 .TitleText {
