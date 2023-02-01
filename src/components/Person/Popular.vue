@@ -1,21 +1,24 @@
 <template>
   <div class="container">
     <div>
-      <button v-on:click.prevent="previous()">Next</button>
-      <button v-on:click.prevent="next()">Back</button>
+      <button v-on:click.prevent="previous()">Back</button>
+      <button v-on:click.prevent="next()">Next</button>
     </div>
     <div>
       <div class="row">
-        <div v-for="person in People" :key="person.id" class="col item">
+        <router-link :to="'/Person/' + person.id + '/' + person.name.replace(/ /g, '+')" v-for="person in People" :key="person.id" class="col item">
           <div class="item-product">
-            <router-link :to="'/Person/' + person.id + '/' + person.name">
+            <div v-if="person.profile_path == null">
+              <img class="image" src="../photo/empty-profile-picture-png-2-2.png" alt="">
+            </div>
+            <div v-else>
               <img class="image" :src="this.API_IMG_URL + person.profile_path" alt="">
-            </router-link>
+            </div>
           </div>
           <div>
             <h2>{{ person.name }}</h2>
           </div>
-        </div>
+        </router-link>
       </div>
     </div>
   </div>
@@ -95,6 +98,7 @@ export default {
   max-width: 200px;
   border-radius: 8px;
   margin-bottom: 25px;
+  text-decoration: none;
 }
 
 h2 {

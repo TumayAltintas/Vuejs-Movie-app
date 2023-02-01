@@ -1,21 +1,20 @@
 <template>
   <div class=" container">
     <div class="blur container" ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
-      <div v-for="(cast,index) in MoviesCast" :key="index"
-           class="opacity-100 shadow-lg rounded-3 col m-2"
-           style="width: 138px;height: 320px;display: inline-block; flex: 0 0 auto;">
+      <router-link :to="'/Person/' + cast.id + '/' + cast.name.replace(/ /g, '+')" v-for="(cast,index) in MoviesCast" :key="index"
+                   class="opacity-100 shadow-lg rounded-3 col m-2 person">
         <div>
-          <router-link v-if="cast.profile_path == null" :to="'/Person/' + cast.id + '/' + cast.name">
+          <div v-if="cast.profile_path == null" >
             <img class="ImgCast" style="height: 207px"
                  src="../photo/empty-profile-picture-png-2-2.png" alt="">
-          </router-link>
-          <router-link v-else :to="'/Person/' + cast.id + '/' + cast.name.replace(/ /g, '+')">
+          </div>
+          <div v-else >
             <img class="ImgCast" :src="this.API_IMG_URL + cast.profile_path" alt="">
-          </router-link>
+          </div>
           <p class=" title2">{{ cast.name }}</p>
           <p class=" title">{{ cast.character }}</p>
         </div>
-      </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -39,6 +38,14 @@ export default {
   padding: 0;
   font-weight: bold;
   color: #000;
+}
+
+.person {
+  width: 138px;
+  height: 320px;
+  display: inline-block;
+  flex: 0 0 auto;
+  text-decoration: none;
 }
 
 .title {

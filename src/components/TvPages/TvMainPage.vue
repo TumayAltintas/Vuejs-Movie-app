@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+    <div class="blur" id="carousel-wrapper">
       <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id + Tv.name.replace(/ /g, '+')" v-for="(Tv,index) in slides"
                    :key="index">
         <div class="average">
@@ -73,6 +73,11 @@ div.average {
 
 img {
   width: 165px;
+}
+
+.blur {
+  overflow-y: hidden;
+  white-space: nowrap;
 }
 
 .LinkItem {
