@@ -1,18 +1,57 @@
 <template>
-  <div id="carousel-container container Full">
+  <div v-if="text === 'tv'" class="container">
     <div class="row">
-      <div v-for="(Movie,index) in slides" :key="index" class="col-lg-2 col-md-3 col-sm-4 m-2"
-           style="width: 165px;height: 250px;display: inline-block; flex: 0 0 auto;">
-        <div>
-          <div class="average">
-            <span>{{ Movie.vote_average }}</span>
-          </div>
-          <router-link to="">
-            <img class="opacity-100 shadow-lg rounded rounded-150" :src="IMG_URL + Movie.poster_path">
+      <div v-for="(data,index) in search" :key="index" class="col item">
+        <div class="item-product">
+          <router-link v-if="data.poster_path == null" :to="'/TvDetail/'+ data.id">
+            <img class="imageE"  src="../photo/empty.jpg" alt="">
+          </router-link>
+          <router-link v-else :to="'/TvDetail/'+ data.id">
+            <img  class="image" :src="this.API_IMG_URL + data.poster_path" alt="">
           </router-link>
         </div>
-        <div class="title">
-          <p>{{ Movie.title }}</p>
+        <div>
+          <router-link class="LinkItem" :to="'/TvDetail/'+ data.id">
+            <h2>{{ data.name }}</h2>
+          </router-link>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div v-if="text === 'movie'" class="container">
+    <div class="row">
+      <div v-for="(data,index) in search" :key="index" class="col item">
+        <div class="item-product">
+          <router-link v-if="data.poster_path == null" :to="'/MovieDetail/'+ data.id">
+            <img class="imageE"  src="../photo/empty.jpg" alt="">
+          </router-link>
+          <router-link v-else :to="'/MovieDetail/'+ data.id">
+            <img  class="image" :src="this.API_IMG_URL + data.poster_path" alt="">
+          </router-link>
+        </div>
+        <div>
+          <router-link class="LinkItem" :to="'/MovieDetail/'+ data.id">
+            <h2>{{ data.title }}</h2>
+          </router-link>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div v-if="text === 'person'" class="container">
+    <div class="row">
+      <div v-for="(data,index) in search" :key="index" class="col item">
+        <div class="item-product">
+          <router-link  v-if="data.poster_path == null" :to="'/Person/'+ data.id + data.name">
+            <img class="imageE" src="../photo/empty.jpg" alt="">
+          </router-link>
+          <router-link v-else :to="'/Person/'+ data.id + data.name">
+            <img  class="image" :src="this.API_IMG_URL + data.profile_path" alt="">
+          </router-link>
+        </div>
+        <div>
+          <router-link class="LinkItem" :to="'/Person/'+ data.id + data.name">
+            <h2>{{ data.name }}</h2>
+          </router-link>
         </div>
       </div>
     </div>

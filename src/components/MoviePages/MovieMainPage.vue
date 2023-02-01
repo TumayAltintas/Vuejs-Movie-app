@@ -1,24 +1,24 @@
 <template>
-    <div class="row">
-      <div class="blur" id="carousel-wrapper">
-        <div v-for="(Movie,index) in slides" :key="index"
-             style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
-          <div class="average">
+  <div class="row">
+    <div class="blur" id="carousel-wrapper">
+      <router-link class="rout" :to="'/MovieDetail/' + Movie.id + Movie.title.replace(/ /g, '+')"
+                   v-for="(Movie,index) in slides" :key="index">
+        <div class="average">
           <span style="color:#000;">
             {{ Movie.vote_average }}
           </span>
-          </div>
-          <router-link class="LinkItem" :to="'/MovieDetail/' + Movie.id + Movie.title.replace(/ /g, '+')">
-            <img class="opacity-100 shadow-lg rounded rounded-150" :src="this.API_IMG_URL + Movie.poster_path" alt="">
-          </router-link>
-          <router-link class="LinkItem" :to="'/MovieDetail/' + Movie.id + Movie.title.replace(/ /g, '+')">
-            <div class="title">
-              <h6 class="TitleText">{{ Movie.title }}</h6>
-            </div>
-          </router-link>
         </div>
-      </div>
+        <div class="LinkItem">
+          <img class="opacity-100 shadow-lg rounded rounded-150" :src="this.API_IMG_URL + Movie.poster_path" alt="">
+        </div>
+        <div class="LinkItem">
+          <div class="title">
+            <h6 class="TitleText">{{ Movie.title }}</h6>
+          </div>
+        </div>
+      </router-link>
     </div>
+  </div>
 </template>
 
 <script>
@@ -36,11 +36,9 @@ export default {
   },
 
   mounted() {
-
     axios
         .get(this.API + 'movie/top_rated?' + this.API_KEY + '&language=en-US&page=' + this.currentPage)
         .then((response) => {
-
           this.slides = response.data.results
         })
   },
@@ -93,7 +91,11 @@ img {
 
 }
 
-.LinkItem {
+.rout {
+  padding: 0;
+  margin-right: 25px;
+  width: 165px;
+  height: 350px;
   text-decoration: none;
 }
 
