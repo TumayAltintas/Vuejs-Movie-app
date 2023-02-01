@@ -2,8 +2,7 @@
   <div class="row">
     <div class="blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
       <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id + Tv.name.replace(/ /g, '+')" v-for="(Tv,index) in slides"
-                   :key="index"
-      >
+                   :key="index">
         <div class="average">
           <span style="color:#000;">
             {{ Tv.vote_average }}
@@ -24,7 +23,6 @@
 
 <script>
 import axios from 'axios'
-
 
 export default {
   name: 'TvMainPage',
@@ -82,15 +80,13 @@ img {
   padding: 0;
   margin-right: 25px;
   width: 165px;
-  height: 350px
+  height: 350px;
 }
 
 .TitleText {
   color: black;
   font-weight: 700;
 }
-
-
 </style>
 
 <!--.blur {-->
