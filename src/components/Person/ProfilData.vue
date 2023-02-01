@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       person: '',
-      knowfor: '',
+      knowfor: [],
       age: '',
       deadage: '',
       socialmedia: '',
@@ -31,9 +31,9 @@ export default {
           this.deadage = this.person.deathday.slice(0, 4) - this.person.birthday.slice(0, 4)
         })
     axios
-        .get(this.API + 'person/' + this.$route.params.id + '/combined_credits?' + this.API_KEY + '&language=en-US')
+        .get(this.API + 'search/person?' +  this.API_KEY + '&language=en-US&query=' + this.$route.params.name + '&page=1' )
         .then((response) => {
-          this.knowfor = response.data.cast
+          this.knowfor = response.data.results[0].known_for
         })
     axios
         .get(this.API + 'person/' + this.$route.params.id + '/external_ids?' + this.API_KEY + '&language=en-US')

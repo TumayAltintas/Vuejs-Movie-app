@@ -36,10 +36,8 @@ export default {
   methods: {
     async fetchActors(page) {
       try {
-
         axios
             .get(this.API + 'search/' + this.text + '?' + this.API_KEY + '&language=en-US&query=' + this.quary + '&page=' + page)
-
             .then((response) => {
               this.search = response.data.results
             })

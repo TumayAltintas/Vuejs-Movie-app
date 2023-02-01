@@ -97,7 +97,7 @@
         <section class="person-know-for">
           <h3>Known For</h3>
           <div class="blur container" ref="carousel" id="carousel-wrapper">
-            <div v-show="know.vote_average > 8" v-for="(know,index) in knowfor" :key="index" class="col list">
+            <div v-for="(know,index) in knowfor" :key="index" class="col list">
               <div>
                 <img class="image" :src="this.API_IMG_URL + know.poster_path" alt="">
                 <router-link class="LinkItem" v-if="know.media_type === 'movie'" :to="'/MovieDetail/'+ know.id">
@@ -153,9 +153,9 @@ export default {
 }
 
 .blur {
-  max-width: 850px;
   overflow-y: hidden;
   white-space: nowrap;
+  display: flex;
 }
 
 .person-know-for {
