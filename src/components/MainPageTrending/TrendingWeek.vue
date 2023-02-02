@@ -9,12 +9,12 @@
         </div>
         <img class="opacity-100 shadow-lg rounded rounded-150" :src="this.API_IMG_URL + week.poster_path" alt="">
         <div v-if="week.media_type='movie'" class="title">
-          <router-link class="Link" :to="'/MovieDetail/' + week.id">
+          <router-link class="Link" :to="'/MovieDetail/' + week.id + '/' + week.title">
             <p>{{ week.title }}</p>
           </router-link>
         </div>
         <div v-if="week.media_type='tv'" class="title2">
-          <router-link class="Link" :to="'/TvDetail/'+ week.id">
+          <router-link class="Link" :to="'/TvDetail/'+ week.id + '/' + week.name">
             <p>{{ week.name }}</p>
           </router-link>
         </div>

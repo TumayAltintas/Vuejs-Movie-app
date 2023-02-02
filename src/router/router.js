@@ -6,7 +6,7 @@ const router = createRouter({
 	routes: [
 		{path: '/', name: 'home', component: () => import('../views/Home.vue')},
 
-		{path: '/MovieDetail/:id', name: 'MovieDetail', component: () => import('../views/MovieView/MovieDetails.vue')},
+		{path: '/MovieDetail/:id/:name', name: 'MovieDetail', component: () => import('../views/MovieView/MovieDetails.vue')},
 
 		{path: '/Movie/:name', name: 'Movie', component: () => import('../views/MovieView/Movie.vue')},
 
@@ -14,7 +14,7 @@ const router = createRouter({
 
 		// {path: '/Tv/:id/name/:name', name: 'TvDetail', component: () => import('../views/TvView/TvDetails.vue')},
 
-		{path: '/TvDetail/:id', name: 'TvDetail', component: () => import('../views/TvView/TvDetails.vue')},
+		{path: '/TvDetail/:id/:name', name: 'TvDetail', component: () => import('../views/TvView/TvDetails.vue')},
 
 		{path: '/Tv/:name', name: 'Tv', component: () => import('../views/TvView/Tv.vue')},
 

@@ -1,7 +1,7 @@
 <template>
   <div class="row">
     <div class="blur" id="carousel-wrapper">
-      <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id + Tv.name.replace(/ /g, '+')" v-for="(Tv,index) in slides"
+      <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id  + '/' + Tv.name.replace(/ /g, '+')" v-for="(Tv,index) in slides"
                    :key="index">
         <div class="average">
           <span style="color:#000;">

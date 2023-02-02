@@ -99,10 +99,6 @@ header {
   position: relative;
   display: inline-block;
 }
-
-.dropdown-content {
-}
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -113,13 +109,10 @@ header {
   text-decoration: none;
   color: white;
   padding: 0.5rem 0.5rem;
-  outline: 0;
-  display: -ms-flexbox;
   display: flex;
   -ms-flex-direction: row;
   flex-direction: row;
   -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
   -ms-flex-align: center;
   align-items: center;
   position: relative;
