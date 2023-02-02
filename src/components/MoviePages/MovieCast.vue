@@ -1,6 +1,6 @@
 <template>
   <div class=" container">
-    <div class="blur container" ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+    <div class="scroll" ref="carousel" style=" white-space: nowrap;" id="carousel-wrapper">
       <router-link :to="'/Person/' + cast.id + '/' + cast.name.replace(/ /g, '+')" v-for="(cast,index) in MoviesCast" :key="index"
                    class="opacity-100 shadow-lg rounded-3 col m-2 person">
         <div>
@@ -62,6 +62,6 @@ img.ImgCast {
   display: flex;
   position: relative;
   transition: transform 0.5s;
-  height: 350px;
+  height: 360px;
 }
 </style>

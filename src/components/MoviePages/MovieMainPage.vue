@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="blur" id="carousel-wrapper">
+    <div class="blur scroll" id="carousel-wrapper">
       <router-link class="rout" :to="'/MovieDetail/' + Movie.id + '/' + Movie.title.replace(/ /g, '+')"
                    v-for="(Movie,index) in slides" :key="index">
         <div class="average">
@@ -53,7 +53,7 @@ export default {
   display: flex;
   position: relative;
   transition: transform 0.5s;
-  height: 350px;
+  height: 360px;
 }
 
 div.title {
@@ -71,10 +71,6 @@ div.average {
   width: max-content;
 }
 
-.blur {
-  overflow-y: hidden;
-  white-space: nowrap;
-}
 
 img {
   width: 165px;
@@ -86,7 +82,6 @@ img {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
   flex-direction: column;
 
 }
@@ -103,6 +98,4 @@ img {
   color: white;
   font-weight: 700;
 }
-
-
 </style>

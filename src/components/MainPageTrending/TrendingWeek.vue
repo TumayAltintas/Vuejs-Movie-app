@@ -1,6 +1,6 @@
 <template>
   <div class="row mb-5">
-    <div class="Trending blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+    <div class="Trending blur scroll" style=" white-space: nowrap;" id="carousel-wrapper">
       <div v-for="(week,index) in WeekData" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
         <div class="average">
           <span style="color:red;">

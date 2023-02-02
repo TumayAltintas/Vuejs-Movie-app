@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="blur container" ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
+    <div class="scroll" ref="carousel" style=" white-space: nowrap;" id="carousel-wrapper">
       <router-link :to="'/Person/' + cast.id + '/' + cast.name.replace(/ /g, '+')" v-for="(cast,index) in TvCast"
                    :key="index"
                    class="opacity-100 shadow-lg rounded-3 col m-2 person">
@@ -35,7 +35,7 @@ export default {
   display: flex;
   position: relative;
   transition: transform 0.5s;
-  height: 350px;
+  height: 360px;
 }
 
 .title {
