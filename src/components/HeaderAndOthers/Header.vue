@@ -60,7 +60,7 @@ export default {
   // },
 }
 /*
-değişim oldue
+düzeltilmesi gerekenler
  */
 </script>
 
