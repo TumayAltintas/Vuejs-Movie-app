@@ -45,14 +45,13 @@ export default {
 .item {
   margin-right: 40px;
   padding: 0;
-  border: 1px solid #e3e3e3;;
   max-width: 180px;
   border-radius: 8px
 }
 
 h2 {
   font-size: 16px;
-  color: #000000
+  color: white;
 }
 
 .LinkItem {

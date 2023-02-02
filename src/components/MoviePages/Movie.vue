@@ -43,7 +43,6 @@ export default {
 .item {
   margin-right: 20px;
   padding: 0;
-  border: 1px solid #e3e3e3;;
   max-width: 200px;
   border-radius: 8px;
   margin-bottom: 25px;
@@ -51,6 +50,6 @@ export default {
 
 h2 {
   font-size: 16px;
-  color: #000000
+  color: white;
 }
 </style>

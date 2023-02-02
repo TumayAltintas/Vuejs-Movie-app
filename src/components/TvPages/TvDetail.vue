@@ -78,7 +78,7 @@ export default {
   margin: 0;
   padding: 0;
   font-size: 0.9em;
-  color: black;
+  color: white;
 }
 
 a {
@@ -93,14 +93,9 @@ a {
 
 span.genres {
   margin-right: 5px;
-  color: rebeccapurple;
 }
 
-.genres {
-  padding-left: 0;
-  top: 0;
-  left: 0;
-}
+
 
 h3 {
   color: white;

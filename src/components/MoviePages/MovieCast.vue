@@ -37,7 +37,7 @@ export default {
   margin: 0;
   padding: 0;
   font-weight: bold;
-  color: #000;
+  color: white;
 }
 
 .person {

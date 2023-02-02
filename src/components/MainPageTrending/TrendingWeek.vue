@@ -3,7 +3,7 @@
     <div class="Trending blur" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
       <div v-for="(week,index) in WeekData" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
         <div class="average">
-          <span style="color:#000;">
+          <span style="color:red;">
             {{ week.vote_average }}
           </span>
         </div>
@@ -93,7 +93,7 @@ div.title2 {
 }
 
 p {
-  color: black;
+  color: white;
   font-weight: 700;
 }
 

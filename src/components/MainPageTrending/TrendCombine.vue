@@ -1,7 +1,7 @@
 <template>
     <div class="d-flex">
       <div class="row col">
-        <h3 class="trend">Trending</h3>
+        <h3 class="trend" style="color: white">Trending</h3>
         <div class="select d-flex">
           <div :class="{ SelectedFirst: SelectedFirst}"><h3 class="text" @click="toggleActive"><a>Today</a></h3></div>
           <span></span>
@@ -64,7 +64,7 @@ export default {
   height: 100%;
   position: relative;
   transition: 1s;
-  background-color: rgb(10, 14, 51);
+  background-color: blue;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   border-bottom-left-radius: 50px;
@@ -78,7 +78,7 @@ export default {
   height: 100%;
   position: relative;
   transition: 1s;
-  background-color: rgb(10, 14, 51);
+  background-color: blue;
   border-top-left-radius: 50px;
   border-top-right-radius: 50px;
   border-bottom-left-radius: 50px;
@@ -94,12 +94,12 @@ export default {
   padding: 4px 20px;
   margin-bottom: 0;
   white-space: nowrap;
-  color: green;
+  color: white;
   cursor: pointer;
 }
 
 .select {
-  border: black solid 1px;
+  border: white solid 1px;
   border-radius: 50px;
   width: 192px;
   height: 30px;

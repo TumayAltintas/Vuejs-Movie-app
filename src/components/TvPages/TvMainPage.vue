@@ -4,7 +4,7 @@
       <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id  + '/' + Tv.name.replace(/ /g, '+')" v-for="(Tv,index) in slides"
                    :key="index">
         <div class="average">
-          <span style="color:#000;">
+          <span style="color:red;">
             {{ Tv.vote_average }}
           </span>
         </div>
@@ -89,7 +89,7 @@ img {
 }
 
 .TitleText {
-  color: black;
+  color: white;
   font-weight: 700;
 }
 </style>

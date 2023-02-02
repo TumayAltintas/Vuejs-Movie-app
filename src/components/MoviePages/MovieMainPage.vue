@@ -4,7 +4,7 @@
       <router-link class="rout" :to="'/MovieDetail/' + Movie.id + '/' + Movie.title.replace(/ /g, '+')"
                    v-for="(Movie,index) in slides" :key="index">
         <div class="average">
-          <span style="color:#000;">
+          <span style="color:red;">
             {{ Movie.vote_average }}
           </span>
         </div>
@@ -100,7 +100,7 @@ img {
 }
 
 .TitleText {
-  color: black;
+  color: white;
   font-weight: 700;
 }
 

@@ -50,7 +50,7 @@ export default {
 .title3 {
   display: flex;
   font-size: 12px;
-  color: #000;
+  color: #b3b3b3;
   font-weight: 500;
   margin: 0;
   padding: 0;
@@ -67,7 +67,7 @@ export default {
   margin: 0;
   padding: 0;
   font-weight: bold;
-  color: #000;
+  color: white;
 }
 
 .person {
