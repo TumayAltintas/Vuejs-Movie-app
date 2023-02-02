@@ -59,6 +59,9 @@ export default {
   //   }
   // },
 }
+/*
+değişim oldu
+ */
 </script>
 
 <style scoped>
