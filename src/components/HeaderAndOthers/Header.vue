@@ -40,12 +40,12 @@
               <router-link class="LinkItem" to="/Person/Popular">Popular People</router-link>
             </ul>
           </li>
-          <li class="nav-item d-flex align-content-center">
-            <a href="https://www.themoviedb.org/" class="flash">Go to MovieDb</a>
-          </li>
         </ul>
       </div>
     </div>
+    <li class="nav-item d-flex  align-content-center justify-content-end">
+      <a href="https://www.themoviedb.org/" class="flash">Go to MovieDb</a>
+    </li>
   </nav>
 </template>
 
@@ -66,14 +66,12 @@ export default {
   animation: flash 3s infinite;
   cursor: pointer;
   text-decoration: none;
-  -ms-flex-direction: row;
-  -ms-flex-align: center;
   font-weight: 800;
   color: white;
   position: absolute;
-  right: 0;
-  margin-right: 20px;
   align-content: center;
+  margin: 0;
+  padding: 0;
 }
 a{
   color: white;
