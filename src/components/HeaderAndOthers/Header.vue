@@ -14,7 +14,7 @@
             <a class="nav-link dropdown-content"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Movies
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style="width: max-content">
               <router-link class="LinkItem" :to="'/Movie/' + 'popular' ">Popular</router-link>
               <router-link class="LinkItem" :to="'/Movie/' + 'now_playing'">Now Playing</router-link>
               <router-link class="LinkItem" :to="'/Movie/' + 'top_rated'">Top Rated</router-link>
