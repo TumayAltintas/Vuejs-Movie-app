@@ -92,12 +92,11 @@ export default {
 }
 
 .item {
-  margin-right: 40px;
+  margin-right: 20px;
   padding: 0;
   max-width: 200px;
   border-radius: 8px;
   margin-bottom: 25px;
-  text-decoration: none;
 }
 
 h2 {
