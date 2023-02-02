@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="blur" id="carousel-wrapper">
+    <div class="blur scroll" id="carousel-wrapper">
       <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id  + '/' + Tv.name.replace(/ /g, '+')" v-for="(Tv,index) in slides"
                    :key="index">
         <div class="average">
@@ -93,27 +93,3 @@ img {
   font-weight: 700;
 }
 </style>
-
-<!--.blur {-->
-<!--transition: linear 0.3s;-->
-<!--opacity: 1;-->
-<!--width: 100%;-->
-<!--display: flex;-->
-<!--justify-content: center;-->
-<!--flex-wrap: wrap;-->
-<!--align-items: flex-start;-->
-<!--align-content: flex-start;-->
-<!--flex-direction: column;-->
-<!--}-->
-
-<!--.blur::after {-->
-<!--content: '';-->
-<!--width: 60px;-->
-<!--height: 100%;-->
-<!--position: absolute;-->
-<!--top: 0;-->
-<!--right: 0;-->
-<!--background-image: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 100%);-->
-<!--will-change: opacity;-->
-
-<!--}-->

@@ -1,0 +1,17 @@
+.scroll {
+    width: 100%;
+    overflow-x: scroll;
+}
+.scroll::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: white inset 0 0 6px;
+    border-radius: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: rgb(29, 195, 201) inset 0 0 24px;
+}

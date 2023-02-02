@@ -5,7 +5,7 @@ import {appAxios} from "./axios/AppAxios.js";
 import store from "./store/store.js";
 import Header from "./components/HeaderAndOthers/Header.vue";
 import {API_KEY, API_IMG_URL, API} from "./Globaljs/Globaljs.js"
-
+import './Style.css'
 const app = createApp(App)
 app.use(store)
 app.use(router)
