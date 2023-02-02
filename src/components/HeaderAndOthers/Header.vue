@@ -25,7 +25,7 @@
             <a class="nav-link dropdown-content" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Tv Shows
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style="width: max-content">
               <router-link class="LinkItem" :to="'/Tv/' + 'popular'">Popular</router-link>
               <router-link class="LinkItem" :to="'/Tv/' + 'airing_today'">Airing Today</router-link>
               <router-link class="LinkItem" :to="'/Tv/' + 'on_the_air'">On The air</router-link>
@@ -36,7 +36,7 @@
             <a class="nav-link dropdown-content"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
               People
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu" style="width: max-content">
               <router-link class="LinkItem" to="/Person/Popular">Popular People</router-link>
             </ul>
           </li>
