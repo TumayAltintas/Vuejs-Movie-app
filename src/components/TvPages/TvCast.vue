@@ -10,8 +10,12 @@
           <div v-else>
             <img class="ImgCast" :src="this.API_IMG_URL + cast.profile_path" alt="">
           </div>
-          <p class=" title2">{{ cast.name }}</p>
-          <p class=" title">{{ cast.character }}</p>
+          <div class="d-flex flex-column">
+            <p class="title2">{{ cast.name }}</p>
+            <p class="title">{{ cast.roles[0].character }}</p>
+            <p class="title3">{{ cast.roles[0].episode_count }} Episodes</p>
+          </div>
+
         </div>
       </router-link>
     </div>
@@ -34,19 +38,25 @@ export default {
 }
 
 .title {
+  display: flex;
+  margin: 0;
+  padding: 0;
   white-space: normal;
-}
+  font-size: 0.8rem;
 
-.person {
-  width: 138px;
-  height: 320px;
-  display: inline-block;
-  flex: 0 0 auto;
-  text-decoration: none;
+}
+.title3{
+  display: flex;
+  font-size: 12px;
+  color: #000;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
 }
 
 .title2 {
   width: 100%;
+font-size: 1rem;
   position: relative;
   white-space: normal;
   display: flex;
@@ -57,6 +67,14 @@ export default {
   font-weight: bold;
   color: #000;
 }
+.person {
+  width: 138px;
+  height: 320px;
+  display: inline-block;
+  flex: 0 0 auto;
+  text-decoration: none;
+}
+
 
 img.ImgCast {
   width: 138px;

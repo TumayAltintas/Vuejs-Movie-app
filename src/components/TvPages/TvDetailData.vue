@@ -31,7 +31,7 @@ export default {
           this.AirDate = response.data.first_air_date.slice(0, 4)
         })
     axios
-        .get(this.API + 'tv/' + this.$route.params.id + '/credits?' + this.API_KEY + '&language=en-US')
+        .get(this.API + 'tv/' + this.$route.params.id + '/aggregate_credits?' + this.API_KEY + '&language=en-US')
         .then((res) => {
           this.TvCast = res.data.cast
         })
