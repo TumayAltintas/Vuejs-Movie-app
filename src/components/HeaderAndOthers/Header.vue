@@ -60,7 +60,7 @@ export default {
   // },
 }
 /*
-düzeltilmesi gerekenler
+düzeltilmesi gerekenlerasd
  */
 </script>
 
