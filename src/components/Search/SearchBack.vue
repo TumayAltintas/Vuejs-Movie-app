@@ -55,7 +55,6 @@ input[type="text"] {
 }
 
 .img-container {
-  position: relative;
   width: 100%;
   height: 300px;
   padding: 0;
@@ -95,7 +94,7 @@ h3 {
 
 button {
   font-size: 1rem;
-  position: absolute;
+  position: relative;
   align-items: center;
   color: white;
   float: right;

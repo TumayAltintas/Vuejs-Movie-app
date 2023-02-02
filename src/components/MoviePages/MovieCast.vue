@@ -8,7 +8,7 @@
             <img class="ImgCast" style="height: 207px"
                  src="../photo/empty-profile-picture-png-2-2.png" alt="">
           </div>
-          <div v-else >
+          <div v-else>
             <img class="ImgCast" :src="this.API_IMG_URL + cast.profile_path" alt="">
           </div>
           <p class=" title2">{{ cast.name }}</p>

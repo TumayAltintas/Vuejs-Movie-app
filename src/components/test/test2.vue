@@ -1,11 +1,34 @@
 <template>
-  <Top-Header/>
-  <div class="container">
-    <div class="select d-flex">
-      <div :class="{ SelectedFirst: SelectedFirst}"><h3 class="text" @click="toggleActive"><a>Today</a></h3></div>
-      <div :class="{selected: selected}"><h3 class="text" @click="secondSelect"><a>This Week</a></h3></div>
+  <header>
+    <div class="d-flex">
+      <a href="https://www.themoviedb.org/ " class="flash">Go to MovieDb</a>
     </div>
-  </div>
+    <div class="container d-flex">
+      <div class="" style="position: absolute; top: 25%">
+
+        <div style="margin-left: 25px" class="dropdown">
+          <a style="color: white;cursor: pointer;position: relative">Movies</a>
+          <div class="dropdown-content">
+            <router-link class="LinkItem" :to="'/Movie/' + 'popular' ">Popular</router-link>
+            <router-link class="LinkItem" :to="'/Movie/' + 'now_playing'">Now Playing</router-link>
+            <router-link class="LinkItem" :to="'/Movie/' + 'top_rated'">Top Rated</router-link>
+            <router-link class="LinkItem" :to="'/Movie/' + 'upcoming'">Upcoming</router-link>
+          </div>
+        </div>
+        <div style="margin-left: 25px" class="dropdown">
+          <a style="color: white;cursor: pointer;">Tv Shows</a>
+          <div class="dropdown-content">
+
+          </div>
+        </div>
+        <div style="margin-left: 25px" class="dropdown">
+          <a style="color: white;cursor: pointer;">People</a>
+          <div class="dropdown-content">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 </template>
 
 <script>

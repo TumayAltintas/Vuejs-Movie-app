@@ -1,10 +1,11 @@
 <template>
   <div class="container">
     <div class="blur container" ref="carousel" style="overflow-y: hidden; white-space: nowrap;" id="carousel-wrapper">
-      <router-link :to="'/Person/' + cast.id + '/' + cast.name.replace(/ /g, '+')" v-for="(cast,index) in TvCast" :key="index"
-           class="opacity-100 shadow-lg rounded-3 col m-2 person">
+      <router-link :to="'/Person/' + cast.id + '/' + cast.name.replace(/ /g, '+')" v-for="(cast,index) in TvCast"
+                   :key="index"
+                   class="opacity-100 shadow-lg rounded-3 col m-2 person">
         <div>
-          <div v-if="cast.profile_path == null" >
+          <div v-if="cast.profile_path == null">
             <img class="ImgCast" style="height: 207px" src="../photo/empty-profile-picture-png-2-2.png" alt="">
           </div>
           <div v-else>
@@ -45,7 +46,8 @@ export default {
   font-size: 0.8rem;
 
 }
-.title3{
+
+.title3 {
   display: flex;
   font-size: 12px;
   color: #000;
@@ -56,7 +58,7 @@ export default {
 
 .title2 {
   width: 100%;
-font-size: 1rem;
+  font-size: 1rem;
   position: relative;
   white-space: normal;
   display: flex;
@@ -67,6 +69,7 @@ font-size: 1rem;
   font-weight: bold;
   color: #000;
 }
+
 .person {
   width: 138px;
   height: 320px;
