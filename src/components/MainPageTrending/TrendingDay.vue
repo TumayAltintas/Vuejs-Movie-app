@@ -1,9 +1,9 @@
 <template>
   <div class="row mb-5">
     <div class="Trending blur scroll" style=" white-space: nowrap;" id="carousel-wrapper">
-      <div v-for="(Day,index) in DayData" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
+      <div v-for="(Day,index) in DayData" :key="index" class="list">
         <div class="average">
-          <span style="color:red;">
+          <span>
             {{ Day.vote_average }}
           </span>
         </div>
@@ -53,6 +53,17 @@ export default {
   background-repeat: no-repeat;
   background-repeat-x: no-repeat;
 
+}
+
+.list {
+  padding: 0;
+  margin-right: 25px;
+  width: 165px;
+  height: 350px
+}
+
+span {
+  color: red
 }
 
 #carousel-wrapper {

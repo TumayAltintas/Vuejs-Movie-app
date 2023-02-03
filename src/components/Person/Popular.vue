@@ -6,7 +6,8 @@
     </div>
     <div>
       <div class="row">
-        <router-link :to="'/Person/' + person.id + '/' + person.name.replace(/ /g, '+')" v-for="person in People" :key="person.id" class="col item">
+        <router-link :to="'/Person/' + person.id + '/' + person.name.replace(/ /g, '+')" v-for="person in People"
+                     :key="person.id" class="col item">
           <div class="item-product">
             <div v-if="person.profile_path == null">
               <img class="image" src="../photo/empty-profile-picture-png-2-2.png" alt="">

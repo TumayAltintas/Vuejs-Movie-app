@@ -14,7 +14,7 @@
             <a class="nav-link dropdown-content"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Movies
             </a>
-            <ul class="dropdown-menu" style="width: max-content">
+            <ul class="dropdown-menu">
               <router-link class="LinkItem" :to="'/Movie/' + 'popular' ">Popular</router-link>
               <router-link class="LinkItem" :to="'/Movie/' + 'now_playing'">Now Playing</router-link>
               <router-link class="LinkItem" :to="'/Movie/' + 'top_rated'">Top Rated</router-link>
@@ -25,7 +25,7 @@
             <a class="nav-link dropdown-content" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Tv Shows
             </a>
-            <ul class="dropdown-menu" style="width: max-content">
+            <ul class="dropdown-menu">
               <router-link class="LinkItem" :to="'/Tv/' + 'popular'">Popular</router-link>
               <router-link class="LinkItem" :to="'/Tv/' + 'airing_today'">Airing Today</router-link>
               <router-link class="LinkItem" :to="'/Tv/' + 'on_the_air'">On The air</router-link>
@@ -36,7 +36,7 @@
             <a class="nav-link dropdown-content"  role="button" data-bs-toggle="dropdown" aria-expanded="false">
               People
             </a>
-            <ul class="dropdown-menu" style="width: max-content">
+            <ul class="dropdown-menu">
               <router-link class="LinkItem" to="/Person/Popular">Popular People</router-link>
             </ul>
           </li>
@@ -65,6 +65,9 @@ düzeltilmesi gerekenlerasd
 </script>
 
 <style scoped>
+ul{
+  width: max-content
+}
 .flash {
   animation: flash 3s infinite;
   cursor: pointer;

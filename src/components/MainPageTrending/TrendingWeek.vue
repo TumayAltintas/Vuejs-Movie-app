@@ -1,7 +1,7 @@
 <template>
   <div class="row mb-5">
     <div class="Trending blur scroll" style=" white-space: nowrap;" id="carousel-wrapper">
-      <div v-for="(week,index) in WeekData" :key="index" style="padding: 0;margin-right: 25px;width: 165px;height: 350px">
+      <div v-for="(week,index) in WeekData" :key="index" class="list">
         <div class="average">
           <span style="color:red;">
             {{ week.vote_average }}
@@ -66,6 +66,17 @@ div.average {
   position: relative;
   top: 0;
   width: max-content;
+}
+
+span {
+  color: red;
+}
+
+.list {
+  padding: 0;
+  margin-right: 25px;
+  width: 165px;
+  height: 350px
 }
 
 div.title {

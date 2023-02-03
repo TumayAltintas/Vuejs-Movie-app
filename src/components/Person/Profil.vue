@@ -100,10 +100,12 @@
             <div v-for="(know,index) in knowfor" :key="index" class="col list">
               <div>
                 <img class="image" :src="this.API_IMG_URL + know.poster_path" alt="">
-                <router-link class="LinkItem" v-if="know.media_type === 'movie'" :to="'/MovieDetail/'+ know.id +'/'+ know.title ">
+                <router-link class="LinkItem" v-if="know.media_type === 'movie'"
+                             :to="'/MovieDetail/'+ know.id +'/'+ know.title ">
                   <p class="title2">{{ know.title }}</p>
                 </router-link>
-                <router-link class="LinkItem" v-if="know.media_type === 'tv'" :to="'/TvDetail/'+ know.id +'/'+ know.name ">
+                <router-link class="LinkItem" v-if="know.media_type === 'tv'"
+                             :to="'/TvDetail/'+ know.id +'/'+ know.name ">
                   <p class="title2">{{ know.name }}</p>
                 </router-link>
               </div>
@@ -127,9 +129,11 @@ export default {
 .LinkItem {
   text-decoration: none;
 }
-p{
+
+p {
   color: white;
 }
+
 .image {
   width: 100%;
   height: 300px;
@@ -145,15 +149,19 @@ p{
   flex: 0 0 auto;
   margin-right: 25px
 }
-h3{
+
+h3 {
   color: white;
 }
-li{
+
+li {
   color: white;
 }
-ul{
+
+ul {
   color: white;
 }
+
 .title2 {
   white-space: normal;
   font-weight: 700;

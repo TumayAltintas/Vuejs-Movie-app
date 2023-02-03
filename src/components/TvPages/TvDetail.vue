@@ -1,41 +1,41 @@
 <template>
-    <div v-bind:style="{ 'background-image': 'url(' + this.API_IMG_URL + TvDetails.backdrop_path + ')' }" class="all">
-      <div class="CustomBg">
-        <div class="container">
-          <div class="single">
-            <section class="d-flex">
-              <div class="origin">
-                <img :src="this.API_IMG_URL + TvDetails.poster_path" alt="">
+  <div v-bind:style="{ 'background-image': 'url(' + this.API_IMG_URL + TvDetails.backdrop_path + ')' }" class="all">
+    <div class="CustomBg">
+      <div class="container">
+        <div class="single">
+          <section class="d-flex">
+            <div class="origin">
+              <img :src="this.API_IMG_URL + TvDetails.poster_path" alt="">
+            </div>
+            <section class="section-link" :style="{backgroundColor}">
+              <div class="title row">
+                <div class="d-flex align-items-center">
+                  <h2 class="hname">
+                    <a>{{ TvDetails.name }}</a>
+                  </h2>
+                  <h2><a class="AirDate">({{ AirDate }})</a></h2>
+                </div>
+                <div class="d-flex">
+                  <div class="fact" v-for="(genres, index) in TvDetails.genres" :key="index">
+                    <span class="genres">{{ genres.name }},</span>
+                  </div>
+                </div>
               </div>
-              <section class="section-link" :style="{backgroundColor}">
-                <div class="title row">
-                  <div class="d-flex align-items-center">
-                    <h2 style="color:white;">
-                      <a>{{ TvDetails.name }}</a>
-                    </h2>
-                    <h2><a class="AirDate">({{ AirDate }})</a></h2>
-                  </div>
-                  <div class="d-flex">
-                    <div class="fact" v-for="(genres, index) in TvDetails.genres" :key="index">
-                      <span style="color:white;" class="genres">{{ genres.name }},</span>
-                    </div>
-                  </div>
+              <h3 class="tagline">
+                {{ TvDetails.tagline }}
+              </h3>
+              <div class="info">
+                <h2>Overview</h2>
+                <div>
+                  <p>{{ TvDetails.overview }}</p>
                 </div>
-                <h3 class="tagline">
-                  {{ TvDetails.tagline }}
-                </h3>
-                <div class="info">
-                  <h2>Overview</h2>
-                  <div>
-                    <p>{{ TvDetails.overview }}</p>
-                  </div>
-                </div>
-              </section>
+              </div>
             </section>
-          </div>
+          </section>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
@@ -43,8 +43,8 @@
 export default {
   name: "Tv",
   props: ['TvDetails', 'AirDate'],
-  data(){
-    return{
+  data() {
+    return {
       backgroundColor: 'rgba(31.5, 31.5, 52.5, 0.2)',
     }
   },
@@ -66,6 +66,10 @@ export default {
   font-weight: 200;
   white-space: nowrap;
   text-decoration: none;
+  color: white;
+}
+
+.hname {
   color: white;
 }
 
@@ -94,7 +98,6 @@ a {
 span.genres {
   margin-right: 5px;
 }
-
 
 
 h3 {

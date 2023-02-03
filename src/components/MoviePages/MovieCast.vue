@@ -1,11 +1,11 @@
 <template>
   <div class=" container">
-    <div class="scroll" ref="carousel" style=" white-space: nowrap;" id="carousel-wrapper">
+    <div class="scroll" ref="carousel" id="carousel-wrapper">
       <router-link :to="'/Person/' + cast.id + '/' + cast.name.replace(/ /g, '+')" v-for="(cast,index) in MoviesCast" :key="index"
                    class="opacity-100 shadow-lg rounded-3 col m-2 person">
         <div>
           <div v-if="cast.profile_path == null" >
-            <img class="ImgCast" style="height: 207px"
+            <img class="ImgCast2"
                  src="../photo/empty-profile-picture-png-2-2.png" alt="">
           </div>
           <div v-else>
@@ -51,7 +51,12 @@ export default {
 .title {
   white-space: normal;
 }
-
+img.ImgCast2 {
+  width: 138px;
+  padding: 0;
+  margin: 0;
+  height: 207px
+}
 img.ImgCast {
   width: 138px;
   padding: 0;

@@ -1,9 +1,9 @@
 <template>
-<footer>
-  <div style="color: white">
-  Made by <a target="_blank" style="text-decoration: none" href="https://github.com/TumayAltintas">Tümay altıntaş</a>
-</div>
-</footer>
+  <footer>
+    <div>
+      Made by <a target="_blank" href="https://github.com/TumayAltintas">Tümay altıntaş</a>
+    </div>
+  </footer>
 </template>
 
 <script>
@@ -13,5 +13,13 @@ export default {
 </script>
 
 <style scoped>
+
+a {
+  text-decoration: none
+}
+
+div {
+  color: white;
+}
 
 </style>

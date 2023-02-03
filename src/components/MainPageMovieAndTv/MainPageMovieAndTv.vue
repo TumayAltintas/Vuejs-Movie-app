@@ -1,15 +1,15 @@
 <template>
   <div class="container">
     <SearchBack/>
-        <div style="margin-top: 50px">
-          <TrendCombine/>
-        </div>
-        <div style="margin-top: 25px">
-          <button class="custom-button" style="color: black;" v-if="show" @click="show=!show">Tv</button>
-          <button class="custom-button" style="color: black;" v-else @click="show=!show">Movie</button>
-        </div>
-        <TvMainPage v-if="show"/>
-        <MovieMainPage v-else/>
+    <div class="trend">
+      <TrendCombine/>
+    </div>
+    <div>
+      <button class="custom-button" v-if="show" @click="show=!show">Tv</button>
+      <button class="custom-button" v-else @click="show=!show">Movie</button>
+    </div>
+    <TvMainPage v-if="show"/>
+    <MovieMainPage v-else/>
   </div>
 </template>
 
@@ -48,7 +48,6 @@ export default {
   display: inline-block;
   color: #fff;
   text-align: center;
-
   background-color: #007bff;
   padding: 0.375rem 0.75rem;
   border: none;
@@ -58,7 +57,9 @@ export default {
   border-radius: 30rem;
   cursor: pointer;
 }
-
+.trend{
+  margin-top: 50px
+}
 .custom-button:hover {
   color: #fff;
   background-color: #0069d9;
