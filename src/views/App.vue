@@ -1,6 +1,8 @@
 <template>
-  <router-view></router-view>
-  <Footer/>
+  <div>
+    <router-view></router-view>
+  </div>
+  <Footer class="justify-content-center d-flex m-4"/>
 </template>
 
 <script>

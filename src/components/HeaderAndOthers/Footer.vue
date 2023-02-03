@@ -1,5 +1,5 @@
 <template>
-<footer style="float: right;margin-right: 25px;margin-bottom: 25px;">
+<footer>
   <div style="color: white">
   Made by <a target="_blank" style="text-decoration: none" href="https://github.com/TumayAltintas">Tümay altıntaş</a>
 </div>
