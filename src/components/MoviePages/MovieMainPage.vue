@@ -2,7 +2,7 @@
   <div class="row">
     <div class="blur scroll" id="carousel-wrapper">
       <router-link class="rout" :to="'/MovieDetail/' + Movie.id + '/' + Movie.title.replace(/ /g, '+')"
-                   v-for="(Movie,index) in slides" :key="index">
+                   v-for="(Movie,index) in movie" :key="index">
         <div class="average">
           <span>
             {{ Movie.vote_average }}
@@ -30,7 +30,7 @@ export default {
   components: {},
   data() {
     return {
-      slides: [],
+      movie: [],
 
     }
   },
@@ -39,7 +39,7 @@ export default {
     axios
         .get(this.API + 'movie/top_rated?' + this.API_KEY + '&language=en-US&page=' + this.currentPage)
         .then((response) => {
-          this.slides = response.data.results
+          this.movie = response.data.results
         })
   },
 

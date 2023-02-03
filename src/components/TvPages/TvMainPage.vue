@@ -2,7 +2,7 @@
   <div class="row">
     <div class="blur scroll" id="carousel-wrapper">
       <router-link class="LinkItem" :to="'/TvDetail/' + Tv.id  + '/' + Tv.name.replace(/ /g, '+')"
-                   v-for="(Tv,index) in slides"
+                   v-for="(Tv,index) in tv"
                    :key="index">
         <div class="average">
           <span>
@@ -30,7 +30,7 @@ export default {
   components: {},
   data() {
     return {
-      slides: [],
+      tv: [],
 
     }
   },
@@ -39,7 +39,7 @@ export default {
         .get(this.API + 'tv/top_rated?' + this.API_KEY + '&language=en-US&page=' + this.currentPage)
         .then((response) => {
 
-          this.slides = response.data.results
+          this.tv = response.data.results
         })
   },
 
