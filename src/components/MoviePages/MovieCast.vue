@@ -62,6 +62,6 @@ img.ImgCast {
   display: flex;
   position: relative;
   transition: transform 0.5s;
-  height: 360px;
+  height: 380px;
 }
 </style>
