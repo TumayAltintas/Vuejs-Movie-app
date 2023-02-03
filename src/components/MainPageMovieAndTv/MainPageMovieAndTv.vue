@@ -4,11 +4,17 @@
     <div class="trend">
       <TrendCombine/>
     </div>
-    <div>
-      <button class="custom-button" v-if="show" @click="show=!show">Tv</button>
-      <button class="custom-button" v-else @click="show=!show">Movie</button>
+    <div class="d-flex">
+      <div class="row col">
+        <h3 class="movie-tv">Top Movie/Tv</h3>
+        <div class="select d-flex">
+          <div :class="{ SelectedFirst: SelectedFirst}"><h3 class="text" @click="toggleActive"><a>Tv</a></h3></div>
+          <span></span>
+          <div :class="{selected: selected}"><h3 class="text" @click="secondSelect"><a>Movie</a></h3></div>
+        </div>
+      </div>
     </div>
-    <TvMainPage v-if="show"/>
+    <TvMainPage v-if="ShowTrend"/>
     <MovieMainPage v-else/>
   </div>
 </template>
@@ -33,49 +39,86 @@ export default {
   },
   data() {
     return {
-      buttonText: 'Tv',
-      buttonColor: '#ccc',
-      show: true,
-      isChecked: false
-
+      ShowTrend: true,
+      selected: false,
+      SelectedFirst: true,
     }
+  },
+  methods: {
+    toggleActive() {
+      this.SelectedFirst = true
+      this.selected = false
+      this.ShowTrend = true
+
+    },
+    secondSelect() {
+      this.SelectedFirst = false
+      this.selected = true
+      this.ShowTrend = false
+    },
   },
 }
 </script>
 
 <style scoped>
-.custom-button {
-  display: inline-block;
-  color: #fff;
-  text-align: center;
-  background-color: #007bff;
-  padding: 0.375rem 0.75rem;
-  border: none;
-  font-size: 1rem;
-  font-weight: 600;
-  line-height: 1.5;
-  border-radius: 30rem;
-  cursor: pointer;
-}
 .trend{
   margin-top: 50px
 }
-.custom-button:hover {
-  color: #fff;
-  background-color: #0069d9;
-  border-color: #0062cc;
+
+.SelectedFirst {
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 100%;
+  position: relative;
+  transition: 1s;
+  background-color: blue;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
+
+}
+.movie-tv{
+  margin-right: 15px;
+  font-size: 1.5em;
+  padding: 0;
+  width: max-content;
+  color: white;
+}
+.selected {
+  float: right;
+  width: 90px;
+  height: 100%;
+  position: relative;
+  transition: 1s;
+  background-color: blue;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-bottom-right-radius: 50px;
 }
 
-.custom-button:active {
-  color: #fff;
-  background-color: #0062cc;
-  border-color: #005cbf;
+.text {
+  display: inline-flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  padding: 4px 20px;
+  margin-bottom: 0;
+  white-space: nowrap;
+  color: white;
+  cursor: pointer;
 }
 
-.custom-button:focus {
-  outline: 0;
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+.select {
+  border: white solid 1px;
+  border-radius: 50px;
+  width: 150px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
 }
-
 </style>
 
