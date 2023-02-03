@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Top-Header/>
    <MoviePagesData/>
   </div>
 </template>

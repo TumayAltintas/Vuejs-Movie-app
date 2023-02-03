@@ -1,10 +1,5 @@
 <template>
   <div>
-    <Top-Header/>
-<!--    <div>-->
-<!--      <input v-model="searchText" placeholder="Search for a movie, tv show, person......">-->
-<!--      <button @click="goToSearchPage">Search</button>-->
-<!--    </div>-->
     <SearchData/>
   </div>
 </template>

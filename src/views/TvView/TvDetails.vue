@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Top-Header/>
     <DetailDataTv/>
   </div>
 </template>
