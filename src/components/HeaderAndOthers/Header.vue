@@ -44,7 +44,7 @@
       </div>
     </div>
     <li class="nav-item d-flex  align-content-center justify-content-end">
-      <a href="https://www.themoviedb.org/" class="flash">Go to MovieDb</a>
+      <a target="_blank" href="https://www.themoviedb.org/" class="flash">Go to MovieDb</a>
     </li>
   </nav>
 </template>

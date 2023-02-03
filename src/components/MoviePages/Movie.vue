@@ -4,7 +4,7 @@
         <div v-for="(movie,index) in Movies" :key="index" class="col item">
           <div class="item-product">
             <router-link :to="'/MovieDetail/'+ movie.id + '/' + movie.title.replace(/ /g, '+')">
-              <img class="image" :src="this.API_IMG_URL + movie.poster_path" alt="">
+              <img class="image" :src="this.API_IMG_URL + movie.poster_path" :alt="movie.title">
             </router-link>
           </div>
           <div>
@@ -17,8 +17,6 @@
 
 <script>
 
-
-let currentPage = 1;
 export default {
   name: "MovieNowPlaying",
   props: ['Movies'],
