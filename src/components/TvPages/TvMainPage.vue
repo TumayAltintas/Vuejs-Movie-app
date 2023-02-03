@@ -54,7 +54,7 @@ export default {
   display: flex;
   position: relative;
   transition: transform 0.5s;
-  height: 350px;
+  height: 360px;
 }
 
 div.title {
