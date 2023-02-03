@@ -98,7 +98,7 @@ button {
   align-items: center;
   color: white;
   float: right;
-  right: 36px;
+  right: 93px;
   width: 100px;
   height: 46px;
   font-weight: 700;
