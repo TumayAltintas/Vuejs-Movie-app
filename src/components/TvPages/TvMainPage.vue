@@ -54,7 +54,7 @@ export default {
   display: flex;
   position: relative;
   transition: transform 0.5s;
-  height: 360px;
+  height: 370px;
 }
 
 div.title {
@@ -81,7 +81,6 @@ img {
 }
 
 .blur {
-  overflow-y: hidden;
   white-space: nowrap;
 }
 
