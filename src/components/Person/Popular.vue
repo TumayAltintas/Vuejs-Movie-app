@@ -98,6 +98,7 @@ export default {
   max-width: 200px;
   border-radius: 8px;
   margin-bottom: 25px;
+  text-decoration: none;
 }
 
 h2 {
