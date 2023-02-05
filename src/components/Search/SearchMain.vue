@@ -30,22 +30,24 @@ export default {
 <style scoped>
 .image {
   width: 100%;
+  height: 100%;
   border-radius: 8px
 }
 
 .imageE {
   width: 100%;
-  height: 270px;
+  height: 100%;
 }
 
 .item-product {
-  width: 180px;
+  width: 165px;
+  height: 248px;
+
 }
 
 .item {
-  margin-right: 40px;
+  margin-right: 20px;
   padding: 0;
-  max-width: 180px;
   border-radius: 8px
 }
 
