@@ -12,8 +12,6 @@ const router = createRouter({
 
 		{ path: '/:pathMatch(.*)*', name: 'NotFound', component: () => import('../views/404.vue') },
 
-		// {path: '/Tv/:id/name/:name', name: 'TvDetail', component: () => import('../views/TvView/TvDetails.vue')},
-
 		{path: '/TvDetail/:id/:name', name: 'TvDetail', component: () => import('../views/TvView/TvDetails.vue')},
 
 		{path: '/Tv/:name', name: 'Tv', component: () => import('../views/TvView/Tv.vue')},
@@ -21,10 +19,6 @@ const router = createRouter({
 		{path: '/Person/Popular', name: 'PersonPopular', component: () => import('../views/Person/PopularPeople.vue')},
 
 		{path: '/Person/:id/:name', name: 'Person', component: () => import('../views/Person/Person.vue')},
-
-		{path: '/Register', name: 'Register', component: () => import('../components/Login-Register/Register.vue')},
-
-		{path: '/Login-Register', name: 'Login-Register', component: () => import('../views/Login-Register/Login-Register.vue')},
 
 		{path: '/search/:query', name: 'search', component: () => import('../views/Search/Search.vue')},
 
