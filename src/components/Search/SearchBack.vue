@@ -44,7 +44,7 @@ export default {
 
 <style scoped>
 input {
-  width: 1220px;
+  width: 100%;
   height: 46px;
   border-radius: 30px;
   border: none;
