@@ -8,7 +8,7 @@
         </div>
         <div class="d-flex search">
           <input @keydown.enter="goToSearchPage" v-model="searchText"
-                 placeholder="Search for a movie, tv show, _ person......">
+                 placeholder="Search for a movie, tv show,  person......">
           <button @click="goToSearchPage">Search</button>
         </div>
       </section>
